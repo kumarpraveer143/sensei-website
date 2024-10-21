@@ -18,8 +18,9 @@ import { notFound, useRouter } from "next/navigation";
 import Feedback from "@/components/activityComps/Feedback";
 
 const Page = ({ params: { id } }) => {
+
   const Router = useRouter();
-  // const [status, setStatus] = useState(false);
+  const [outcomesText, setOutcomesText] = useState("");
   const [state, setState] = useState(0);
   const [infoOpen, setInfoOpen] = useState(false);
   const [currProcess, setCurrProcess] = useState(0);
@@ -49,14 +50,19 @@ const Page = ({ params: { id } }) => {
       }
     };
     fetchProcessData();
-  }, []);
+    setOutcomesText(processText(interactiveActivity?.keyOutcomes))
+  }, [id, interactiveActivity?.keyOutcomes]);
+
+  const processText = (outcomes) => {
+    return outcomes?.replace(/(\d+\.)/g, '\n$1').trim();
+  }
 
   switch (state) {
     case 0:
       return (
         <Loading
           activity={{
-            outComes: interactiveActivity?.keyOutcomes,
+            outComes: outcomesText,
             name: interactiveActivity?.interactiveActivityName,
             ageGroup: "5-7 years",
           }}
