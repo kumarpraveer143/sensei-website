@@ -12,6 +12,7 @@ import { useSession } from "next-auth/react";
 import axios from "axios";
 import Danger from "@/Images/danger.svg?url";
 import LeftSide from "@/components/loginComps/LeftSide";
+import { fetchParentsRequest } from "@/Redux/slice/parentSlice";
 
 const Page = () => {
   //Fetching Parent and child data
@@ -25,14 +26,17 @@ const Page = () => {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/";
   const [orderId, setOrderId] = useState(currentUserData?.orderId);
+  const parentData = useSelector((state) => state?.parentsData?.data)
 
   //Dispatching actions to get parent and children data from provided details
   const dispatch = useDispatch();
-  // const id = parentData?.id;
-  // useEffect(() => {
-  //   dispatch(fetchParentsRequest({ phone }));
-  //   dispatch(fetchChildrenRequest({ id }));
-  // }, [id, phone, dispatch]);
+  const id = parentData?.id;
+  const phone = parentData?.phone
+  useEffect(() => {
+    dispatch(fetchParentsRequest({ phone }));
+    // dispatch(fetchChildrenRequest({ id }));
+  }, [id, phone, dispatch]);
+  console.log(currentUserData)
 
   //otp input functionality
 

@@ -1,11 +1,13 @@
 "use client";
 import React, { useEffect } from "react";
-import Image from "next/image";
 import Rafiki from "@/assets/rafiki.svg";
 import User from "@/assets/user.svg";
 import MainLogo from "@/assets/mainlogo.svg";
+
 const Loading = ({ action, activity }) => {
+
   // console.log("activity", activity);
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       action();
@@ -14,6 +16,7 @@ const Loading = ({ action, activity }) => {
       clearTimeout(timeout);
     };
   }, [action]);
+
   return (
     <div className="relative my-10 flex h-full min-h-[90vh] flex-col justify-evenly gap-5">
       <div className="center-x relative h-[150px] w-[150px]">
@@ -70,7 +73,7 @@ const Loading = ({ action, activity }) => {
         </p>
       </div>
       <div className="mx-auto flex flex-col justify-center gap-4">
-        <h2 className="h4 uunderline uuppercase mx-auto h-fit max-w-[min(90vw,500px)] text-center text-secondary underline-offset-8">
+        <h2 className="h5 underline uppercase mx-auto h-fit min-w-96 text-center text-secondary underline-offset-4 whitespace-pre-line">
           {activity?.outComes}
         </h2>
         {/* <h2 className="h4 mx-auto h-fit max-w-[90vw] whitespace-nowrap text-center font-semibold">
