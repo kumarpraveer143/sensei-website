@@ -12,12 +12,12 @@ import { Bigplayer } from "@/components/miniComps/VideoPlay";
 export default function Home() {
   return (
     <div className="bbg-[#FEF5F3] flex flex-col gap-20 overflow-x-hidden pb-20 md:gap-40 md:pb-40">
-      <div className="relative mb-4 pt-[56.25%]">
+      <div className="relative mb-3 pt-[56.25%]">
         <iframe
           src={"https://www.youtube.com/embed/IDGiY6r2HOw?autoplay=1&rel=0"}
           className="absolute left-0 top-2"
           width="100%"
-          height="700px"
+          height="820px"
           allow="autoplay"
         ></iframe>
       </div>
