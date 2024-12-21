@@ -5,7 +5,7 @@ import Mission from "@/assets/mission.svg";
 import Vision from "@/assets/vision.svg";
 import ABLTopology from "@/assets/ABLTopology-1.svg?url";
 import group from "@/assets/us/Group_40155.png";
-// import { team, psychologists } from "@/utils/data";
+import { team, psychologists } from "@/utils/data";
 import Link from "next/link";
 import Background from "@/components/miniComps/BackGround";
 import CircleOfTrust from "../../components/homeComps/CircleOfTrust";
@@ -95,7 +95,7 @@ const Page = async () => {
           Our Team
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
-          {team.map(
+          {team?.map(
             (person, index) =>
               person[4] === "Core" && (
                 <Person person={person} key={index} index={index} />
@@ -109,7 +109,7 @@ const Page = async () => {
           Our Psychologist{" "}
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
-          {psychologists.map(
+          {psychologists?.map(
             (person, index) =>
               person[4] === "Psychology" && (
                 <Person person={person} key={index} index={index} />
@@ -122,7 +122,7 @@ const Page = async () => {
           Our Advisor
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
-          {team.map(
+          {team?.map(
             (person, index) =>
               person[4] === "Advisor" && (
                 <Person person={person} key={index} index={index} />

@@ -8,7 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 // import { ToastContainer } from "react-toastify";
 import StoreProvider from "@/Redux/Provider";
 export const metadata = {
-  metadataBase: new URL(`${process.env.NEXTAUTH_URL}`),
+  // metadataBase: new URL(`${process.env.NEXTAUTH_URL}`),
   title: {
     default:
       "Life skills that empower your child in this digital world mentally, emotionally, ethically",
@@ -25,13 +25,13 @@ export default function RootLayout({ children }) {
   return (
     <>
       <html lang="en scrollbar-hide">
-        <GoogleTagManager gtmId={process.env.GTM_ID} />
+        {/* <GoogleTagManager gtmId={process.env.GTM_ID} /> */}
         <body
           className={
             "scrollbar-hide flex min-h-screen flex-col justify-between"
           }
         >
-          <GoogleAnalytics gaId={process.env.GA_ID} />
+          {/* <GoogleAnalytics gaId={process.env.GA_ID} /> */}
           <StoreProvider>
             <Navbar />
             {children}

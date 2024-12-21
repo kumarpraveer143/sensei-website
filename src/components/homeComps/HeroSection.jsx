@@ -20,12 +20,22 @@ const HeroSection = () => {
         {/* <Background /> */}
         <div className="container mx-auto flex h-full w-full max-w-[90vw] justify-between gap-10 pb-10 pt-20 max-[900px]:flex-col">
           <div className="flex min-w-[40vw] flex-col gap-10">
-            <h1 className="h1 lg:h1 min-h-max max-w-[800px] leading-snug">
-              Life skills that empower your child in this digital world{" "}
+            <h1 className="h1 lg:h1 min-h-max max-w-[800px] text-[48px] leading-snug">
+              {/* Life skills that empower your child in this digital world{" "}
               <span className="inline-block min-w-[200px] max-w-fit bg-grad_1 bg-clip-text text-transparent">
                 <TypingAni texts={Herotexts} delay={2000} speed={100} />
-              </span>
+              </span> */}
+              Your Partner in Parenting.
             </h1>
+            <h3 className="text-[30px] font-semibold">
+              Evolving your child into a{" "}
+              <span className="inline-block min-w-[100px] max-w-fit bg-grad_1 bg-clip-text text-transparent">
+                <TypingAni texts={Herotexts} delay={2000} speed={100} />
+              </span>{" "}
+            </h3>
+            <h3 className="-mt-8 text-[30px] font-semibold">
+              and successful individual.
+            </h3>
             <FreeActivityBtn />
 
             <div className="whitespace-nowrap">
