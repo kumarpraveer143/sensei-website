@@ -18,7 +18,7 @@ const HeroSection = () => {
     <div className="min-h-max">
       <div className="relative z-[1]">
         {/* <Background /> */}
-        <div className="container mx-auto flex h-full w-full max-w-[90vw] justify-between gap-10 pb-10 pt-20 max-[900px]:flex-col">
+        <div className="container mx-auto flex h-full w-full max-w-[90vw] justify-between gap-10 pb-10 pt-10 max-[900px]:flex-col-reverse max-[900px]:gap-32">
           <div className="flex min-w-[40vw] flex-col gap-10">
             <h1 className="h1 lg:h1 -mt-8 min-h-max max-w-[800px] text-[48px] leading-snug">
               {/* Life skills that empower your child in this digital world{" "}
@@ -78,7 +78,7 @@ const HeroSection = () => {
               src={bgtopo}
               alt="bgtopo"
               sizes="auto"
-              className="absolute -right-[20vw] min-w-[700px] max-[900px]:-bottom-[20vw] max-[900px]:min-w-[150vw] md:max-w-[min(900px,70vw)] min-[900px]:-top-[10vw] min-[900px]:left-0"
+              className="absolute -right-[20vw] hidden min-w-[700px] max-[900px]:-bottom-[20vw] max-[900px]:min-w-[150vw] md:max-w-[min(900px,70vw)] min-[900px]:-top-[10vw] min-[900px]:left-0 lg:block"
             />
             <HeroImageAny />
             <Image
