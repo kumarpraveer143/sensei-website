@@ -13,6 +13,8 @@ const TextReader = ({ text, role }) => {
   const [muted, setMuted] = useState(false);
   const audioRef = useRef(null);
   useEffect(() => {
+    console.log(text);
+    
     getTextToAudio(text).then((response) => {
       setAudio(response);
     });
@@ -58,12 +60,12 @@ const TextReader = ({ text, role }) => {
         )}
       </div>
       <div className="max-w-full text-wrap text-grey_1">
-        {text.split(" ").map((segment, index) => (
+        {text.split("|").map((segment, index) => (
           //check if it is number. like segment make a condition for it
 
           <span
             key={index}
-            className={`${timer == 0 || (audio.hasOwnProperty("timestamps") && audio.timestamps[index] && audio.timestamps[index].start <= timer) ? "text-primary" : "text-primary/35"}`}
+            className={`${timer == 0 || (audio.hasOwnProperty("timestamps") && audio.timestamps[index] && audio.timestamps[index].start <= timer) ? "text-primary" : "text-primary/35"} block py-2`}
           >
             {index > 0 &&
               segment.length > 1 &&

@@ -12,16 +12,18 @@ import Background1 from "@/components/miniComps/BackGround.jsx";
 import { getSubColour } from "@/utils/logic";
 import Activities from "@/components/Modules/Activities";
 import axios from "axios";
+import { useSession } from "next-auth/react";
 
 const UserDashboard = () => {
+  const { data } = useSession();
   const [modules, setModules] = useState([]);
   const [colours, setColours] = useState({});
   const [subjectId, setSubjectId] = useState(0);
   const [subjectData, setSubjectData] = useState([]);
-  const currentUserData = useSelector((state) => state?.currentUser?.data);
+  // const currentUserData = useSelector((state) => state?.currentUser?.data);
   const fetchSubjectData = async () => {
     const res = await axios.get(`/subjects`).catch((err) => console.log(err));
-    // console.log(res?.data);
+    console.log(res?.data);
     if (res?.data) {
       setSubjectData(res.data);
       setModules(res?.data[0]?.modules);
@@ -49,7 +51,7 @@ const UserDashboard = () => {
           <p className="h4 text-grey_1">Hello!</p>
           <Link className="no-underline" href="/familypage">
             <p className="h3 font-bold text-black">
-              {currentUserData?.name || "Avatar name"}
+              {data?.user?.name?.split(" ")[0]}
             </p>
           </Link>
           <p className="body-1 text-grey_1">
@@ -94,6 +96,7 @@ const UserDashboard = () => {
                       hidden={"sm:hidden "}
                       colours={colours}
                       modules={modules}
+                      subjectId={item.subjectId}
                     />
                   )}
                 </React.Fragment>
@@ -105,6 +108,7 @@ const UserDashboard = () => {
           hidden={"max-sm:hidden"}
           colours={colours}
           modules={modules}
+          subjectId={"ff80818195387c6d0195387d8cd20000"}
         />
       </div>
     </div>

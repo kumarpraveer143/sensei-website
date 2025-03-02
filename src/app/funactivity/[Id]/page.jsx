@@ -9,6 +9,7 @@ import Bookm from "@/components/activityComps/bookm";
 import ActivityCard from "@/components/Modules/ActivityCard";
 import introbg from "@/Images/introbg.svg?url";
 import Print from "@/components/miniComps/Print";
+import axios from "axios";
 // import { gamifiedActivities, interactivieActivities } from "@/utils/data";
 export const Home = ({ params: { Id } }) => {
   const [activities, setactivities] = useState({})
@@ -16,11 +17,11 @@ export const Home = ({ params: { Id } }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/api/submodules/${Id}`,
+        const response = await axios.get(
+          `/submodules/${Id}`,
         );
-        setactivities(await response.json());
-        console.log(await response.json());
+        setactivities(response.data);
+        console.log(response.data);
         
       } catch (error) {
         console.log(error, "error vachindi ra");

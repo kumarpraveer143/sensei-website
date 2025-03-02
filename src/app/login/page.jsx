@@ -2,11 +2,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { v4 as uuid } from "uuid";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useDispatch } from "react-redux";
-import { setCurrentUserData } from "@/Redux/slice/currentuserslice";
+import Google_Icon from './google.png'
+import { signIn } from "next-auth/react"
+// import axios from "axios";
+// import { v4 as uuid } from "uuid";
+// import { useRouter, useSearchParams } from "next/navigation";
+// import { useDispatch } from "react-redux";
+// import { setCurrentUserData } from "@/Redux/slice/currentuserslice";
 // import { toast } from "react-toastify";
 import Link from "next/link";
 import LeftSide from "@/components/loginComps/LeftSide";
@@ -14,58 +16,58 @@ import Backgroud from "@/Images/background.svg?url";
 import Image from "next/image";
 
 const page = () => {
-  const [phoneNum, setPhoneNum] = useState("");
-  const [parentName, setParentName] = useState("");
-  const [login, setLogin] = useState(false);
-  const [orderId, setOrderid] = useState(uuid());
-  const dispatch = useDispatch();
+  // const [phoneNum, setPhoneNum] = useState("");
+  // const [parentName, setParentName] = useState("");
+  // const [login, setLogin] = useState(false);
+  // const [orderId, setOrderid] = useState(uuid());
+  // const dispatch = useDispatch();
 
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
-  const router = useRouter();
+  // const searchParams = useSearchParams();
+  // const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
+  // const router = useRouter();
 
-  const handleClick = async () => {
-    //phonenum validation using regex
-    dispatch(
-      setCurrentUserData({
-        phoneNumber: phoneNum,
-        name: parentName,
-        parentId: "",
-        orderId: orderId,
-      }),
-    );
+  // const handleClick = async () => {
+  //   //phonenum validation using regex
+  //   dispatch(
+  //     setCurrentUserData({
+  //       phoneNumber: phoneNum,
+  //       name: parentName,
+  //       parentId: "",
+  //       orderId: orderId,
+  //     }),
+  //   );
 
-    try {
-      const otpRes = await axios.post(`/v1/otp/send`, {
-        dtCode: orderId,
-        phoneNumber: phoneNum,
-        name: parentName,
-        //"email": "yashpratapsingh125@gmail.com",
-        //"orderId": "ABC1235",
-        otpTTL: 60,
-        otpLength: 6,
-        // "channel": "WHATSAPP/SMS/EMAIL"
-      });
-      // const status = otpRes;
-      // console.log(otpRes);
-      // setOrderid(otpRes?.data?.orderId);
-      router.push("/otpverification?callbackUrl=" + callbackUrl);
-    } catch (error) {
-      // toast.warn("Enter correct number");
-      alert(error?.response?.data || "Enter correct number");
-      console.error(error);
-    }
-  };
+  //   try {
+  //     const otpRes = await axios.post(`/v1/otp/send`, {
+  //       dtCode: orderId,
+  //       phoneNumber: phoneNum,
+  //       name: parentName,
+  //       //"email": "yashpratapsingh125@gmail.com",
+  //       //"orderId": "ABC1235",
+  //       otpTTL: 60,
+  //       otpLength: 6,
+  //       // "channel": "WHATSAPP/SMS/EMAIL"
+  //     });
+  //     // const status = otpRes;
+  //     // console.log(otpRes);
+  //     // setOrderid(otpRes?.data?.orderId);
+  //     router.push("/otpverification?callbackUrl=" + callbackUrl);
+  //   } catch (error) {
+  //     // toast.warn("Enter correct number");
+  //     alert(error?.response?.data || "Enter correct number");
+  //     console.error(error);
+  //   }
+  // };
 
-  const handleChange = (pn) => {
-    const phoneNumRegex = /^[0-9]\d{9}$/;
-    if (phoneNumRegex.test(pn)) {
-      setPhoneNum(91 + pn);
-      setLogin(true);
-    } else {
-      setLogin(false);
-    }
-  };
+  // const handleChange = (pn) => {
+  //   const phoneNumRegex = /^[0-9]\d{9}$/;
+  //   if (phoneNumRegex.test(pn)) {
+  //     setPhoneNum(91 + pn);
+  //     setLogin(true);
+  //   } else {
+  //     setLogin(false);
+  //   }
+  // };
 
   return (
     <div className="max-w-screen h-full overflow-hidden">
@@ -90,24 +92,32 @@ const page = () => {
             gamified activities at{" "}
             <span className="text-secondary">₹ 99/-</span>
           </p>
+          <div className=" w-full h-12 mt-12 flex items-center">
+          <button onClick={() => {signIn("google")}} className="text-zinc-800 px-8 pl-6 py-3 rounded-xl bg-zinc-200 flex gap-4 items-center">
+            <Image src={Google_Icon} alt="google icon" width={20} height={20} />
+            <span>Login with google</span>
+          
+          </button>
+          </div>
+
           <div className="flex w-full flex-col gap-4 rounded-3xl py-11 sm:items-start">
             <div className="flex w-full flex-col gap-4 sm:w-[335px] sm:items-start sm:justify-start">
-              <label
+              {/* <label
                 htmlFor="name"
                 className="font-Nunito text-base font-normal"
               >
                 Child Name
               </label>
               <div className="mt-1.5 flex w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-lg sm:w-[276px]">
-                <input
+                {/* <input
                   type="text"
                   name="name"
                   id="name"
                   onChange={(e) => setParentName(e.target.value)}
                   className="w-full outline-none"
-                />
-              </div>
-              <label
+                /> */}
+            </div>
+            {/* <label
                 type="number"
                 className="font-Nunito text-base font-normal"
               >
@@ -115,45 +125,44 @@ const page = () => {
               </label>
               <div className="mt-1.5 flex w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-lg sm:w-[276px]">
                 <span className="mr-2 px-2 font-bold text-gray-600">+91</span>
-                <input
+                {/* <input
                   type="tel"
                   maxLength={10}
                   onChange={(e) => handleChange(e.target.value)}
                   className="w-full outline-none"
-                />
-              </div>
-              <p className="font-Nunito text-xs font-light sm:mx-0 sm:w-[276px]">
+                /> */}
+          </div>
+          {/* <p className="font-Nunito text-xs font-light sm:mx-0 sm:w-[276px]">
                 A 6 digit OTP will be sent via SMS to verify your mobile number.
               </p>
-            </div>
-            {login && (
-              <button
-                className="backgroud-button cursor-pointer rounded-full px-6 py-3 text-white"
-                onClick={handleClick}
-              >
-                Login
-              </button>
-            )}
-            <p className="w-full max-w-[276px] text-xs">
-              By signing in, you agree to the{" "}
-              <Link href="/t&c" className="font-semibold">
-                Terms of Service
-              </Link>{" "}
-              and{" "}
-              <Link href="/privacy-policy" className="font-semibold">
-                Privacy Policy
-              </Link>
-              . You also agree that you have parental consent (if child). We use
-              WhatsApp for important updates
-            </p>
-            {/* <p className="font-Nunito text-xs font-bold sm:hidden">
+            </div> */}
+          {/* <button
+              className="backgroud-button cursor-pointer rounded-full px-6 py-3 text-white"
+              onClick={handleClick}
+            >
+              Login
+            </button> */}
+
+          <p className="w-full max-w-[276px] text-xs">
+            By signing in, you agree to the{" "}
+            <Link href="/t&c" className="font-semibold">
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link href="/privacy-policy" className="font-semibold">
+              Privacy Policy
+            </Link>
+            . You also agree that you have parental consent (if child). We use
+            WhatsApp for important updates
+          </p>
+          {/* <p className="font-Nunito text-xs font-bold sm:hidden">
               <Link href="/t&c">Terms of Service</Link> |{" "}
               <Link href="/privacy-policy">Privacy Policy</Link>
             </p> */}
-          </div>
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 

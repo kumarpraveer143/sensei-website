@@ -8,7 +8,7 @@ import Print from "../miniComps/Print";
 import Free from "@/assets/free.gif";
 import Image from "next/image";
 
-const Activities = ({ modules, hidden, colours }) => {
+const Activities = ({ modules, hidden, colours , subjectId }) => {
   
   const [moduleId, setModuleId] = useState(null);
   const [selectedModule, setSelectedModule] = useState(null);
@@ -17,6 +17,8 @@ const Activities = ({ modules, hidden, colours }) => {
   useEffect(() => {
     // Reset selectedModule and moduleId when modules change
     setSelectedModule(null);
+    console.log(subjectId);
+    
     setModuleId(null);
   }, [modules]);
 
@@ -42,7 +44,7 @@ const Activities = ({ modules, hidden, colours }) => {
               <div
                 key={index}
                 className={`${
-                  module?.moduleId === "2c914d4292147b910192147d64e50001"
+                  subjectId === "ff80818195387c6d0195387d8cd20000"
                     ? "text-primary"
                     : "text-grey_2"
                 } flex flex-col gap-2`}
@@ -51,23 +53,23 @@ const Activities = ({ modules, hidden, colours }) => {
                 <button
                   onClick={() =>
                     getSubModules(
-                      module?.moduleId !== "2c914d4292147b910192147d64e50001"
-                        ? null
-                        : index
+                      subjectId === "ff80818195387c6d0195387d8cd20000"
+                        ? index
+                        : null
                     )
                   }
                   className="flex w-full items-center rounded-2xl bg-white px-4 py-2 text-primary disabled:text-grey_2 md:gap-2"
                   disabled={
-                    module?.moduleId !== "2c914d4292147b910192147d64e50001"
+                    subjectId !== "ff80818195387c6d0195387d8cd20000"
                   }
                 >
-                  {module?.moduleId !== "2c914d4292147b910192147d64e50001" && (
+                  {subjectId !== "ff80818195387c6d0195387d8cd20000" && (
                     <Lock className="mr-2 min-w-10 max-w-10 max-sm:min-w-7 max-sm:max-w-7" />
                   )}
                   <li className="list-inside pr-2 text-left">
                     {module.moduleName}
                   </li>
-                  {module?.moduleId === "2c914d4292147b910192147d64e50001" && (
+                  {subjectId === "ff80818195387c6d0195387d8cd20000" && (
                     <>
                       <Image
                         src={Free}
