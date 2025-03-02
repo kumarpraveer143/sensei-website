@@ -12,7 +12,7 @@ const Subject = ({ subject, action, selected }) => {
   let subjectName = subject?.subjectName;
   let Int = 24;
   let Gam = 12;
-  if (subject?.subjectId === "2c93b8d691fe7631019200ddf3f30037") {
+  if (subject?.subjectId === "ff80818195387c6d0195387d8cd20000") {
     Int = 8;
     Gam = 4;
   }
@@ -31,6 +31,8 @@ const Subject = ({ subject, action, selected }) => {
         onClick={action}
         className={`relative flex h-[153px] min-w-[303px] flex-shrink-0 items-end md:max-w-[min(400px,100vw)]`}
       >
+
+
         {/* {specificSubjectPicture?.length === 2 ? (
           <>
     w        <Image
