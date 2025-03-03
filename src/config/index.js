@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://ec2-13-203-28-32.ap-south-1.compute.amazonaws.com/api";
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export const getParentsDataAPI = async (phone) =>
   axios.get(`/details/parent/${phone}`);
