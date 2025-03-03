@@ -17,7 +17,7 @@ const Activities = ({ modules, hidden, colours , subjectId }) => {
   useEffect(() => {
     // Reset selectedModule and moduleId when modules change
     setSelectedModule(null);
-    console.log(subjectId);
+    console.log(modules);
     
     setModuleId(null);
   }, [modules]);
@@ -44,7 +44,7 @@ const Activities = ({ modules, hidden, colours , subjectId }) => {
               <div
                 key={index}
                 className={`${
-                  subjectId === "ff80818195387c6d0195387d8cd20000"
+                  module.moduleId === "ff80818195387c6d0195387d8ce80001"
                     ? "text-primary"
                     : "text-grey_2"
                 } flex flex-col gap-2`}
@@ -53,23 +53,23 @@ const Activities = ({ modules, hidden, colours , subjectId }) => {
                 <button
                   onClick={() =>
                     getSubModules(
-                      subjectId === "ff80818195387c6d0195387d8cd20000"
+                      module.moduleId === "ff80818195387c6d0195387d8ce80001"
                         ? index
                         : null
                     )
                   }
                   className="flex w-full items-center rounded-2xl bg-white px-4 py-2 text-primary disabled:text-grey_2 md:gap-2"
                   disabled={
-                    subjectId !== "ff80818195387c6d0195387d8cd20000"
+                    module.moduleId !== "ff80818195387c6d0195387d8ce80001"
                   }
                 >
-                  {subjectId !== "ff80818195387c6d0195387d8cd20000" && (
+                  {module.moduleId !== "ff80818195387c6d0195387d8ce80001" && (
                     <Lock className="mr-2 min-w-10 max-w-10 max-sm:min-w-7 max-sm:max-w-7" />
                   )}
                   <li className="list-inside pr-2 text-left">
                     {module.moduleName}
                   </li>
-                  {subjectId === "ff80818195387c6d0195387d8cd20000" && (
+                  {module.moduleId === "ff80818195387c6d0195387d8ce80001" && (
                     <>
                       <Image
                         src={Free}
