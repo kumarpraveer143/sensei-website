@@ -73,7 +73,7 @@ const Loading = ({ action, activity }) => {
         </p>
       </div>
       <div className="mx-auto flex flex-col justify-center gap-4">
-        <h2 className="h5 underline uppercase mx-auto h-fit min-w-96 text-center text-secondary underline-offset-4 whitespace-pre-line">
+        <h2 className="h5 underline mx-auto h-fit min-w-96 text-center text-secondary underline-offset-4 whitespace-pre-line">
           {activity?.outComes}
         </h2>
         {/* <h2 className="h4 mx-auto h-fit max-w-[90vw] whitespace-nowrap text-center font-semibold">

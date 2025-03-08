@@ -18,16 +18,28 @@ const UserDashboard = () => {
   const { data } = useSession();
   const [modules, setModules] = useState([]);
   const [colours, setColours] = useState({});
+  const [locked, setlocked] = useState(true)
   const [subjectId, setSubjectId] = useState(0);
   const [subjectData, setSubjectData] = useState([]);
   // const currentUserData = useSelector((state) => state?.currentUser?.data);
   const fetchSubjectData = async () => {
-    const res = await axios.get(`/subjects`).catch((err) => console.log(err));
+    
+    const res = await axios.get(`/parent-users/getPricingPlan?email=${data?.user?.email}`).catch((err) => console.log(err));
     console.log(res?.data);
     if (res?.data) {
-      setSubjectData(res.data);
-      setModules(res?.data[0]?.modules);
-      setColours(getSubColour(res?.data[0]?.subject?.subjectName));
+      setSubjectData(res.data?.subjects);
+      setlocked(false)
+      setModules(res?.data?.subjects[0]?.modules);
+      setColours(getSubColour(res?.data?.subjects[0]?.subject?.subjectName));
+    }else{
+      const res = await axios.get("/subjects").catch((err) => console.log(err));
+      console.log(res?.data);
+      if(res?.data){
+        setSubjectData(res.data);
+        setlocked(true)
+        setModules(res?.data[0]?.modules);
+        setColours(getSubColour(res?.data[0]?.subjectName));
+      }
     }
   };
   const selectmodule = (sid) => {
@@ -89,10 +101,11 @@ const UserDashboard = () => {
                   <Subject
                     subject={item}
                     selected={i === subjectId}
-                    action={() => selectmodule(i)}
+                    action={(id) => {selectmodule(i); document.querySelectorAll(".subject").forEach(element => element.style.filter = "saturate(0%)");document.getElementById(id).style.filter = "saturate(100%)";}}
                   />
                   {i === subjectId && (
                     <Activities
+                      locked={locked}
                       hidden={"sm:hidden "}
                       colours={colours}
                       modules={modules}
@@ -105,6 +118,7 @@ const UserDashboard = () => {
           </div>
         )}
         <Activities
+          locked={locked}
           hidden={"max-sm:hidden"}
           colours={colours}
           modules={modules}

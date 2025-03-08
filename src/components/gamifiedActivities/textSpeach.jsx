@@ -65,7 +65,7 @@ const TextReader = ({ text, role }) => {
 
           <span
             key={index}
-            className={`${timer == 0 || (audio.hasOwnProperty("timestamps") && audio.timestamps[index] && audio.timestamps[index].start <= timer) ? "text-primary" : "text-primary/35"} block py-2`}
+            className={`${timer == 0 || (audio.hasOwnProperty("timestamps") && audio.timestamps[index] && audio.timestamps[index].start <= timer) ? "text-[#333333]" : "text-primary/35"} block py-2`}
           >
             {index > 0 &&
               segment.length > 1 &&
