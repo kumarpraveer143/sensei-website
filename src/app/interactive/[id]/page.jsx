@@ -186,7 +186,7 @@ const Page = ({ params: { id } }) => {
               {currProcess !== 0 && (
                 <button
                   onClick={() => prevProcess()}
-                  className="h5_b w-[min(90vw,200px)] rounded-[15px] border-b-4 border-gray-400 bg-gray-300 px-6 py-2 text-secondary"
+                  className="h5_b w-[min(90vw,200px)] rounded-[15px] border border-b-4 border-gray-400 px-6 py-2 text-secondary"
                 >
                   Back
                 </button>

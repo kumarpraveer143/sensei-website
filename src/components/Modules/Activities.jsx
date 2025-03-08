@@ -8,7 +8,7 @@ import Print from "../miniComps/Print";
 import Free from "@/assets/free.gif";
 import Image from "next/image";
 
-const Activities = ({ modules, hidden, colours , subjectId }) => {
+const Activities = ({ modules, hidden, colours , subjectId , locked }) => {
   
   const [moduleId, setModuleId] = useState(null);
   const [selectedModule, setSelectedModule] = useState(null);
@@ -17,7 +17,7 @@ const Activities = ({ modules, hidden, colours , subjectId }) => {
   useEffect(() => {
     // Reset selectedModule and moduleId when modules change
     setSelectedModule(null);
-    console.log(modules);
+    // console.log(subjectId);  
     
     setModuleId(null);
   }, [modules]);
@@ -44,7 +44,7 @@ const Activities = ({ modules, hidden, colours , subjectId }) => {
               <div
                 key={index}
                 className={`${
-                  module.moduleId === "ff80818195387c6d0195387d8ce80001"
+                  module.moduleId === "ff80818195387c6d0195387d8ce80001" && !locked
                     ? "text-primary"
                     : "text-grey_2"
                 } flex flex-col gap-2`}
@@ -53,23 +53,23 @@ const Activities = ({ modules, hidden, colours , subjectId }) => {
                 <button
                   onClick={() =>
                     getSubModules(
-                      module.moduleId === "ff80818195387c6d0195387d8ce80001"
+                      module.moduleId === "ff80818195387c6d0195387d8ce80001" && !locked
                         ? index
                         : null
                     )
                   }
                   className="flex w-full items-center rounded-2xl bg-white px-4 py-2 text-primary disabled:text-grey_2 md:gap-2"
                   disabled={
-                    module.moduleId !== "ff80818195387c6d0195387d8ce80001"
+                   module.moduleId !== "ff80818195387c6d0195387d8ce80001"
                   }
                 >
-                  {module.moduleId !== "ff80818195387c6d0195387d8ce80001" && (
+                  {module.moduleId !== "ff80818195387c6d0195387d8ce80001" && locked && (
                     <Lock className="mr-2 min-w-10 max-w-10 max-sm:min-w-7 max-sm:max-w-7" />
                   )}
-                  <li className="list-inside pr-2 text-left">
+                  <li className="list-inside pr-2 text-">
                     {module.moduleName}
                   </li>
-                  {module.moduleId === "ff80818195387c6d0195387d8ce80001" && (
+                  {module.moduleId === "ff80818195387c6d0195387d8ce80001" &&  (
                     <>
                       <Image
                         src={Free}
@@ -88,7 +88,7 @@ const Activities = ({ modules, hidden, colours , subjectId }) => {
                 </button>
 
                 {selectedModule === index && (
-                  <ol className="flex list-decimal flex-col items-end justify-end gap-5">
+                  <ol className="flex list-decimal flex-col items-end justify-end gap-2">
                     {module?.subModules?.map((subModule, subIndex) => (
                       <Link
                         href={`/funactivity/${subModule.subModuleId}`}

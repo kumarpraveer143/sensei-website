@@ -7,12 +7,13 @@ import { getSubColour } from "@/utils/logic";
 
 const Subject = ({ subject, action, selected }) => {
   // console.log("subject", selected);
-
+  console.log(subject?.subjectId);
+  
   const [show, setShow] = useState(false);
   let subjectName = subject?.subjectName;
   let Int = 24;
   let Gam = 12;
-  if (subject?.subjectId === "ff80818195387c6d0195387d8cd20000") {
+  if (subject?.subjectId === "ff80818195387c6d019538830e98002d") {
     Int = 8;
     Gam = 4;
   }
@@ -28,8 +29,9 @@ const Subject = ({ subject, action, selected }) => {
   return (
     <>
       <div
-        onClick={action}
-        className={`relative flex h-[153px] min-w-[303px] flex-shrink-0 items-end md:max-w-[min(400px,100vw)]`}
+        onClick={() => {action(subject?.subjectId)}}
+        id={subject?.subjectId}
+        className={`relative subject flex h-[153px] min-w-[303px] flex-shrink-0 items-end md:max-w-[min(400px,100vw)]`}
       >
 
 
@@ -58,7 +60,7 @@ const Subject = ({ subject, action, selected }) => {
         {/* )} */}
         <div
           style={colorforinnerSubjectDiv}
-          className={`${selected ? "drop-shadow-lg" : " "} flex h-[120px] w-full cursor-pointer flex-col items-start gap-1.5 rounded-lg px-[10px] py-4`}
+          className={`${selected ? "drop-shadow-lg" : " "} card flex h-[120px] w-full cursor-pointer flex-col items-start gap-1.5 rounded-lg px-[10px] py-4`}
           onClick={() => setShow(!show)}
         >
           {/* <p className="font-Quicksand text-3xl font-normal leading-6 tracking-tighter text-[#2C3D68]">

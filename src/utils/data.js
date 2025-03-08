@@ -29,8 +29,8 @@ export const plans = {
         name: "Basic",
         ddescription:
           "Lorem ipsum dolor sit amet consectetur. Mauris mattis nist lectus urna nisi mauris.",
-        curr_price: "₹699",
-        price: "₹747",
+        curr_price: "₹999",
+        price: "₹1199 ",
         billed: "One Time Payment",
         subjects: { 1: true, 2: false, 3: false },
         duration: "3 Months",
@@ -41,16 +41,16 @@ export const plans = {
           "E-learning materials",
         ],
         monthly: {
-          curr_price: "₹249",
-          price: "₹499",
+          curr_price: "₹333",
+          price: "₹399",
         },
       },
       {
         name: "Intermediate",
         ddescription:
           "Lorem ipsum dolor sit amet consectetur. Mauris mattis nisl lectus urna nisi mauris",
-        curr_price: "₹1399",
-        price: "₹1494",
+        curr_price: "₹1899",
+        price: "₹2099",
         billed: "One Time Payment",
         subjects: { 1: true, 2: true, 3: false },
         duration: "6 Months",
@@ -62,16 +62,16 @@ export const plans = {
         ],
         tag: "Best Selling",
         monthly: {
-          curr_price: "₹249",
-          price: "₹499",
+          curr_price: "₹316",
+          price: "₹349",
         },
       },
       {
         name: "In-depth",
         ddescription:
           "Lorem ipsum dolor sit amet consectetur. Mauris mattis nisl lectus urna nisl mauris.",
-        curr_price: "₹1999",
-        price: "₹2241",
+        curr_price: "₹2799",
+        price: "₹3299",
         billed: "One Time Payment",
         subjects: { 1: true, 2: true, 3: true },
         duration: "9 Months",
@@ -83,8 +83,8 @@ export const plans = {
           "E-learning materials",
         ],
         monthly: {
-          curr_price: "₹249",
-          price: "₹499",
+          curr_price: "₹311",
+          price: "₹366",
         },
       },
     ],

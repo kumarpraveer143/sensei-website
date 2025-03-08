@@ -99,21 +99,21 @@ const HeroSection = () => {
                 <span className="absolute h-full w-1/2 rounded-full bg-primary" />
               </div>
             </div>
-            <div className="absolute right-0 top-0 h-[90px] w-[180px] rounded-xl bg-white p-2 drop-shadow-lg max-[900px]:-right-10 max-[900px]:-top-20 max-sm:scale-50">
-              <h1 className="h5_b text-grad">30 Lakhs</h1>
-              <p className="body_5 text-grey_1">
+            <div className="absolute right-0 top-0 md:h-[120px] sm:h-[140px] w-[240px] rounded-xl bg-white p-3 drop-shadow-lg max-[900px]:-right-10 max-[900px]:-top-20 max-sm:scale-50">
+              <h1 className="h4_b text-grad max-sm:text-2xl">30 Lakhs</h1>
+              <p className="body_4 text-grey_1 max-sm:text-xl">
                 Class 10th student failed in 2023 board exams
               </p>
             </div>
-            <div className="absolute -top-10 left-20 h-[90px] w-[180px] rounded-xl bg-white p-2 drop-shadow-lg max-sm:left-0 max-sm:scale-50">
-              <h1 className="h5_b text-grad">1 out of 7</h1>
-              <p className="body_5 text-grey_1">
+            <div className="absolute -top-10 left-20 md:h-[120px] sm:h-[140px] w-[240px] rounded-xl bg-white p-3 drop-shadow-lg max-sm:left-0 max-sm:scale-50">
+              <h1 className="h4_b text-grad max-sm:text-2xl">1 out of 7</h1>
+              <p className="body_4 text-grey_1 max-sm:text-xl">
                 children experiences a mental health disorder{" "}
               </p>
             </div>
-            <div className="absolute bottom-0 right-10 h-[90px] w-[180px] rounded-xl bg-white p-2 drop-shadow-lg max-[900px]:-bottom-16 max-[900px]:-right-10 max-sm:scale-50">
-              <h1 className="h5_b text-grad">1,673</h1>
-              <p className="body_5 text-grey_1">
+            <div className="absolute bottom-0 right-10 md:h-[120px] sm:h-[140px] w-[240px] rounded-xl bg-white p-3 drop-shadow-lg max-[900px]:-bottom-16 max-[900px]:-right-10 max-sm:scale-50">
+              <h1 className="h4_b text-grad max-sm:text-2xl">1,673</h1>
+              <p className="body_4 text-grey_1 max-sm:text-xl">
                 Suicide cases due to failure in examination in year 2021{" "}
               </p>
             </div>

@@ -32,6 +32,7 @@ const Page = () => {
     activePlanId: "",
     visitingCounsellor: false,
     anyMedicalHistory: false,
+    phoneNumber: "",
   })
 
   const [planPrice, setPlanPrice] = useState("");
@@ -112,7 +113,7 @@ const Page = () => {
       bloodGroup: "B+",
       ageGroup: "05-10",
       activePlanId: childFormDetails.activePlanId,
-      phoneNumber: parentData?.phone,
+      phoneNumber: childFormDetails.phoneNumber,
       grade: childFormDetails.grade,
       planPrice: planPrice,
     };
@@ -134,12 +135,12 @@ const Page = () => {
         activePlanId: childData.activePlanId,
         phoneNumber: Number(childData?.phoneNumber),
       };
-      const res = await axios.post(
-        `/child-users`,
-        data
-      );
-      console.log("result", res);
-      return res;
+      // const res = await axios.post(
+      //   `/child-users`,
+      //   data
+      // );
+      // console.log("result", res);
+      // return res;
     } catch (error) {
       console.log(error);
       return error;
@@ -165,7 +166,7 @@ const Page = () => {
             onSubmit={(e) => saveData(e)}
             className="ssm:flex-row mt-5 flex flex-col items-center justify-center gap-2 sm:gap-12"
           >
-            <div className="z-50 h-[569px] w-[353px] rounded-lg bg-[#FFF8F1] sm:h-[388px] sm:w-[562px]">
+            <div className="z-50 min-h-[569px] w-[353px] rounded-lg bg-[#FFF8F1] sm:w-[562px]">
               <div className="z-50 flex h-14 w-full items-center justify-between rounded-se-lg rounded-ss-lg bg-[#F58720] px-5 sm:justify-between sm:px-5">
                 <h1 className="font-Nunito text-xl font-bold text-white">
                   {childrenData.length + 1}. Child
@@ -294,6 +295,23 @@ const Page = () => {
                       <span className="slider round"></span>
                     </label>
                   </div>
+                </div>
+              </div>
+              <div className="mt-2 flex flex-col gap-2 px-5 sm:mt-5 sm:flex-row sm:gap-6">
+                <div className="flex flex-col sm:h-[75px] sm:w-[279px]">
+                  <label htmlFor="" className="mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    value={childFormDetails.phoneNumber}
+                    onChange={handleChange}
+                    placeholder="Enter phone number"
+                    className="rounded-md px-6 py-3 outline-none sm:border-2"
+                  />
                 </div>
               </div>
             </div>

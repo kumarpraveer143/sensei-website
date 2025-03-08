@@ -24,7 +24,7 @@ export const Home = ({ params: { Id } }) => {
         console.log(response.data);
         
       } catch (error) {
-        console.log(error, "error vachindi ra");
+        console.log(error, "error in fetching data");
       }
     };
     fetchData();
@@ -42,10 +42,13 @@ export const Home = ({ params: { Id } }) => {
       {/* <Print data={activities} /> */}
       {/* <Print data={interactivieActivities} /> */}
       <EmotionNav name={activities?.subModuleName} />
-      <div className="flex w-full flex-col gap-10 md:px-24 px-6 py-24">
-        {!!activities?.interactiveActivities?.length && (
+
+      <div className="flex w-full flex-col gap-10 md:px-24 px-6 py-12">
+      <h1 className="body_1 w-fit text-primary text-4xl font-semibold">{activities?.subModuleName} </h1>
+      <div className="flex w-full flex-wrap lg:pr-24 justify-between items-center">
+      {!!activities?.interactiveActivities?.length && (
           <div className="nmd:max-w-[45%] flex flex-col gap-4">
-            <h4 className="h4 text-left uppercase text-black">
+            <h4 className="h5 text-left uppercase text-black">
               Interactive Activities
             </h4>
 
@@ -58,7 +61,7 @@ export const Home = ({ params: { Id } }) => {
         )}
         {!!activities?.digitalActivities?.length && (
           <div className="nmd:max-w-[45%] flex flex-col gap-4">
-            <h4 className="h4 text-left uppercase text-black">
+            <h4 className="h5 text-left uppercase text-black">
               Gamified Activities
             </h4>
 
@@ -69,6 +72,7 @@ export const Home = ({ params: { Id } }) => {
             </div>
           </div>
         )}
+      </div>
       </div>
 
       {/* <Intro />

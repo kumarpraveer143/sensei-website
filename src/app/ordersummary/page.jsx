@@ -9,8 +9,11 @@ import { removeCurrentChild } from "@/Redux/slice/currentChildSlice";
 import Background from "@/components/miniComps/BackGround";
 import OrderCard from "@/components/OrderCard";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const Page = () => {
+  const session = useSession();
+  
   const [paymentSuccesful, setPaymentSuccesful] = useState(false);
   const [paymentFailed, setPaymentFailed] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -19,49 +22,61 @@ const Page = () => {
   const currentChildData = useSelector((state) => state?.currentChild?.data);
   const currentUserData = useSelector((state) => state?.currentUser?.data);
 
-  // console.log(currentChildData, currentUserData);
+  console.log({...currentChildData,parentId : session?.data?.user?.parentId});
 
   const router = useRouter();
-
   const paymentHandler = async (e) => {
     e.preventDefault();
-
+  
     const amount = currentChildData?.planPrice * 100;
     const currency = "INR";
-    // console.log(
-    //   process.env.NEXT_PUBLIC_RAZORPAY_KEY,
-    //   amount,
-    //   currency,
-    //   currentUserData?.orderId,
-    // );
+    
     var options = {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY,
       amount,
       currency,
       name: "Sensei",
-      description: `Family plan payement request for ${currentChildData?.childName}`,
+      description: `Family plan payment request for ${currentChildData?.childName}`,
       image: "",
       order_id: currentUserData?.orderId,
       handler: async function (response) {
-        // console.log(currentChildData);
+        try {
+          // Collect payment details from Razorpay response
+          const paymentDetails = {
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_signature: response.razorpay_signature,
+            amount: amount / 100, // Convert back to original currency unit
+            currency: currency
+          };
+          
+          // Create payload with both child data and payment details
+          const { bloodGroup, medicalHistoryDescription, planPrice, ...payload } = {
+            ...currentChildData,parentId : session?.data?.user?.parentId 
+          };
+          console.log("Payload:", payload);
 
-        const createChildRes = await axios.post(
-          `/child-users`,
-          currentChildData,
-        );
-        // console.log(createChildRes);
-        if (createChildRes?.id) {
+          // Make API call to your backend with combined data
+          const paymentResult = await axios.post(
+            `/child-users`,
+            payload
+          );
+          
+          console.log("Payment processed and child created:", paymentResult.data);
+          
           setPaymentFailed(false);
           setPaymentSuccesful(true);
+            
+          setTimeout(() => {
+            removeCurrentChild();
+            router.push(`/dashboard`);
+          }, 3000);
+        } catch (error) {
+          console.error("Error processing payment:", error);
+          setPaymentSuccesful(false);
+          setPaymentFailed(true);
+          alert("There was an error processing your payment. Please try again.");
         }
-
-        // setPaymentFailed(false);
-        // setPaymentSuccesful(true);
-        setTimeout(() => {
-          removeCurrentChild();
-          router.push(`/dashboard`);
-        }, 3000);
-        clearTimeout();
       },
       prefill: {
         name: "Sensei",
@@ -72,9 +87,12 @@ const Page = () => {
         color: "#f97316",
       },
     };
+    
     var rzp1 = new window.Razorpay(options);
     rzp1.open();
+    
     rzp1.on("payment.failed", function (response) {
+      console.error("Payment failed:", response.error);
       if (response.error.code) {
         alert(
           `${response.error.description} Please enter correct payment information`,
