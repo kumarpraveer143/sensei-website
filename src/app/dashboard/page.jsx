@@ -6,8 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import addchild from "@/Images/addchild.png";
 import Subject from "@/components/Modules/Subject";
-// import Navbar3 from "@/components/Navbar3";
-// import CounsellorCard from "@/components/CounsellorCard";
 import Background1 from "@/components/miniComps/BackGround.jsx";
 import { getSubColour } from "@/utils/logic";
 import Activities from "@/components/Modules/Activities";
@@ -15,45 +13,103 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 
 const UserDashboard = () => {
-  const { data } = useSession();
+  const { data: session, status } = useSession();
   const [modules, setModules] = useState([]);
   const [colours, setColours] = useState({});
-  const [locked, setlocked] = useState(true)
+  const [locked, setLocked] = useState(true);
   const [subjectId, setSubjectId] = useState(0);
   const [subjectData, setSubjectData] = useState([]);
-  // const currentUserData = useSelector((state) => state?.currentUser?.data);
+  const [customUserData, setCustomUserData] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const fetchSubjectData = async () => {
+    setLoading(true);
+    setError(null);
     
-    const res = await axios.get(`/parent-users/getPricingPlan?email=${data?.user?.email}`).catch((err) => console.log(err));
-    console.log(res?.data);
-    if (res?.data) {
-      setSubjectData(res.data?.subjects);
-      setlocked(false)
-      setModules(res?.data?.subjects[0]?.modules);
-      setColours(getSubColour(res?.data?.subjects[0]?.subject?.subjectName));
-    }else{
-      const res = await axios.get("/subjects").catch((err) => console.log(err));
-      console.log(res?.data);
-      if(res?.data){
-        setSubjectData(res.data);
-        setlocked(true)
-        setModules(res?.data[0]?.modules);
-        setColours(getSubColour(res?.data[0]?.subjectName));
+    try {
+      if (status === "loading") return; // Wait until session is loaded
+      
+      if (status === "unauthenticated") {
+        throw new Error("User not authenticated");
       }
+
+      console.log("Fetching subject data...");
+      const email = session?.user?.email;
+      if (!email) throw new Error("No email found in session");
+
+      // Try to get user-specific data first
+      try {
+        const res = await axios.get(`/parent-users/getPricingPlan?email=${email}`);
+        console.log("Pricing plan response:", res?.data);
+        
+        if (res?.data?.subjects) {
+          setSubjectData(res.data.subjects);
+          setCustomUserData(true);
+          setLocked(false);
+          setModules(res.data.subjects[0]?.modules || []);
+          setColours(getSubColour(res.data.subjects[0]?.subject?.subjectName || ""));
+          return;
+        }
+      } catch (userDataError) {
+        console.log("No user-specific data found, falling back to general subjects");
+      }
+
+      // Fallback to general subjects if no user-specific data
+      const res = await axios.get("/subjects");
+      console.log("Subjects response:", res?.data);
+      
+      if (res?.data) {
+        setSubjectData(res.data);
+        setLocked(true);
+        setModules(res.data[0]?.modules || []);
+        setColours(getSubColour(res.data[0]?.subjectName || ""));
+      }
+    } catch (error) {
+      console.error("Error fetching subject data:", error);
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
-  const selectmodule = (sid) => {
-    setSubjectId(sid);
-    setModules(subjectData[sid]?.modules);
-    const col = getSubColour(subjectData[sid]?.subjectName);
-    // console.log("col", subjectData[sid]?.subjectId, col);
 
+  const selectModule = (sid) => {
+    setSubjectId(sid);
+    setModules(subjectData[sid]?.modules || []);
+    const col = getSubColour(subjectData[sid]?.subject?.subjectName || subjectData[sid]?.subjectName || "");
     setColours(col);
+    
+    // Update UI for selected subject
+    document.querySelectorAll(".subject").forEach(element => {
+      element.style.filter = "saturate(0%)";
+    });
+    const selectedElement = document.getElementById(`subject-${sid}`);
+    if (selectedElement) {
+      selectedElement.style.filter = "saturate(100%)";
+    }
   };
 
   useEffect(() => {
     fetchSubjectData();
-  }, []);
+  }, [status, session]);
+
+  if (status === "loading" || loading) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="text-xl">Loading...</div>
+      </div>
+    );
+  }
+
+  if (status === "unauthenticated" || error) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="text-xl text-red-500">
+          {error || "Please sign in to access this page"}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="hh-screen container relative mx-auto flex w-fit flex-col items-center gap-10 from-gray-200 to-white p-4 py-10 sm:py-20">
@@ -63,7 +119,7 @@ const UserDashboard = () => {
           <p className="h4 text-grey_1">Hello!</p>
           <Link className="no-underline" href="/familypage">
             <p className="h3 font-bold text-black">
-              {data?.user?.name?.split(" ")[0]}
+              {session?.user?.name?.split(" ")[0]}
             </p>
           </Link>
           <p className="body-1 text-grey_1">
@@ -89,24 +145,25 @@ const UserDashboard = () => {
         </div>
       </div>
       <div className="flex w-full gap-10">
-        {!!subjectData?.length && (
+        {subjectData?.length > 0 ? (
           <div className="flex grow flex-col">
             <h4 className="h4 px-4 text-left uppercase text-black">
-              {" "}
               Subjects
             </h4>
             <div className="scrollbar flex w-full flex-col gap-5 px-4 sm:h-[500px] sm:overflow-y-auto">
               {subjectData.map((item, i) => (
                 <React.Fragment key={i}>
                   <Subject
+                    id={`subject-${i}`}
                     subject={item}
                     selected={i === subjectId}
-                    action={(id) => {selectmodule(i); document.querySelectorAll(".subject").forEach(element => element.style.filter = "saturate(0%)");document.getElementById(id).style.filter = "saturate(100%)";}}
+                    action={() => selectModule(i)}
                   />
                   {i === subjectId && (
                     <Activities
+                      customUserData={customUserData}
                       locked={locked}
-                      hidden={"sm:hidden "}
+                      hidden={"sm:hidden"}
                       colours={colours}
                       modules={modules}
                       subjectId={item.subjectId}
@@ -116,14 +173,21 @@ const UserDashboard = () => {
               ))}
             </div>
           </div>
+        ) : (
+          <div className="flex w-full justify-center py-10">
+            <p className="text-lg">No subjects available</p>
+          </div>
         )}
-        <Activities
-          locked={locked}
-          hidden={"max-sm:hidden"}
-          colours={colours}
-          modules={modules}
-          subjectId={"ff80818195387c6d0195387d8cd20000"}
-        />
+        {modules.length > 0 && (
+          <Activities
+            customUserData={customUserData}
+            locked={locked}
+            hidden={"max-sm:hidden"}
+            colours={colours}
+            modules={modules}
+            subjectId={subjectData[subjectId]?.subjectId || ""}
+          />
+        )}
       </div>
     </div>
   );
