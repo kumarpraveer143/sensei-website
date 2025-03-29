@@ -25,13 +25,13 @@ export default function RootLayout({ children }) {
   return (
     <>
       <html lang="en scrollbar-hide">
-        {/* <GoogleTagManager gtmId={process.env.GTM_ID} /> */}
+        <GoogleTagManager gtmId={process.env.GTM_ID} />
         <body
           className={
             "scrollbar-hide flex min-h-screen flex-col justify-between"
           }
         >
-          {/* <GoogleAnalytics gaId={process.env.GA_ID} /> */}
+          <GoogleAnalytics gaId={process.env.GA_ID} />
           <StoreProvider>
             <Navbar />
             {children}
