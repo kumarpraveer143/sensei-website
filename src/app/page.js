@@ -9,9 +9,11 @@ import Psychologists from "@/components/homeComps/Psychologists";
 import Comments from "../components/homeComps/Comments";
 import HeroSection from "../components/homeComps/HeroSection";
 import { Bigplayer } from "@/components/miniComps/VideoPlay";
+import { HeroSectionUpdated } from "@/components/homeComps/HeroSectionUpdated";
+
 export default function Home() {
   return (
-    <div className="bbg-[#FEF5F3] flex flex-col gap-20 overflow-x-hidden pb-20 md:gap-40 md:pb-40">
+    <div className="mt-3 bbg-[#FEF5F3] flex flex-col gap-20 overflow-x-hidden pb-20 md:gap-40 md:pb-40">
       <div className="relative mb-3">
         <iframe
           src={"https://www.youtube.com/embed/IDGiY6r2HOw?autoplay=1&rel=0"}
@@ -33,3 +35,12 @@ export default function Home() {
     </div>
   );
 }
+
+
+// export default function Home() {
+//   return (
+//     <div className="w-screen h-screen">
+//       <HeroSectionUpdated />
+//     </div>
+//   )
+// }

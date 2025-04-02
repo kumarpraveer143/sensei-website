@@ -18,7 +18,6 @@ import { notFound, useRouter } from "next/navigation";
 import Feedback from "@/components/activityComps/Feedback";
 
 const Page = ({ params: { id } }) => {
-
   const Router = useRouter();
   const [outcomesText, setOutcomesText] = useState("");
   const [state, setState] = useState(0);
@@ -50,12 +49,12 @@ const Page = ({ params: { id } }) => {
       }
     };
     fetchProcessData();
-    setOutcomesText(processText(interactiveActivity?.keyOutcomes))
+    setOutcomesText(processText(interactiveActivity?.keyOutcomes));
   }, [id, interactiveActivity?.keyOutcomes]);
 
   const processText = (outcomes) => {
-    return outcomes?.replace(/(\d+\.)/g, '\n$1').trim();
-  }
+    return outcomes?.replace(/(\d+\.)/g, "\n$1").trim();
+  };
 
   switch (state) {
     case 0:
@@ -79,7 +78,14 @@ const Page = ({ params: { id } }) => {
         />
       );
     case 3:
-      return <Feedback />;
+      return interactiveActivity ? (
+        <Feedback
+          activityId={interactiveActivity.interactiveActivityId}
+          activityName={interactiveActivity.interactiveActivityName}
+        />
+      ) : (
+        "please wait" // loader may be needed
+      );
     case 2:
       return (
         <>
@@ -129,6 +135,7 @@ const Page = ({ params: { id } }) => {
                 {interactiveActivity?.processes[currProcess]?.processNumber +
                   ". " +
                   interactiveActivity?.processes[currProcess]?.processName}{" "}
+
               </p>
             </div>
             <Image

@@ -72,6 +72,13 @@ const Page = () => {
     }));
   }
 
+  const getMaxDate = () => {
+    const today = new Date();
+    today.setFullYear(today.getFullYear() - 3); // Subtract 3 years
+    return today.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+  };
+  
+
   const createPaymentorder = async (data) => {
     let status;
     try {
@@ -151,9 +158,9 @@ const Page = () => {
     <div className="h-fit w-screen">
       <Background />
       {/* <Navbar1 parentName={currentUserData.name} /> */}
-      <div className="flex flex-col items-center justify-center sm:block sm:items-start sm:justify-center">
-        <div className="mt-24 flex flex-col items-center justify-center font-Nunito sm:mt-0">
-          <h1 className="text-2xl font-bold text-[#2C3D68] sm:mt-28 sm:text-3xl">
+      <div className="mt-10 flex flex-col items-center justify-center sm:block sm:items-start sm:justify-center">
+        <div className="md:mt-10 flex flex-col items-center justify-center font-Nunito sm:mt-20">
+          <h1 className="text-2xl font-bold text-[#2C3D68] sm:mt-4 sm:text-3xl">
             Add child&apos;s details
           </h1>
           <h6 className="font-Nunito text-sm font-normal text-gray-600">
@@ -164,9 +171,9 @@ const Page = () => {
           <form
             name="childForm"
             onSubmit={(e) => saveData(e)}
-            className="ssm:flex-row mt-5 flex flex-col items-center justify-center gap-2 sm:gap-12"
+            className="ssm:flex-row mt-3 flex flex-col items-center justify-center gap-2 sm:gap-3"
           >
-            <div className="z-50 min-h-[569px] w-[353px] rounded-lg bg-[#FFF8F1] sm:w-[562px]">
+            <div className="z-50 min-h-[530px] w-[353px] rounded-lg bg-[#FFF8F1] sm:w-[562px]">
               <div className="z-50 flex h-14 w-full items-center justify-between rounded-se-lg rounded-ss-lg bg-[#F58720] px-5 sm:justify-between sm:px-5">
                 <h1 className="font-Nunito text-xl font-bold text-white">
                   {childrenData.length + 1}. Child
@@ -240,6 +247,7 @@ const Page = () => {
                     id="date"
                     name="dateOfBirth"
                     value={childFormDetails.dateOfBirth}
+                    max={getMaxDate()}
                     onChange={handleChange}
                     className="rounded-md px-5 py-2 outline-none sm:border-2"
                   />
@@ -297,7 +305,7 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-2 flex flex-col gap-2 px-5 sm:mt-5 sm:flex-row sm:gap-6">
+              <div className="mt-2 flex flex-col gap-2 px-5 sm:mt-5 sm:flex-row sm:gap-7">
                 <div className="flex flex-col sm:h-[75px] sm:w-[279px]">
                   <label htmlFor="" className="mb-2">
                     Phone Number
@@ -310,12 +318,14 @@ const Page = () => {
                     value={childFormDetails.phoneNumber}
                     onChange={handleChange}
                     placeholder="Enter phone number"
+                    maxLength={10}
+                    pattern="\d{10}"
                     className="rounded-md px-6 py-3 outline-none sm:border-2"
                   />
                 </div>
               </div>
             </div>
-            <div className="my-12 flex items-center justify-center gap-3">
+            <div className="mb-12 flex items-center justify-center gap-2">
               <button
                 type="submit"
                 className="backgroud-button z-50 h-[57px] w-fit rounded-full px-6 py-2.5 text-center font-Nunito text-lg font-extrabold text-white"
