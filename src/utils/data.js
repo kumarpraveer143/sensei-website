@@ -372,25 +372,34 @@ export const faqs = [
 ];
 export const navLinks = [
   {
+    index:1,
     title: "Home",
     link: "/",
   },
   {
-    title: "Pricing",
-    link: "/pricing",
-  },
-  {
+    index:2,
     title: "About Us",
     link: "/about",
   },
   {
+    index:3,
+    title: "Pricing",
+    link: "/pricing",
+  },
+  {
+    index:4,
+    title: "Contact us",
+    link: "/contact",
+  },
+  {
+    index:5,
     title: "Blogs",
     link: "/blogs",
   },
-
   {
-    title: "Contact Us",
-    link: "/contact",
+    index:6,
+    title: "Curriculum",
+    link: "/subjects",
   },
 ];
 export const ABLFilters = [

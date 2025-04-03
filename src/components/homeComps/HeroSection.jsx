@@ -1,3 +1,4 @@
+
 import React from "react";
 import Background from "@/components/miniComps/BackGround.jsx";
 import Image from "next/image";
@@ -13,115 +14,37 @@ import TypingAni from "@/components/miniComps/TypingAni";
 import { Herotexts } from "@/utils/data";
 import HeroImageAny from "./HeroImageAny";
 import FreeActivityBtn from "@/components/activityComps/FreeActivityBtn";
+import Magic from "@/assets/magic.svg" ;
+
 const HeroSection = () => {
   return (
-    <div className="min-h-max">
-      <div className="relative z-[1]">
-        {/* <Background /> */}
-        <div className="container mx-auto flex h-full w-full max-w-[90vw] justify-between gap-10 pb-10 pt-10 max-[900px]:flex-col-reverse max-[900px]:gap-32">
-          <div className="flex min-w-[40vw] flex-col gap-10">
-            <h1 className="h1 lg:h1 -mt-8 min-h-max max-w-[800px] text-[48px] leading-snug">
-              {/* Life skills that empower your child in this digital world{" "}
-              <span className="inline-block min-w-[200px] max-w-fit bg-grad_1 bg-clip-text text-transparent">
-                <TypingAni texts={Herotexts} delay={2000} speed={100} />
-              </span> */}
-              Your Partner in Parenting.
-            </h1>
-            <h3 className="text-[30px] font-semibold">
-              Evolving your child into a{" "}
-              <span className="inline-block min-w-[100px] max-w-fit bg-grad_1 bg-clip-text text-transparent">
-                <TypingAni texts={Herotexts} delay={2000} speed={100} />
-              </span>{" "}
-            </h3>
-            <h3 className="-mt-8 text-[30px] font-semibold">
-              and successful individual.
-            </h3>
-            <FreeActivityBtn />
-
-            <div className="whitespace-nowrap">
-              <p className="body_3 flex items-center gap-1 text-grey_1">
-                <Image src={tic} alt="tic" sizes="auto" />
-                Designed by Psychologists & Counselors
-              </p>
-
-              <p className="body_3 flex items-center gap-1 text-grey_1">
-                <Image src={tic} alt="tic" sizes="auto" />
-                Aligned with National Education Policy{" "}
-              </p>
-            </div>
-            <div className="flex min-w-max items-center gap-4">
-              <div>
-                <p className="body1_b flex items-center gap-2 border-b-2 border-grey_2 pb-1">
-                  <Image src={google} alt="google" width={36} height={36} />
-                  4.3/5
-                </p>
-                <p className="body_3 text-grey_1">Google rating</p>
-              </div>
-              <div>
-                <p className="body1_b flex items-center gap-2 border-b-2 border-grey_2 pb-1">
-                  <Image src={userround} alt="userround" sizes="auto" />
-                  150+
-                </p>
-                <p className="body_3 text-grey_1">Active users</p>
-              </div>
-              <div>
-                <p className="body1_b flex items-center gap-2 border-b-2 border-grey_2 pb-1">
-                  <Whatsapp className="text-[#3AA176]" />
-                  350+{" "}
-                </p>
-                <p className="body_3 text-grey_1">Parents Community</p>
-              </div>
-            </div>
+    <div className="grid grid-cols-2 mx-20 mt-20">
+        <div className="maintext">
+          <div className="w-[618px] justify-center text-slate-700 text-5xl font-black font-['Nunito'] leading-[60px]">
+            Empower Your Child with Essential Life Skills for the Digital Age.
           </div>
-          <div className="relative mx-auto max-h-[min(900px,50vw)] min-w-[min(900px,50vw)] max-[900px]:order-[-1] max-[900px]:mb-40 max-[900px]:min-w-[90vw] max-sm:mb-20">
-            <Image
-              src={bgtopo}
-              alt="bgtopo"
-              sizes="auto"
-              className="absolute -right-[20vw] hidden min-w-[700px] max-[900px]:-bottom-[20vw] max-[900px]:min-w-[150vw] md:max-w-[min(900px,70vw)] min-[900px]:-top-[10vw] min-[900px]:left-0 lg:block"
-            />
-            <HeroImageAny />
-            <Image
-              src={personality}
-              alt="personality"
-              sizes="auto"
-              className="absolute left-[2vw] top-20 max-w-[max(15vw,80px)] max-[900px]:left-[10vw] max-[900px]:top-10"
-            />
-            <Image
-              src={heromobile}
-              alt="heromobile"
-              sizes="auto"
-              className="absolute right-10 top-28 max-w-[max(15vw,65px)] max-[900px]:-right-5 max-[900px]:top-20"
-            />
-            <div className="absolute bottom-0 left-0 h-[60px] w-[165px] rounded-lg bg-white p-2 drop-shadow-lg max-[900px]:-bottom-10 max-[900px]:left-16 max-sm:h-[39px] max-sm:w-[107px]">
-              <Flower className="absolute -top-[30px] right-5 max-w-[83px] max-sm:-top-5 max-sm:right-2 max-sm:max-w-[56px]" />
-              <div className="absolute bottom-2 left-0 right-0 mx-auto h-[13px] w-[90%] rounded-full bg-[#F2F2F2] max-sm:h-[8px]">
-                <span className="absolute h-full w-1/2 rounded-full bg-primary" />
+          <div className="w-[618px] justify-center text-stone-500 text-lg font-bold font-['Nunito'] mt-2 mb-4">
+            Interactive, Activity based modules designed to foster emotional
+            intelligence, resilience, and social skills in children.
+          </div>
+          <div className="w-72 px-5 py-3.5 bg-amber-500 rounded-2xl shadow-[0px_1px_1px_0px_rgba(0,0,0,0.12)] shadow-[0px_2px_5px_0px_rgba(103,110,118,0.08)] inline-flex flex-col justify-center items-start">
+            <div className="self-stretch relative inline-flex justify-end items-center gap-2">
+              <div className="text-center justify-start text-white text-md font-black font-['Nunito'] leading-snug">
+                Start Your Child’s Journey
               </div>
-            </div>
-            <div className="absolute right-0 top-0 md:h-[120px] sm:h-[140px] w-[240px] rounded-xl bg-white p-3 drop-shadow-lg max-[900px]:-right-10 max-[900px]:-top-20 max-sm:scale-50">
-              <h1 className="h4_b text-grad max-sm:text-2xl">30 Lakhs</h1>
-              <p className="body_4 text-grey_1 max-sm:text-xl">
-                Class 10th student failed in 2023 board exams
-              </p>
-            </div>
-            <div className="absolute -top-10 left-20 md:h-[120px] sm:h-[140px] w-[240px] rounded-xl bg-white p-3 drop-shadow-lg max-sm:left-0 max-sm:scale-50">
-              <h1 className="h4_b text-grad max-sm:text-2xl">1 out of 7</h1>
-              <p className="body_4 text-grey_1 max-sm:text-xl">
-                children experiences a mental health disorder{" "}
-              </p>
-            </div>
-            <div className="absolute bottom-0 right-10 md:h-[120px] sm:h-[140px] w-[240px] rounded-xl bg-white p-3 drop-shadow-lg max-[900px]:-bottom-16 max-[900px]:-right-10 max-sm:scale-50">
-              <h1 className="h4_b text-grad max-sm:text-2xl">1,673</h1>
-              <p className="body_4 text-grey_1 max-sm:text-xl">
-                Suicide cases due to failure in examination in year 2021{" "}
-              </p>
+              <Magic />
             </div>
           </div>
         </div>
+        <div className="w-[634px] h-96 relative bg-slate-700 rounded-[30px] overflow-hidden">
+          <iframe
+            src="https://www.youtube.com/embed/IDGiY6r2HOw?autoplay=1&rel=0"
+            className="absolute top-0 left-0 w-full h-full"
+            allow="autoplay"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
-      {/* <InfiniteScroll /> */}
-    </div>
   );
 };
 
