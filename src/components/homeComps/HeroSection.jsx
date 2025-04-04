@@ -32,7 +32,7 @@ const HeroSection = () => {
               <div className="text-center justify-start text-white text-md font-black font-['Nunito'] leading-snug">
                 Start Your Child’s Journey
               </div>
-              <Magic />
+              <Magic className="hover:fill-[#2C3D68]"/>
             </div>
           </div>
         </div>
