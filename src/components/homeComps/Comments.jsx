@@ -12,7 +12,7 @@ const Comments = () => {
       style={{
         backgroundImage: `url(${ABLTopology.src})`,
       }}
-      className="container mx-auto flex flex-col gap-16"
+      className="my-10 container mx-auto flex flex-col gap-16"
     >
       <div className="mx-auto flex max-w-[min(100%,850px)] flex-col content-center gap-5">
         {/* <div className="flex flex-col "> */}

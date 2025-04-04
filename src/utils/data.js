@@ -6,6 +6,19 @@ import focusLearning from "@/assets/FocusOnLearning.svg?url";
 import personalizedInsight from "@/assets/personalizedInsight.svg?url";
 import Selfawareness from "@/assets/selfawareness.svg?url";
 import Mentalwellness from "@/assets/mental.svg?url";
+
+import Book1 from "@/assets/scrollAssets/Book-1.svg?url"
+import Book2 from "@/assets/scrollAssets/Book-3.svg?url"
+import Book3 from "@/assets/scrollAssets/Book-2.svg?url"
+import Book4 from "@/assets/scrollAssets/Book-4.svg?url"
+import Book5 from "@/assets/scrollAssets/Book-5.svg?url"
+import Book6 from "@/assets/scrollAssets/Book-6.svg?url"
+
+import Card1 from "@/assets/scrollAssets/Card1.svg?url";
+import Card2 from "@/assets/scrollAssets/Card2.svg?url";
+import Card3 from "@/assets/scrollAssets/Card3.svg?url";
+import Card4 from "@/assets/scrollAssets/Card4.svg?url";
+
 export const plans = {
   Family: {
     features: {
@@ -1945,3 +1958,64 @@ export const subjects = [
     ],
   },
 ];
+
+export const ScrollButtonData = [
+  {
+    svgUrl: Book1,
+    title: "Understanding Emotions",
+    activityTime: "30 Mins."
+  },
+  {
+    svgUrl: Book2,
+    title: "Building Self Esteem",
+    activityTime: "30 Mins."
+  },
+  {
+    svgUrl: Book3,
+    title: "Social Skills and Empathy",
+    activityTime: "30 Mins."
+  },
+  {
+    svgUrl: Book4,
+    title: "Coping With Daily Stressors",
+    activityTime: "30 Mins."
+  },
+  {
+    svgUrl: Book5,
+    title: "Healthy Habits",
+    activityTime: "30 Mins."
+  },
+  {
+    svgUrl: Book6,
+    title: "Building Resilience",
+    activityTime: "30 Mins."
+  }
+]
+
+
+export const ScrollCardData = [
+  {
+    title: "Emotions Charades",
+    svgUrl: Card1,
+    activityTime: "15 Mins.",
+    // rating
+  },
+  {
+    title: "Feelings Collage",
+    svgUrl: Card2,
+    activityTime: "15 Mins.",
+    // rating
+  },
+  {
+    title: "Balloon Breaths",
+    svgUrl: Card3,
+    activityTime: "15 Mins.",
+    // rating
+  },
+  {
+    title: "Nature Meditation",
+    svgUrl: Card4,
+    activityTime: "15 Mins.",
+    // rating
+  },
+]

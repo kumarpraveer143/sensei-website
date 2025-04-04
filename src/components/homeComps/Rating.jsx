@@ -1,38 +1,42 @@
 const RatingInfo = () => {
   return (
-    <div className="mt-10 flex justify-center items-center w-full">
-      <div className="inline-flex justify-center items-center gap-12 my-8">
-        <div className="w-48 h-30 p-6 bg-white rounded-[10px] shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] inline-flex flex-col justify-center items-start gap-1">
-          <div className="justify-start text-amber-500 text-3xl font-black font-['Nunito']">
+    <div className="flex w-full items-center justify-center">
+      <div className="my-4 grid max-w-screen-xl grid-cols-2 gap-4 px-4 md:my-8 md:grid-cols-4 md:gap-6">
+        <div className="flex w-full flex-col items-start justify-center gap-1 rounded-[10px] bg-white p-4 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] md:p-6">
+          <div className="font-['Nunito'] text-2xl font-black text-amber-500 md:text-3xl">
             2000+
           </div>
-          <div className="justify-start text-stone-500 text-md font-semibold font-['Nunito']">
+          <div className="md:text-md font-['Nunito'] text-sm font-semibold text-stone-500">
             Users
           </div>
         </div>
-        <div className="w-48 h-30 p-6 bg-white rounded-[10px] shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] inline-flex flex-col justify-center items-start gap-1">
-          <div className="justify-start text-amber-500 text-2xl font-black font-['Nunito']">
+
+        <div className="flex w-full flex-col items-start justify-center gap-1 rounded-[10px] bg-white p-4 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] md:p-6">
+          <div className="font-['Nunito'] text-xl font-black text-amber-500 md:text-2xl">
             5-10 Years
           </div>
-          <div className="justify-start text-stone-500 text-md font-semibold font-['Nunito']">
+          <div className="md:text-md font-['Nunito'] text-sm font-semibold text-stone-500">
             Age Group
           </div>
         </div>
-        <div className="w-48 h-30 p-6 bg-white rounded-[10px] shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] inline-flex flex-col justify-center items-start gap-1">
-          <div className="justify-start text-amber-500 text-3xl font-black font-['Nunito']">
+
+        <div className="flex w-full flex-col items-start justify-center gap-1 rounded-[10px] bg-white p-4 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] md:p-6">
+          <div className="font-['Nunito'] text-2xl font-black text-amber-500 md:text-3xl">
             700+
           </div>
-          <div className="justify-start text-stone-500 text-md font-semibold font-['Nunito']">
+          <div className="md:text-md font-['Nunito'] text-sm font-semibold text-stone-500">
             DIY Activities
           </div>
         </div>
-        <div className="w-48 h-30 p-6 bg-white rounded-[10px] shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] inline-flex flex-col justify-center items-start gap-1">
-          <div className="w-40 h-9 inline-flex justify-between items-center">
+
+        <div className="flex w-full flex-col items-start justify-center gap-1 rounded-[10px] bg-white p-4 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] md:p-6">
+          <div className="flex items-center justify-between">
             {[...Array(4)].map((_, index) => (
               <svg
                 key={index}
-                width="20"
-                height="20"
+                width="16"
+                height="16"
+                className="md:h-5 md:w-5"
                 viewBox="0 0 23 23"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,8 +65,9 @@ const RatingInfo = () => {
               </svg>
             ))}
             <svg
-              width="20"
-              height="20"
+              width="16"
+              height="16"
+              className="md:h-5 md:w-5"
               viewBox="0 0 23 23"
               fill="grey"
               xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +81,7 @@ const RatingInfo = () => {
               />
             </svg>
           </div>
-          <div className="justify-start text-stone-500 text-md font-semibold font-['Nunito']">
+          <div className="pt-2 md:text-md font-['Nunito'] text-sm font-semibold text-stone-500">
             Google Rating
           </div>
         </div>

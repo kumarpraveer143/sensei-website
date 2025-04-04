@@ -1,53 +1,44 @@
 import Image from "next/image";
-import CardImage from "@/assets/scrollAssets/cardImage.svg?url";
-import BookIcon from "@/assets/scrollAssets/bookIcon.svg?url";
+// import Star from "@/assets/starFilled.svg";
+import Cake from "@/assets/scrollAssets/bday-cake.svg";
 
-export const ScrollCard = () => {
+export const ScrollCard = ({ svgUrl,title,activityTime }) => {
+  // console.log(svgUrl, title, activityTime);
   return (
-    <div className="mx-6 self-stretch inline-flex flex-col">
-      <Image src={CardImage} alt="card-image" />
+    <div className="my-6 mx-6 self-stretch inline-flex flex-col">
+      <Image src={svgUrl} alt="book-icon" />
       <div className="self-stretch p-3.5 bg-white rounded-lg inline-flex flex-col justify-start items-start gap-1.5">
-        <div className="justify-start text-neutral-500 text-xs font-semibold font-['Nunito']">
-          5-7 years
+    <div className="self-stretch inline-flex justify-between items-center">
+        <div className="flex justify-start items-center gap-1.5">
+            <div className="w-4 h-4 relative overflow-hidden">
+                <Cake className="w-4 h-4" />
+              </div>
+            <div className="justify-start text-neutral-500 text-xs font-extrabold font-['Nunito']">5-7 years</div>
         </div>
-        <div className="justify-start text-neutral-500 text-xs font-semibold font-['Nunito']">
-          546
-        </div>
-        <div className="self-stretch inline-flex justify-between items-center">
-          <div className="justify-start text-neutral-900 text-base font-bold font-['Nunito']">
-            Emotions Charades
-          </div>
-          <div className="text-right justify-start text-amber-500 text-xs font-bold font-['Nunito_Sans'] uppercase leading-none">
-            30 mins
-          </div>
-        </div>
-        <div className="self-stretch p-[5px] bg-orange-100 rounded-md shadow-[0px_2px_5px_0px_rgba(0,0,0,0.12)] inline-flex justify-between items-center">
-          <div className="p-[5px] rounded-md outline outline-1 outline-offset-[-1px] outline-zinc-800 inline-flex flex-col justify-center items-start">
-            <div className="self-stretch justify-start text-amber-500 text-xs font-black font-['Nunito'] leading-none">
-              120+
-            </div>
-            <div className="justify-start text-black text-[10px] font-medium font-['Nunito'] leading-3">
-              Interactive Activity
-            </div>
-          </div>
-          <div className="p-[5px] rounded-md outline outline-1 outline-offset-[-1px] outline-zinc-800 inline-flex flex-col justify-center items-start">
-            <div className="justify-start text-amber-500 text-xs font-black font-['Nunito'] leading-none">
-              12+
-            </div>
-            <div className="justify-start text-black text-[10px] font-medium font-['Nunito'] leading-3">
-              Gamified Activity
-            </div>
-          </div>
-        </div>
-      </div>
+        {/* <div className="flex justify-start items-center gap-1">
+            { [...Array(5)].map((_, index) => (
+                index < 4 ? (
+                    <Star key={index} className="w-4 h-4" />
+                ) : (
+                    <Star key={index} className="w-4 h-4 saturate-0" />
+                )
+            ))}
+        </div> */}
+    </div>
+    <div className="self-stretch inline-flex justify-between items-center">
+        <div className="justify-start text-neutral-900 text-sm font-extrabold font-['Nunito']">{ title }</div>
+        <div className="text-right justify-start text-amber-500 text-xs font-extrabold font-['Nunito'] uppercase leading-none">{ activityTime }</div>
+    </div>
+</div>
+      
     </div>
   );
 };
 
-export const ScrollButton = () => {
+export const ScrollButton = ({svgUrl, title, activityTime }) => {
   return (
-    <div className="mx-3 w-80 pl-10 pr-6 py-2 bg-white rounded-[58px] outline outline-[3px] outline-offset-[-3px] outline-amber-500 backdrop-blur-[1px] inline-flex justify-start items-center gap-3">
-      <Image src={BookIcon} alt="book" className="w-12 h-12" />
+    <div className="w-[340px] h-fit max-w-[350px] max-h-[104px]  mx-3 w-90  px-6 py-4 bg-white rounded-[58px] outline outline-[3px] outline-offset-[-3px] outline-amber-500 backdrop-blur-[1px] inline-flex justify-start items-center gap-3">
+      <Image src={ svgUrl } alt="book" className="w-12 h-12" />
       <div className="flex-1 inline-flex flex-col justify-start items-start gap-1">
         <div className="inline-flex justify-center items-center gap-1">
           <div className="w-6 h-6 p-px rounded-[3px] flex justify-center items-center gap-1 overflow-hidden">
@@ -68,12 +59,12 @@ export const ScrollButton = () => {
               />
             </svg>
           </div>
-          <div className="justify-start text-amber-500 text-sm font-extrabold font-['Nunito'] leading-none">
-            30 Mins.
+          <div className="justify-start text-amber-500 text-md font-extrabold font-['Nunito'] leading-none">
+            {activityTime}
           </div>
         </div>
-        <div className="justify-start text-slate-700 text-md font-extrabold font-['Nunito'] capitalize leading-snug">
-          Understanding Emotions
+        <div className="justify-start text-slate-700 text-md font-extrabold font-['Nunito'] capitalize leading-snug text-wrap">
+          {title}
         </div>
       </div>
     </div>
