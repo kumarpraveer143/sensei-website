@@ -12,11 +12,11 @@ const Comments = () => {
       style={{
         backgroundImage: `url(${ABLTopology.src})`,
       }}
-      className="container mx-auto flex flex-col gap-16"
+      className="my-10 container mx-auto flex flex-col gap-16"
     >
       <div className="mx-auto flex max-w-[min(100%,850px)] flex-col content-center gap-5">
         {/* <div className="flex flex-col "> */}
-        <h2 className="h4 relative mx-auto h-fit w-full max-w-[90vw] text-center uppercase text-secondary lg:col-start-2">
+        <h2 className="h4 relative mx-auto h-fit w-full max-w-[90vw] text-center uppercase text-secondary lg:col-start-2 font-bold">
           Testimonials
         </h2>
         <Carousel>

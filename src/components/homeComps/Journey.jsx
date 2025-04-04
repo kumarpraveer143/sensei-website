@@ -4,7 +4,7 @@ import Mobilejourney from "@/assets/mobilejurney.svg";
 const Journey = () => {
   return (
     <>
-      <div className="max-sm:hidden">
+      <div className="my-10 max-sm:hidden">
         <Userjourney />
       </div>
       <div className="sm:hidden">

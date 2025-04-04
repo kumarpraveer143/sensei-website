@@ -1,35 +1,25 @@
-import AboutUs from "@/components/homeComps/AboutUs";
+
 import FAQS from "@/components/homeComps/FAQS";
-import Footer from "@/components/Footer";
 import GetStarted from "@/components/homeComps/GetStarted";
 import Journey from "@/components/homeComps/Journey";
-import OurModules from "@/components/homeComps/OurModules";
-import ParentIssues from "@/components/homeComps/ParentIssues";
-import Psychologists from "@/components/homeComps/Psychologists";
 import Comments from "../components/homeComps/Comments";
 import HeroSection from "../components/homeComps/HeroSection";
-import { Bigplayer } from "@/components/miniComps/VideoPlay";
+import Rating from "@/components/homeComps/Rating";
+import WhatIsSenseiSection from "@/components/homeComps/WhatIsSensei";
+import ExploreCurriculum from "@/components/homeComps/ExploreCurriculum";
+
 export default function Home() {
   return (
-    <div className="bbg-[#FEF5F3] flex flex-col gap-20 overflow-x-hidden pb-20 md:gap-40 md:pb-40">
-      <div className="relative mb-3">
-        <iframe
-          src={"https://www.youtube.com/embed/IDGiY6r2HOw?autoplay=1&rel=0"}
-          className=""
-          width="100%"
-          height="820px"
-          allow="autoplay"
-        ></iframe>
-      </div>
+    <div className="mt-3 overflow-x-hidden overflow-y-scroll flex flex-col gap-8">
       <HeroSection />
-      <ParentIssues />
-      <Psychologists />
-      <OurModules />
+      <Rating />
+      <WhatIsSenseiSection />
+      <ExploreCurriculum />
       <Comments />
-      <AboutUs />
       <GetStarted />
       <Journey />
       <FAQS />
     </div>
   );
 }
+

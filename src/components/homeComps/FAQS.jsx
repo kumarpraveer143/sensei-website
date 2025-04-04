@@ -7,9 +7,9 @@ const FAQS = () => {
   const [checkedId, setCheckedId] = useState(1);
 
   return (
-    <div className="container relative mx-auto flex max-w-[min(90vw,1000px)] flex-col items-center gap-11">
+    <div className="my-10 container relative mx-auto flex max-w-[min(90vw,1000px)] flex-col items-center gap-11">
       <Stars />
-      <h2 className="h4 mx-auto h-fit max-w-[90vw] uppercase text-secondary lg:col-start-2">
+      <h2 className="h4 mx-auto h-fit max-w-[90vw] uppercase text-secondary lg:col-start-2 font-bold">
         Frequently Asked Questions
       </h2>
       <div className="flex w-full flex-col gap-6">
@@ -92,3 +92,6 @@ export const FAQ = ({ faq, checkedId, setCheckedId }) => {
   );
 };
 export default FAQS;
+
+
+

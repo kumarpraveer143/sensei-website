@@ -72,7 +72,7 @@ const Loading = ({ action, activity }) => {
           Age Group: {activity?.ageGroup || "5-10"} years old
         </p>
       </div>
-      <div className="mx-auto flex flex-col justify-center gap-4">
+      <div className="mx-auto flex flex-col justify-center">
         <h2 className="h5 underline mx-auto h-fit min-w-96 text-center text-secondary underline-offset-4 whitespace-pre-line">
           {activity?.outComes}
         </h2>

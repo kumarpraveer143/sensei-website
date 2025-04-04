@@ -41,7 +41,7 @@ const UserDashboard = () => {
       // Try to get user-specific data first
       try {
         const res = await axios.get(`/parent-users/getPricingPlan?email=${email}`);
-        console.log("Pricing plan response:", res?.data);
+        // console.log("Pricing plan response:", res?.data);
         
         if (res?.data?.subjects) {
           setSubjectData(res.data.subjects);
@@ -49,6 +49,14 @@ const UserDashboard = () => {
           setLocked(false);
           setModules(res.data.subjects[0]?.modules || []);
           setColours(getSubColour(res.data.subjects[0]?.subject?.subjectName || ""));
+
+          console.log("\n\n")   //debug
+          console.log(subjectData)    //debug
+          console.log(customUserData)   //debug
+          console.log(locked)   //debug
+          console.log(modules)    //debug
+          console.log(colours)    //debug
+          console.log("\n\n")   //debug
           return;
         }
       } catch (userDataError) {
@@ -56,6 +64,7 @@ const UserDashboard = () => {
       }
 
       // Fallback to general subjects if no user-specific data
+
       const res = await axios.get("/subjects");
       console.log("Subjects response:", res?.data);
       
@@ -81,11 +90,11 @@ const UserDashboard = () => {
     
     // Update UI for selected subject
     document.querySelectorAll(".subject").forEach(element => {
-      element.style.filter = "saturate(0%)";
+      // element.style.filter = "saturate(0%)";
     });
     const selectedElement = document.getElementById(`subject-${sid}`);
     if (selectedElement) {
-      selectedElement.style.filter = "saturate(100%)";
+      // selectedElement.style.filter = "saturate(100%)";
     }
   };
 
