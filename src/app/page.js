@@ -7,6 +7,7 @@ import HeroSection from "../components/homeComps/HeroSection";
 import Rating from "@/components/homeComps/Rating";
 import WhatIsSenseiSection from "@/components/homeComps/WhatIsSensei";
 import ExploreCurriculum from "@/components/homeComps/ExploreCurriculum";
+import WhyChooseSenseiSection from "@/components/homeComps/WhyChooseSensei";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Rating />
       <WhatIsSenseiSection />
       <ExploreCurriculum />
+      <WhyChooseSenseiSection />
       <Comments />
       <GetStarted />
       <Journey />

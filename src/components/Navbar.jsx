@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between bg-slate-700 px-4 md:px-10">
+      <nav className="flex items-center justify-between bg-[#2C3C68] px-4 md:px-10">
         <div className="m-2 md:m-4">
           <Link href={"/"}>
             <MainLogo className="relative h-10 w-20 overflow-hidden text-white md:h-14 md:w-28" />
@@ -65,7 +65,7 @@ const Navbar = () => {
                   </Link>
 
                   {/* Dropdown */}
-                  <div className="flex max-h-0 flex-col overflow-hidden whitespace-nowrap rounded-lg bg-slate-700 text-white transition-all group-hover/sub:max-h-fit group-hover/sub:p-2 min-[850px]:absolute">
+                  <div className="flex max-h-0 flex-col overflow-hidden whitespace-nowrap rounded-lg bg-[#2C3D68] text-white transition-all group-hover/sub:max-h-fit group-hover/sub:p-2 min-[850px]:absolute">
                     {subjects.map((subject, index) => (
                       <Link
                         key={index}
@@ -187,7 +187,7 @@ const Navbar = () => {
 
         {/* Mobile dropdown menu */}
         {isMenuOpen && (
-          <div className="absolute left-0 top-[72px] z-50 w-full bg-slate-700 md:hidden">
+          <div className="absolute left-0 top-[72px] z-50 w-full bg-[#2C3D68] md:hidden">
             <ul className="flex flex-col px-4 py-2 font-['Nunito'] text-lg font-bold text-white">
               {navLinks.map((link) =>
                 link.title === "Curriculum" ? (
