@@ -6,6 +6,14 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import StoreProvider from "@/Redux/Provider";
 import { GoogleTagManager, GoogleTagManagerNoScript, MetaPixel, GTag } from "@/components/Analytics";
+// import { Nunito } from "next/font/google";
+
+// const nunito = Nunito({
+//   subsets: ['latin'],
+//   weight: ['400', '700', '900'],
+//   display: 'swap',
+//   variable: '--font-nunito',
+// });
 
 export const metadata = {
   title: {
