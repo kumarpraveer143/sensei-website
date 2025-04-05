@@ -100,7 +100,7 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <button
-          className="ml-2 block rounded-md bg-orange-500 p-2 md:hidden"
+          className="ml-2 block rounded-md bg-[#FF8B13] p-2 md:hidden"
           onClick={toggleMenu}
         >
           <svg
@@ -129,7 +129,7 @@ const Navbar = () => {
                 <User className="mr-7 h-8 min-w-8 rounded-full bg-white p-1 text-[#FF8B13]" />
                 <div className="group absolute left-7 flex align-middle">
                   <DownArrow className="m-4 h-4 -rotate-90 cursor-pointer text-primary transition-all group-hover:rotate-90" />
-                  <div className="absolute -right-4 top-10 z-[100] hidden w-max flex-col gap-6 rounded-xl bg-[#26355A] p-2 group-hover:flex md:px-4 md:py-3">
+                  <div className="absolute -right-4 top-10 z-[100] hidden w-max flex-col gap-6 rounded-xl bg-[#FF8B13] p-2 group-hover:flex md:px-4 md:py-3">
                     <Link
                       href={"/dashboard"}
                       className="flex w-full cursor-pointer items-center gap-5"
@@ -155,7 +155,7 @@ const Navbar = () => {
           ) : (
             <Link
               href="/login"
-              className="m-4 inline-flex flex-col items-start justify-center gap-2 overflow-hidden rounded-2xl bg-amber-500 px-5 py-3.5 shadow-[0px_1px_1px_0px_rgba(0,0,0,0.12)] shadow-[0px_2px_5px_0px_rgba(103,110,118,0.08)]"
+              className="m-4 inline-flex flex-col items-start justify-center gap-2 overflow-hidden rounded-2xl bg-[#FF8B13] px-5 py-3.5 shadow-[0px_1px_1px_0px_rgba(0,0,0,0.12)] shadow-[0px_2px_5px_0px_rgba(103,110,118,0.08)]"
             >
               <div className="inline-flex items-center justify-center gap-2.5 self-stretch">
                 <div className="justify-center text-center font-['Nunito'] text-lg font-black leading-normal text-white">
@@ -187,7 +187,7 @@ const Navbar = () => {
 
         {/* Mobile dropdown menu */}
         {isMenuOpen && (
-          <div className="absolute left-0 top-[72px] z-50 w-full bg-[#2C3D68] md:hidden">
+          <div className="absolute left-0 top-[72px] z-50 w-full bg-[#FF8B13] md:hidden">
             <ul className="flex flex-col px-4 py-2 font-['Nunito'] text-lg font-bold text-white">
               {navLinks.map((link) =>
                 link.title === "Curriculum" ? (
@@ -220,7 +220,7 @@ const Navbar = () => {
 
                     {/* Mobile Subjects Dropdown */}
                     {isSubjectDropdownOpen && (
-                      <div className="mt-2 flex flex-col rounded-lg bg-slate-800 pl-4">
+                      <div className="mt-2 flex flex-col rounded-lg bg-[#2C3C68] pl-4">
                         {subjects.map((subject, index) => (
                           <Link
                             key={index}
