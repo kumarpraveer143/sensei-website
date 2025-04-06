@@ -41,19 +41,24 @@ const Page = ({ params: { id } }) => {
       const res = await axios
         .get(`/interactive-activities/${id}`)
         .catch((err) => console.log(err));
-      // console.log(res);
 
+      console.log(res?.data); // for debugging
       if (res?.data) {
-        // console.log("interactive : " + res?.data);
         setInteractiveActivity(res?.data);
       }
     };
     fetchProcessData();
-    setOutcomesText(processText(interactiveActivity?.keyOutcomes));
-  }, [id, interactiveActivity?.keyOutcomes]);
+  }, [id]);
+
+  useEffect(() => {
+    if (interactiveActivity?.keyOutcomes) {
+      setOutcomesText(processText(interactiveActivity.keyOutcomes));
+    }
+  }, [interactiveActivity?.keyOutcomes]);
 
   const processText = (outcomes) => {
-    return outcomes?.replace(/(\d+\.)/g, "\n$1").trim();
+    const withoutPipes = outcomes?.replace(/\s*\|\s*/g, "\n");
+    return withoutPipes?.replace(/(\d+\.)/g, "$1 ").trim();
   };
 
   switch (state) {
@@ -135,7 +140,6 @@ const Page = ({ params: { id } }) => {
                 {interactiveActivity?.processes[currProcess]?.processNumber +
                   ". " +
                   interactiveActivity?.processes[currProcess]?.processName}{" "}
-
               </p>
             </div>
             <Image

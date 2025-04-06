@@ -8,14 +8,14 @@ const Materials = ({ action, materials }) => {
     >
       <div className="mx-auto flex flex-col justify-center gap-4">
         <h3 className="h3 text-grad mx-auto font-bold">Are you ready? </h3>
-        <p className="body-3 mx-auto text-grey_1">
+        <p className="body_3 mx-auto text-grey_1">
           Be ready with the following materials{" "}
         </p>
         <ul className="flex list-inside list-disc flex-col gap-2">
           {materials?.split("|").map((material, index) => (
             <li
               key={index}
-              className="body-2 max-w-[min(90vw,500px)] text-black"
+              className="body_2 max-w-[min(90vw,500px)] text-black"
             >
               {material}
             </li>
