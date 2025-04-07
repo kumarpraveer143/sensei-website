@@ -60,7 +60,7 @@ const Footer = () => {
                     <span>&nbsp;Edu. Pvt. Ltd.</span>
                   </p>
                 </div>
-                <h1 className="font-NunitoSans text-lg font-bold text-white sm:text-xl md:text-3xl lg:text-[42px]">
+                <h1 className="font-Nunito text-lg font-bold text-white sm:text-xl md:text-3xl lg:text-[42px]">
                   Life-Skills
                   <br />
                   Education
@@ -74,14 +74,14 @@ const Footer = () => {
             </div>
             <div className="-order-1 flex-grow-[.3] md:order-none">
               <div className="flex justify-around gap-10 text-sm md:justify-normal md:text-base lg:gap-20">
-                <div className="flex cursor-pointer flex-col gap-3 font-NunitoSans text-sm font-normal text-white md:gap-4">
+                <div className="flex cursor-pointer flex-col gap-3 font-Nunito text-md font-semibold text-white md:gap-4">
                   {navLinks.map((link, index) => (
                     <Link key={index} href={link.link}>
                       <h2>{link.title}</h2>
                     </Link>
                   ))}
                 </div>
-                <div className="flex cursor-pointer flex-col gap-3 font-NunitoSans text-sm font-normal text-white md:gap-4">
+                <div className="flex cursor-pointer flex-col gap-3 font-Nunito text-md font-normal text-white md:gap-4">
                   <h2></h2>
                   <h2></h2>
                   <Link
@@ -108,12 +108,12 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              <p className="mml-[10%] mx-auto mt-5 hidden basis-full font-NunitoSans text-xs font-light text-gray-300 md:block md:text-sm md:font-normal">
+              <p className="mml-[10%] mx-auto mt-5 hidden basis-full font-Nunito text-xs font-light text-gray-300 md:block md:text-sm md:font-normal">
                 © {year} SAARK Edu. Pvt. Ltd. All rights reserved.
               </p>
             </div>
             <span className="mx-4 h-[1.5px] bg-gradient-to-r from-gray-500 via-white to-gray-500 md:hidden"></span>
-            <p className="mx-auto basis-full font-NunitoSans text-xs font-light text-gray-300 md:hidden md:text-sm md:font-normal">
+            <p className="mx-auto basis-full font-Nunito text-xs font-light text-gray-300 md:hidden md:text-sm md:font-normal">
               © {year} SAARK Edu. Pvt. Ltd. All rights reserved.
             </p>
           </div>

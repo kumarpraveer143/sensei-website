@@ -14,6 +14,8 @@ import Link from "next/link";
 import LeftSide from "@/components/loginComps/LeftSide";
 import Backgroud from "@/Images/background.svg?url";
 import Image from "next/image";
+import WhyChooseSenseiSection from "@/components/homeComps/WhyChooseSensei";
+import ExploreCurriculum from "@/components/homeComps/ExploreCurriculum";
 
 const page = () => {
   // const [phoneNum, setPhoneNum] = useState("");
@@ -136,7 +138,7 @@ const page = () => {
                   </g>
                 </g>
               </svg>
-              <span>Login with Google</span>
+              <span>FREE Sign Up</span>
               
             </button>
           </div>
@@ -202,6 +204,8 @@ const page = () => {
             </p> */}
         </div>
       </div>
+      <WhyChooseSenseiSection />
+      <ExploreCurriculum />
     </div>
     // </div>
   );

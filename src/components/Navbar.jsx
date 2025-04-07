@@ -129,7 +129,7 @@ const Navbar = () => {
                 <User className="mr-7 h-8 min-w-8 rounded-full bg-white p-1 text-[#FF8B13]" />
                 <div className="group absolute left-7 flex align-middle">
                   <DownArrow className="m-4 h-4 -rotate-90 cursor-pointer text-primary transition-all group-hover:rotate-90" />
-                  <div className="absolute -right-4 top-10 z-[100] hidden w-max flex-col gap-6 rounded-xl bg-[#FF8B13] p-2 group-hover:flex md:px-4 md:py-3">
+                  <div className="absolute -right-4 top-10 z-[100] hidden w-max flex-col gap-6 rounded-xl bg-[#FF8B13] md:bg-[#2C3D68] p-2 group-hover:flex md:px-4 md:py-3">
                     <Link
                       href={"/dashboard"}
                       className="flex w-full cursor-pointer items-center gap-5"

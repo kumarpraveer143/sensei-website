@@ -24,17 +24,20 @@ const Page = ({ params: { id } }) => {
   const [infoOpen, setInfoOpen] = useState(false);
   const [currProcess, setCurrProcess] = useState(0);
   const [interactiveActivity, setInteractiveActivity] = useState(null);
+
   const nextProcess = () => {
     if (currProcess !== interactiveActivity?.processes?.length - 1) {
       setCurrProcess((pre) => pre + 1);
     } else {
       setState((pre) => pre + 1);
     }
+    window.scrollTo(0, 0);
   };
   const prevProcess = () => {
     if (currProcess !== 0) {
       setCurrProcess((pre) => pre - 1);
     }
+    window.scrollTo(0, 0);
   };
   useEffect(() => {
     const fetchProcessData = async () => {
