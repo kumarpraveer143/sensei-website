@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import { faqs } from "@/utils/data";
 import FreeActivityBtn from "@/components/activityComps/FreeActivityBtn";
 import Stars from "@/components/miniComps/Stars";
-const FAQS = () => {
-  const [checkedId, setCheckedId] = useState(1);
 
+const FAQS = () => {
+  // Change the initial state to null so no FAQs are open by default
+  // Or set to a specific ID like 1 if you want one open by default
+  const [openFaqId, setOpenFaqId] = useState(1);
+  
   return (
     <div className="my-10 container relative mx-auto flex max-w-[min(90vw,1000px)] flex-col items-center gap-11">
       <Stars />
@@ -16,8 +19,8 @@ const FAQS = () => {
         {faqs.map((faq, index) => (
           <FAQ
             key={index}
-            checkedId={checkedId}
-            setCheckedId={setCheckedId}
+            openFaqId={openFaqId}
+            setOpenFaqId={setOpenFaqId}
             faq={faq}
           />
         ))}
@@ -26,7 +29,18 @@ const FAQS = () => {
     </div>
   );
 };
-export const FAQ = ({ faq, checkedId, setCheckedId }) => {
+
+export const FAQ = ({ faq, openFaqId, setOpenFaqId }) => {
+  // Check if this FAQ is the currently open one
+  const isOpen = openFaqId === faq.id;
+  
+  // Handle toggling the FAQ open/closed
+  const handleToggle = () => {
+    // If this FAQ is already open, close it by setting openFaqId to null
+    // Otherwise, open this FAQ and close any others
+    setOpenFaqId(isOpen ? null : faq.id);
+  };
+
   return (
     <div className="flex h-fit gap-6 border-b-2 border-grey_2 p-2 align-middle has-[:checked]:rounded-xl has-[:checked]:border-0 has-[:checked]:bg-[#FF8B13] has-[:checked]:bg-opacity-10 sm:p-5">
       <div className="flex w-full flex-col gap-4">
@@ -34,7 +48,7 @@ export const FAQ = ({ faq, checkedId, setCheckedId }) => {
           <div className="flex items-start gap-4">
             <p
               className={`body1_b ${
-                checkedId === faq.id ? "text-[#FF8B13]" : "text-[#787878]"
+                isOpen ? "text-[#FF8B13]" : "text-[#787878]"
               }`}
             >
               {faq.id >= 10 ? "" : "0"}
@@ -42,7 +56,7 @@ export const FAQ = ({ faq, checkedId, setCheckedId }) => {
             </p>
             <p
               className={`h3 ${
-                checkedId === faq.id ? "text-[#FF8B13]" : "text-[#787878]"
+                isOpen ? "text-[#FF8B13]" : "text-[#787878]"
               }`}
             >
               {faq.question}
@@ -52,11 +66,10 @@ export const FAQ = ({ faq, checkedId, setCheckedId }) => {
             className="peer appearance-none"
             id={`question${faq.id}`}
             type="checkbox"
-            defaultChecked={checkedId === faq.id}
-            onChange={() => setCheckedId(checkedId === faq.id ? -1 : faq.id)}
+            checked={isOpen}
+            onChange={handleToggle}
           />
           <label
-            // onClick={() => setCheckedId(checkedId === faq.id ? -1 : faq.id)}
             alt="expand"
             htmlFor={`question${faq.id}`}
             className="ml-auto rotate-45 cursor-pointer rounded-full bg-[#FF8B13] p-1 opacity-25 transition-transform peer-checked:rotate-0 peer-checked:opacity-100 md:p-2"
@@ -91,7 +104,5 @@ export const FAQ = ({ faq, checkedId, setCheckedId }) => {
     </div>
   );
 };
+
 export default FAQS;
-
-
-

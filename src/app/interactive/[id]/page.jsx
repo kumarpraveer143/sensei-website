@@ -24,36 +24,44 @@ const Page = ({ params: { id } }) => {
   const [infoOpen, setInfoOpen] = useState(false);
   const [currProcess, setCurrProcess] = useState(0);
   const [interactiveActivity, setInteractiveActivity] = useState(null);
+
   const nextProcess = () => {
     if (currProcess !== interactiveActivity?.processes?.length - 1) {
       setCurrProcess((pre) => pre + 1);
     } else {
       setState((pre) => pre + 1);
     }
+    window.scrollTo(0, 0);
   };
   const prevProcess = () => {
     if (currProcess !== 0) {
       setCurrProcess((pre) => pre - 1);
     }
+    window.scrollTo(0, 0);
   };
   useEffect(() => {
     const fetchProcessData = async () => {
       const res = await axios
         .get(`/interactive-activities/${id}`)
         .catch((err) => console.log(err));
-      // console.log(res);
 
+      console.log(res?.data); // for debugging
       if (res?.data) {
-        // console.log("interactive : " + res?.data);
         setInteractiveActivity(res?.data);
       }
     };
     fetchProcessData();
-    setOutcomesText(processText(interactiveActivity?.keyOutcomes));
-  }, [id, interactiveActivity?.keyOutcomes]);
+  }, [id]);
+
+  useEffect(() => {
+    if (interactiveActivity?.keyOutcomes) {
+      setOutcomesText(processText(interactiveActivity.keyOutcomes));
+    }
+  }, [interactiveActivity?.keyOutcomes]);
 
   const processText = (outcomes) => {
-    return outcomes?.replace(/(\d+\.)/g, "\n$1").trim();
+    const withoutPipes = outcomes?.replace(/\s*\|\s*/g, "\n");
+    return withoutPipes?.replace(/(\d+\.)/g, "$1 ").trim();
   };
 
   switch (state) {
@@ -135,7 +143,6 @@ const Page = ({ params: { id } }) => {
                 {interactiveActivity?.processes[currProcess]?.processNumber +
                   ". " +
                   interactiveActivity?.processes[currProcess]?.processName}{" "}
-
               </p>
             </div>
             <Image

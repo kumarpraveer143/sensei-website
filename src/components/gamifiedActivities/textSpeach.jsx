@@ -6,19 +6,30 @@ import pause from "@/assets/pause.svg?url";
 import mute from "@/assets/sound-off.svg?url";
 import replay from "@/assets/replay.svg?url";
 import { getTextToAudio } from "@/config/textToSpeech";
+
 const TextReader = ({ text, role }) => {
   const [timer, setTimer] = useState(0);
   const [audio, setAudio] = useState(-1);
   const [play, setPlay] = useState(false);
   const [muted, setMuted] = useState(false);
   const audioRef = useRef(null);
-  useEffect(() => {
-    console.log(text);
+  
+  // Format text by handling pipe separators
+  const formatTextWithLineBreaks = (text) => {
+    if (!text) return [];
     
+    // Split by pipe symbol and trim each segment
+    return text.split("|").map(segment => segment.trim());
+  };
+  
+  const formattedSegments = formatTextWithLineBreaks(text);
+  
+  useEffect(() => {
     getTextToAudio(text).then((response) => {
       setAudio(response);
     });
   }, [text]);
+  
   const togglePlay = () => {
     if (play) {
       audioRef.current.pause();
@@ -27,6 +38,7 @@ const TextReader = ({ text, role }) => {
       audioRef.current.play();
     }
   };
+  
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-between gap-4">
@@ -60,23 +72,17 @@ const TextReader = ({ text, role }) => {
         )}
       </div>
       <div className="max-w-full text-wrap text-grey_1">
-        {text.split("|").map((segment, index) => (
-          //check if it is number. like segment make a condition for it
-
-          <span
+        {formattedSegments.map((segment, index) => (
+          <p
             key={index}
-            className={`${timer == 0 || (audio.hasOwnProperty("timestamps") && audio.timestamps[index] && audio.timestamps[index].start <= timer) ? "text-[#333333]" : "text-primary/35"} block py-2`}
+            className={`${
+              timer == 0 || (audio?.timestamps && audio.timestamps[index] && audio.timestamps[index].start <= timer) 
+                ? "text-[#333333]" 
+                : "text-primary/35"
+            } mb-3`}
           >
-            {index > 0 &&
-              segment.length > 1 &&
-              (segment[segment.length - 1] == "." || segment[1] == ".") &&
-              !isNaN(segment[0]) && <br />}
-            {segment.length > 1 &&
-              index > 1 &&
-              segment[segment.length - 1] == "." &&
-              !isNaN(segment[0]) && <br />}
-            {segment}{" "}
-          </span>
+            {segment}
+          </p>
         ))}
       </div>
       {audio?.audio && (
@@ -86,7 +92,6 @@ const TextReader = ({ text, role }) => {
           onPlaying={() => setPlay(true)}
           onTimeUpdate={(e) => {
             setTimer(e.target.currentTime);
-            //console.log(e.target.currentTime);
           }}
         >
           <source src={audio.audio} />
