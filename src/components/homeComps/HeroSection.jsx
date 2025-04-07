@@ -13,12 +13,11 @@ const HeroSection = () => {
           intelligence, resilience, and social skills in children.
         </div>
         <Link href={"/login"}>
-          <button className="inline-flex w-full max-w-xs flex-col items-start justify-center rounded-2xl bg-amber-500 px-5 py-3.5 shadow-[0px_1px_1px_0px_rgba(0,0,0,0.12)] shadow-[0px_2px_5px_0px_rgba(103,110,118,0.08)]">
+          <button className="inline-flex w-full max-w-xs flex-col items-start justify-center rounded-2xl bg-amber-500 px-5 py-3.5 shadow-[0px_1px_1px_0px_rgba(0,0,0,0.12)] shadow-[0px_2px_5px_0px_rgba(103,110,118,0.08)] group">
             <div className="relative inline-flex w-full items-center justify-between gap-2 self-stretch">
               <div className="text-md justify-start text-center font-['Nunito'] font-black leading-snug text-white">
                 Start Your Child&apos;s Journey
               </div>
-              <div className="group">
                 <svg
                   width="32"
                   height="32"
@@ -39,7 +38,6 @@ const HeroSection = () => {
                     />
                   </g>
                 </svg>
-              </div>
             </div>
           </button>
         </Link>
