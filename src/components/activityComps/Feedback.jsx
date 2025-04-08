@@ -12,6 +12,13 @@ const Feedback = ({ activityId, activityName }) => {
   const Router = useRouter();
   const [star, setStar] = useState(2);
   const [feedback, setFeedback] = useState('');
+
+  const getChildName = async () => {
+    const parent = (await getSession()).user
+    const childName = (await axios.get(`/parent-users/getPricingPlan?email=${parent.email}`)).data.childName
+    return childName
+  }
+
   return (
     <div className="relative flex min-h-[90vh] flex-col items-center justify-evenly">
       <div className="mx-auto flex flex-col items-center justify-center gap-4">
@@ -44,6 +51,8 @@ const Feedback = ({ activityId, activityName }) => {
           // console.log(feedback)
           // console.log(activityId + " " + activityName)
           // const parent = (await getSession()).user
+          // const childName = await getChildName();
+
           // const response = await axios.post("/feedback", {
           //   activityId,
           //   activityName,
@@ -51,7 +60,7 @@ const Feedback = ({ activityId, activityName }) => {
           //   message : feedback,
           //   parentName : parent.name,
           //   emailId : parent.email,
-          //   childName : null,    // cannot find child
+          //   childName : childName
           // })
           // console.log(response);
           Router.back()
