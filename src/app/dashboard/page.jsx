@@ -66,7 +66,7 @@ const UserDashboard = () => {
       // Fallback to general subjects if no user-specific data
 
       const res = await axios.get("/subjects");
-      console.log("Subjects response:", res?.data);
+      // console.log("Subjects response:", res?.data);
       
       if (res?.data) {
         setSubjectData(res.data);

@@ -43,17 +43,17 @@ const Feedback = ({ activityId, activityName }) => {
           // console.log(star+1)
           // console.log(feedback)
           // console.log(activityId + " " + activityName)
-          const parent = (await getSession()).user
-          const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/feedback`, {
-            activityId,
-            activityName,
-            rating : star+1,
-            message : feedback,
-            parentName : parent.name,
-            emailId : parent.email,
-            childName : null,    // cannot find child
-          })
-          console.log(response);
+          // const parent = (await getSession()).user
+          // const response = await axios.post("/feedback", {
+          //   activityId,
+          //   activityName,
+          //   rating : star+1,
+          //   message : feedback,
+          //   parentName : parent.name,
+          //   emailId : parent.email,
+          //   childName : null,    // cannot find child
+          // })
+          // console.log(response);
           Router.back()
         }}
         className="h5_b mx-auto w-[min(90vw,300px)] rounded-[16px] border-b-4 border-[#C96D0E] bg-grad_1 px-6 py-2 text-center text-white disabled:opacity-50 cursor-pointer" 
