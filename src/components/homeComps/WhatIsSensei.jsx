@@ -7,13 +7,14 @@ import BrainIcon from "@/assets/brainIcon.svg?url";
 import BlockIcon from "@/assets/blockIcon.svg?url";
 import BulbIcon from "@/assets/bulbIcon.svg?url";
 import TargetIcon from "@/assets/targetIcon.svg?url";
+import ExploreCurriculum from "./ExploreCurriculum";
 
 const WhatIsSenseiSection = () => {
   return (
     <>
       <div className="mt-10 flex justify-center items-center w-full px-4">
         <div className="w-full max-w-5xl inline-flex flex-col justify-start items-center gap-4">
-          <div className="text-center justify-center text-amber-500 text-2xl font-bold font-['Nunito'] uppercase leading-loose">
+          <div className="text-center justify-center text-[#ff8b13] text-2xl font-bold font-['Nunito'] uppercase leading-loose">
             What is sensei
           </div>
           <div className="text-center justify-center text-slate-700 text-4xl font-black font-['Nunito'] capitalize leading-10 px-4">
@@ -26,7 +27,7 @@ const WhatIsSenseiSection = () => {
           </div>
         </div>
       </div>
-
+      <ExploreCurriculum />
       <div className="w-full flex justify-center items-center mt-20 px-4 lg:px-8">
         <div className="grid grid-cols-1 gap-10 w-full max-w-6xl">
           {/* Row 1 */}

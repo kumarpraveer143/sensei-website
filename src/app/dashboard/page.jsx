@@ -22,14 +22,35 @@ const UserDashboard = () => {
   const [customUserData, setCustomUserData] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [plan, setPlan] = useState("");
+  const [childName, setChildName] = useState("");
+
+  const selectModule = (sid) => {
+    setSubjectId(sid);
+    setModules(subjectData[sid]?.modules || []);
+    const col = getSubColour(
+      subjectData[sid]?.subject?.subjectName ||
+        subjectData[sid]?.subjectName ||
+        "",
+    );
+    setColours(col);
+
+    document.querySelectorAll(".subject").forEach((element) => {
+      // element.style.filter = "saturate(0%)";
+    });
+    const selectedElement = document.getElementById(`subject-${sid}`);
+    if (selectedElement) {
+      // selectedElement.style.filter = "saturate(100%)";
+    }
+  };
 
   const fetchSubjectData = async () => {
     setLoading(true);
     setError(null);
-    
+
     try {
-      if (status === "loading") return; // Wait until session is loaded
-      
+      if (status === "loading") return; 
+
       if (status === "unauthenticated") {
         throw new Error("User not authenticated");
       }
@@ -38,36 +59,39 @@ const UserDashboard = () => {
       const email = session?.user?.email;
       if (!email) throw new Error("No email found in session");
 
-      // Try to get user-specific data first
       try {
-        const res = await axios.get(`/parent-users/getPricingPlan?email=${email}`);
-        console.log("Pricing plan response:", res?.data);
-        
+        const res = await axios.get(
+          `/parent-users/getPricingPlan?email=${email}`,
+        );
+        // console.log(res.data);
+        if(res.data?.pricingPlan) {
+          setPlan(res.data.pricingPlan.name);
+        } else setPlan("Upgrade Now!");   //unsure about this
+
+        if(res.data.childName){
+          setChildName(res.data.childName);
+        } else setChildName(session?.user?.name || "User");
+
         if (res?.data?.subjects) {
           setSubjectData(res.data.subjects);
           setCustomUserData(true);
           setLocked(false);
           setModules(res.data.subjects[0]?.modules || []);
-          setColours(getSubColour(res.data.subjects[0]?.subject?.subjectName || ""));
-
-          // console.log("\n\n")   //debug
-          // console.log(subjectData)    //debug
-          // console.log(customUserData)   //debug
-          // console.log(locked)   //debug
-          // console.log(modules)    //debug
-          // console.log(colours)    //debug
-          // console.log("\n\n")   //debug
+          setColours(
+            getSubColour(res.data.subjects[0]?.subject?.subjectName || ""),
+          );
           return;
         }
       } catch (userDataError) {
-        console.log("No user-specific data found, falling back to general subjects");
+        console.log(
+          "No user-specific data found, falling back to general subjects",
+        );
       }
 
       // Fallback to general subjects if no user-specific data
-
       const res = await axios.get("/subjects");
       // console.log("Subjects response:", res?.data);
-      
+
       if (res?.data) {
         setSubjectData(res.data);
         setLocked(true);
@@ -79,22 +103,6 @@ const UserDashboard = () => {
       setError(error.message);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const selectModule = (sid) => {
-    setSubjectId(sid);
-    setModules(subjectData[sid]?.modules || []);
-    const col = getSubColour(subjectData[sid]?.subject?.subjectName || subjectData[sid]?.subjectName || "");
-    setColours(col);
-    
-    // Update UI for selected subject
-    document.querySelectorAll(".subject").forEach(element => {
-      // element.style.filter = "saturate(0%)";
-    });
-    const selectedElement = document.getElementById(`subject-${sid}`);
-    if (selectedElement) {
-      // selectedElement.style.filter = "saturate(100%)";
     }
   };
 
@@ -127,13 +135,37 @@ const UserDashboard = () => {
         <div className="flex flex-col items-start gap-1 py-4">
           <p className="h4 text-grey_1">Hello!</p>
           <Link className="no-underline" href="/familypage">
-            <p className="h3 font-bold text-black">
-              {session?.user?.name?.split(" ")[0]}
+            <p className="h3 font-bold capitalize text-[#2C3D68]">
+              {childName}
             </p>
           </Link>
           <p className="body-1 text-grey_1">
             Let&apos;s start your journey to a brighter future.
           </p>
+          <div class="active-button inline-flex items-center justify-start gap-4 self-stretch">
+            <div class="justify-start font-['Nunito'] text-2xl font-semibold text-[#2C3D68]">
+              {plan}
+            </div>
+            <div class="inline-flex flex-col items-start justify-center gap-2 overflow-hidden rounded-lg bg-green-100 px-2 py-[3px]">
+              <div class="inline-flex items-center justify-center gap-[5px] self-stretch overflow-hidden">
+                <div className="relative h-3 w-3 overflow-hidden">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="z-10"
+                  >
+                    <circle cx="6" cy="6" r="4" fill="#3AA176" />
+                  </svg>
+                </div>
+                <div class="justify-start text-center font-['Inter'] text-sm font-medium leading-tight text-green-500">
+                  Active
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="relative h-fit max-w-[min(650px,90vw)] rounded-2xl bg-gradient-to-t from-[#EF5F3D] via-[#F97A23] to-[#F8BF3B] p-4 shadow-lg">
           <h1 className="h3 mb-4 w-[80%] text-left font-Nunito font-bold text-white">
@@ -156,9 +188,7 @@ const UserDashboard = () => {
       <div className="flex w-full gap-10">
         {subjectData?.length > 0 ? (
           <div className="flex grow flex-col">
-            <h4 className="h4 px-4 text-left uppercase text-black">
-              Subjects
-            </h4>
+            <h4 className="h4 px-4 text-left uppercase text-black">Subjects</h4>
             <div className="scrollbar flex w-full flex-col gap-5 px-4 sm:h-[500px] sm:overflow-y-auto">
               {subjectData.map((item, i) => (
                 <React.Fragment key={i}>
@@ -175,7 +205,7 @@ const UserDashboard = () => {
                       hidden={"sm:hidden"}
                       colours={colours}
                       modules={modules}
-                      subjectId={item.subjectId}
+                      subjectId={item.subjectId || item.subject?.subjectId}
                     />
                   )}
                 </React.Fragment>
@@ -194,7 +224,11 @@ const UserDashboard = () => {
             hidden={"max-sm:hidden"}
             colours={colours}
             modules={modules}
-            subjectId={subjectData[subjectId]?.subjectId || ""}
+            subjectId={
+              subjectData[subjectId]?.subjectId ||
+              subjectData[subjectId]?.subject?.subjectId ||
+              ""
+            }
           />
         )}
       </div>

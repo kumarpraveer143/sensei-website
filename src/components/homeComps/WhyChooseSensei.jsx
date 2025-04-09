@@ -2,7 +2,7 @@ const WhyChooseSenseiSection = () => {
   return (
     <div className="h-fit my-8 flex flex-col items-center justify-center gap-6 px-4 md:gap-10">
       <div className="inline-flex w-full max-w-[853px] flex-col items-center justify-start gap-2 md:gap-4">
-        <div className="justify-center text-center font-['Nunito'] text-xl font-bold uppercase leading-relaxed text-amber-500 md:text-2xl md:leading-loose">
+        <div className="justify-center text-center font-['Nunito'] text-xl font-bold uppercase leading-relaxed text-[#ff8b13] md:text-2xl md:leading-loose">
           Why Choose Sensei
         </div>
         <div className="justify-center text-center font-['Nunito'] text-2xl font-black capitalize leading-8 text-slate-700 md:text-4xl md:leading-10">

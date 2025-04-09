@@ -3,7 +3,7 @@ const RatingInfo = () => {
     <div className="flex w-full items-center justify-center">
       <div className="my-4 grid max-w-screen-xl grid-cols-2 gap-4 px-4 md:my-8 md:grid-cols-4 md:gap-6">
         <div className="flex w-full flex-col items-start justify-center gap-1 rounded-[10px] bg-white p-4 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] md:p-6">
-          <div className="font-['Nunito'] text-2xl font-black text-amber-500 md:text-3xl">
+          <div className="font-['Nunito'] text-2xl font-black text-[#ff8b13] md:text-3xl">
             2000+
           </div>
           <div className="md:text-md font-['Nunito'] text-sm font-semibold text-stone-500">
@@ -12,7 +12,7 @@ const RatingInfo = () => {
         </div>
 
         <div className="flex w-full flex-col items-start justify-center gap-1 rounded-[10px] bg-white p-4 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] md:p-6">
-          <div className="font-['Nunito'] text-xl font-black text-amber-500 md:text-2xl">
+          <div className="font-['Nunito'] text-xl font-black text-[#ff8b13] md:text-2xl">
             5-10 Years
           </div>
           <div className="md:text-md font-['Nunito'] text-sm font-semibold text-stone-500">
@@ -21,7 +21,7 @@ const RatingInfo = () => {
         </div>
 
         <div className="flex w-full flex-col items-start justify-center gap-1 rounded-[10px] bg-white p-4 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] md:p-6">
-          <div className="font-['Nunito'] text-2xl font-black text-amber-500 md:text-3xl">
+          <div className="font-['Nunito'] text-2xl font-black text-[#ff8b13] md:text-3xl">
             700+
           </div>
           <div className="md:text-md font-['Nunito'] text-sm font-semibold text-stone-500">

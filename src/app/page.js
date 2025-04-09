@@ -15,8 +15,8 @@ export default function Home() {
       <HeroSection />
       <Rating />
       <WhatIsSenseiSection />
+      {/* <ExploreCurriculum /> */}
       <WhyChooseSenseiSection />
-      <ExploreCurriculum />
       <Comments />
       <GetStarted />
       <Journey />

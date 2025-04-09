@@ -66,7 +66,12 @@ const Page = ({ params: { id } }) => {
       );
 
     case 2:
-      return <Feedback />;
+      return (
+        <Feedback
+          activityName={digitalActivity.digitalActivityName}
+          activityId={digitalActivity.digitalActivityId}
+        />
+      );
     case 1:
       return !digitalActivity ? (
         notFound()
