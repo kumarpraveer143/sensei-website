@@ -47,23 +47,32 @@ const Feedback = ({ activityId, activityName }) => {
       />
       <div
         onClick={async () => {
-          // console.log(star+1)
-          // console.log(feedback)
-          // console.log(activityId + " " + activityName)
-          // const parent = (await getSession()).user
-          // const childName = await getChildName();
+          console.log(star+1)
+          console.log(feedback)
+          console.log(activityId + " " + activityName)
+          const parent = (await getSession()).user
+          const childName = await getChildName();
+          try{
+            const response = await axios.post("/feedback", {
+              activityId,
+              activityName,
+              rating : star+1,
+              message : feedback,
+              parentName : parent.name,
+              emailId : parent.email,
+              childName : childName
+            })
 
-          // const response = await axios.post("/feedback", {
-          //   activityId,
-          //   activityName,
-          //   rating : star+1,
-          //   message : feedback,
-          //   parentName : parent.name,
-          //   emailId : parent.email,
-          //   childName : childName
-          // })
-          // console.log(response);
-          Router.back()
+            if(response.status === 201){
+              console.log("feedback submitted")
+            } else {
+              console.log("feedback not submitted")
+            }
+          } catch(err){
+            console.log(err)
+          } finally{
+            Router.back()
+          }
         }}
         className="h5_b mx-auto w-[min(90vw,300px)] rounded-[16px] border-b-4 border-[#C96D0E] bg-grad_1 px-6 py-2 text-center text-white disabled:opacity-50 cursor-pointer" 
       >
