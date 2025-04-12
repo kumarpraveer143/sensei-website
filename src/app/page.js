@@ -1,13 +1,16 @@
 
 import FAQS from "@/components/homeComps/FAQS";
 import GetStarted from "@/components/homeComps/GetStarted";
-import Journey from "@/components/homeComps/Journey";
+// import Journey from "@/components/homeComps/Journey";
 import Comments from "../components/homeComps/Comments";
 import HeroSection from "../components/homeComps/HeroSection";
 import Rating from "@/components/homeComps/Rating";
 import WhatIsSenseiSection from "@/components/homeComps/WhatIsSensei";
-import ExploreCurriculum from "@/components/homeComps/ExploreCurriculum";
+// import ExploreCurriculum from "@/components/homeComps/ExploreCurriculum";
 import WhyChooseSenseiSection from "@/components/homeComps/WhyChooseSensei";
+import { HowItWorks } from "@/components/homeComps/HowItWorks";
+import { TestimonialsSection } from "@/components/homeComps/Testimonials";
+import { ArticlesSection } from "@/components/homeComps/Articles";
 
 export default function Home() {
   return (
@@ -17,10 +20,12 @@ export default function Home() {
       <WhatIsSenseiSection />
       {/* <ExploreCurriculum /> */}
       <WhyChooseSenseiSection />
-      <Comments />
-      <GetStarted />
-      <Journey />
-      <FAQS />
+      <HowItWorks />
+      <TestimonialsSection />
+      <ArticlesSection />
+      {/* <Comments /> */}
+      {/* <GetStarted /> */}
+      {/* <FAQS /> */}
     </div>
   );
 }
