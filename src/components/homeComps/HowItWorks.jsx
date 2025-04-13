@@ -2,14 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef, useMemo } from "react";
-import SignUpScreen from "@/assets/signUpScreen.svg?url";
-import StartLearning from "@/assets/startLearning.svg?url";
-import TakeAssessment from "@/assets/takeAssessment.svg?url";
-import TrackGrowth from "@/assets/trackGrowth.svg?url";
+// import SignUpScreen from "@/assets/signUpScreen.svg?url";
+// import StartLearning from "@/assets/startLearning.svg?url";
+// import TakeAssessment from "@/assets/takeAssessment.svg?url";
+// import TrackGrowth from "@/assets/trackGrowth.svg?url";
 
 export const HowItWorks = () => {
   const [activeSection, setActiveSection] = useState("signup");
-  const [currentImage, setCurrentImage] = useState(SignUpScreen);
+  const [currentImage, setCurrentImage] = useState("/images/signUpScreen.webp");
   const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
 
@@ -23,10 +23,10 @@ export const HowItWorks = () => {
   // Images mapping to sections
   const sectionImages = useMemo(
     () => ({
-      signup: SignUpScreen,
-      learning: StartLearning,
-      assessment: TakeAssessment,
-      growth: TrackGrowth,
+      signup: "/images/signUpScreen.webp",
+      learning: "/images/startLearning.webp",
+      assessment: "/images/takeAssessment.webp",
+      growth: "/images/trackGrowth.webp",
     }),
     [],
   );
@@ -82,6 +82,8 @@ export const HowItWorks = () => {
               src={currentImage}
               alt={`${activeSection} illustration`}
               className="transition-all duration-500 ease-in-out"
+              width={500}
+              height={500}
             />
           </div>
         )}
@@ -124,9 +126,11 @@ export const HowItWorks = () => {
             {isMobile && activeSection === "signup" && (
               <div className="mt-4 flex justify-center transition-all duration-300 ease-in-out">
                 <Image
-                  src={SignUpScreen}
+                  src={"/images/signUpScreen.webp"}
                   alt="Sign up illustration"
                   className="transition-all duration-500 ease-in-out"
+                  width={500}
+                  height={500}
                 />
               </div>
             )}
@@ -169,9 +173,11 @@ export const HowItWorks = () => {
             {isMobile && activeSection === "learning" && (
               <div className="mt-4 flex justify-center transition-all duration-300 ease-in-out">
                 <Image
-                  src={StartLearning}
+                  src={"/images/startLearning.webp"}
                   alt="Start learning illustration"
                   className="transition-all duration-500 ease-in-out"
+                  width={500}
+                  height={500}
                 />
               </div>
             )}
@@ -212,9 +218,11 @@ export const HowItWorks = () => {
             {isMobile && activeSection === "assessment" && (
               <div className="mt-4 flex justify-center transition-all duration-300 ease-in-out">
                 <Image
-                  src={TakeAssessment}
+                  src={"/images/takeAssessment.webp"}
                   alt="Take assessment illustration"
                   className="transition-all duration-500 ease-in-out"
+                  width={500}
+                  height={500}
                 />
               </div>
             )}
@@ -254,9 +262,11 @@ export const HowItWorks = () => {
             {isMobile && activeSection === "growth" && (
               <div className="mt-4 flex justify-center transition-all duration-300 ease-in-out">
                 <Image
-                  src={TrackGrowth}
+                  src={"/images/trackGrowth.webp"}
                   alt="Track growth illustration"
                   className="transition-all duration-500 ease-in-out"
+                  width={500}
+                  height={500}
                 />
               </div>
             )}

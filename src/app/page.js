@@ -1,6 +1,6 @@
 
 import FAQS from "@/components/homeComps/FAQS";
-import GetStarted from "@/components/homeComps/GetStarted";
+// import GetStarted from "@/components/homeComps/GetStarted";
 // import Journey from "@/components/homeComps/Journey";
 import Comments from "../components/homeComps/Comments";
 import HeroSection from "../components/homeComps/HeroSection";
@@ -25,7 +25,7 @@ export default function Home() {
       <ArticlesSection />
       {/* <Comments /> */}
       {/* <GetStarted /> */}
-      {/* <FAQS /> */}
+      <FAQS />
     </div>
   );
 }
