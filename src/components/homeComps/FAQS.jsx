@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { faqs } from "@/utils/data";
-import FreeActivityBtn from "@/components/activityComps/FreeActivityBtn";
 import Stars from "@/components/miniComps/Stars";
 import { BottomCTA } from "./BottomCTA";
 
@@ -27,7 +26,6 @@ const FAQS = () => {
           />
         ))}
       </div>
-      <FreeActivityBtn />
     </div>
      <BottomCTA />
     </>
