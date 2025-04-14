@@ -91,8 +91,7 @@ const page = () => {
         <div className="flex h-max w-full flex-col justify-end p-4 sm:relative sm:h-screen sm:w-1/2 sm:justify-center">
           <p className="h3 text-secondary font-semibold text-primary max-sm:pt-10">
             Login now and get started with the fun & easy-to-use interactive &
-            gamified activities at{" "}
-            <span className="text-[#FF8B13]">₹ 99/-</span>
+            gamified activities.
           </p>
           <div className="mt-12 flex h-12 w-full items-center">
             <button
