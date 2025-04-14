@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { faqs } from "@/utils/data";
 import FreeActivityBtn from "@/components/activityComps/FreeActivityBtn";
 import Stars from "@/components/miniComps/Stars";
+import { BottomCTA } from "./BottomCTA";
 
 const FAQS = () => {
   // Change the initial state to null so no FAQs are open by default
@@ -10,6 +11,7 @@ const FAQS = () => {
   const [openFaqId, setOpenFaqId] = useState(1);
   
   return (
+    <>
     <div className="my-10 container relative mx-auto flex max-w-[min(90vw,1000px)] flex-col items-center gap-11">
       <Stars />
       <h2 className="h4 mx-auto h-fit max-w-[90vw] uppercase text-secondary lg:col-start-2 font-bold">
@@ -27,6 +29,8 @@ const FAQS = () => {
       </div>
       <FreeActivityBtn />
     </div>
+     <BottomCTA />
+    </>
   );
 };
 

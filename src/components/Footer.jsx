@@ -9,12 +9,21 @@ import Mail from "@/assets/mail.svg";
 import Location from "@/assets/location.svg";
 import Phone from "@/assets/phone.svg";
 import Stars from "@/assets/stars.svg?url";
+import FooterImage from "@/assets/footerChild.svg?url";
 import { navLinks } from "@/utils/data";
 const Footer = () => {
   const d = new Date();
   let year = d.getFullYear();
   return (
     <div className="">
+      <div className="footer-image flex items-center justify-center sm:justify-start">
+        <Image
+          src={FooterImage}
+          alt="footer"
+          className="-z-10 -mb-5 items-center justify-center md:-mb-14 md:ml-5"
+          priority
+        />
+      </div>
       <div className="flex flex-col flex-wrap justify-center gap-4 rounded-[calc(4vw)] bg-grad_1 p-4 text-xs font-normal text-slate-200 sm:flex-row sm:flex-nowrap sm:gap-10 md:rounded-b-none md:text-base lg:gap-20">
         <div className="flex items-center gap-2">
           <div className="grid h-10 w-10 place-items-center rounded-full bg-white">
@@ -74,14 +83,14 @@ const Footer = () => {
             </div>
             <div className="-order-1 flex-grow-[.3] md:order-none">
               <div className="flex justify-around gap-10 text-sm md:justify-normal md:text-base lg:gap-20">
-                <div className="flex cursor-pointer flex-col gap-3 font-Nunito text-md font-semibold text-white md:gap-4">
+                <div className="text-md flex cursor-pointer flex-col gap-3 font-Nunito font-semibold text-white md:gap-4">
                   {navLinks.map((link, index) => (
                     <Link key={index} href={link.link}>
                       <h2>{link.title}</h2>
                     </Link>
                   ))}
                 </div>
-                <div className="flex cursor-pointer flex-col gap-3 font-Nunito text-md font-normal text-white md:gap-4">
+                <div className="text-md flex cursor-pointer flex-col gap-3 font-Nunito font-normal text-white md:gap-4">
                   <h2></h2>
                   <h2></h2>
                   <Link

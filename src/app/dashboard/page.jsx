@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
 import addchild from "@/Images/addchild.png";
@@ -34,14 +33,6 @@ const UserDashboard = () => {
         "",
     );
     setColours(col);
-
-    document.querySelectorAll(".subject").forEach((element) => {
-      // element.style.filter = "saturate(0%)";
-    });
-    const selectedElement = document.getElementById(`subject-${sid}`);
-    if (selectedElement) {
-      // selectedElement.style.filter = "saturate(100%)";
-    }
   };
 
   const fetchSubjectData = async () => {
@@ -59,47 +50,68 @@ const UserDashboard = () => {
       const email = session?.user?.email;
       if (!email) throw new Error("No email found in session");
 
+      //get user-specific data
+      let hasUserData = false;
       try {
         const res = await axios.get(
           `/parent-users/getPricingPlan?email=${email}`,
         );
-        // console.log(res.data);
+        console.log("User data response:", res.data);
+        
         if(res.data?.pricingPlan) {
-          setPlan(res.data.pricingPlan.name);
-        } else setPlan("Upgrade Now!");   //unsure about this
-
+          if(res.data.pricingPlan.name === "No active plan found for this user."){
+            setPlan("Upgrade Now!");
+          } else {
+            setPlan(res.data.pricingPlan.name);
+          }
+        }
+        
         if(res.data.childName){
           setChildName(res.data.childName);
-        } else setChildName(session?.user?.name || "User");
+        } else {
+          setChildName(session?.user?.name || "User");
+        }
 
-        if (res?.data?.subjects) {
-          setSubjectData(res.data.subjects);
+        // Check for subjects in res.data.pricingPlan.subjects
+        if (res?.data?.pricingPlan?.subjects && res.data.pricingPlan.subjects.length > 0) {
+          console.log("Setting user-specific subjects from pricingPlan:", res.data.pricingPlan.subjects);
+          setSubjectData(res.data.pricingPlan.subjects);
           setCustomUserData(true);
           setLocked(false);
-          setModules(res.data.subjects[0]?.modules || []);
+          setModules(res.data.pricingPlan.subjects[0]?.modules || []);
           setColours(
-            getSubColour(res.data.subjects[0]?.subject?.subjectName || ""),
+            getSubColour(res.data.pricingPlan.subjects[0]?.subject?.subjectName || ""),
           );
-          return;
+          hasUserData = true;
         }
       } catch (userDataError) {
-        console.log(
-          "No user-specific data found, falling back to general subjects",
-        );
+        console.error("Error fetching user-specific data:", userDataError);
       }
+      
+      // If no user-specific subjects, fetch general subjects
+      if (!hasUserData) {
+        try {
+          console.log("Fetching general subjects");
+          const res = await axios.get("/subjects");
+          console.log("General subjects response:", res?.data);
 
-      // Fallback to general subjects if no user-specific data
-      const res = await axios.get("/subjects");
-      // console.log("Subjects response:", res?.data);
-
-      if (res?.data) {
-        setSubjectData(res.data);
-        setLocked(true);
-        setModules(res.data[0]?.modules || []);
-        setColours(getSubColour(res.data[0]?.subjectName || ""));
+          if (res?.data && res.data.length > 0) {
+            console.log("Setting general subjects:", res.data);
+            setSubjectData(res.data);
+            setLocked(true);
+            setModules(res.data[0]?.modules || []);
+            setColours(getSubColour(res.data[0]?.subjectName || ""));
+          } else {
+            console.log("No general subjects found in response");
+          }
+        } catch (generalSubjectsError) {
+          console.error("Error fetching general subjects:", generalSubjectsError);
+          throw new Error("Failed to fetch any subject data");
+        }
       }
+      
     } catch (error) {
-      console.error("Error fetching subject data:", error);
+      console.error("Error in fetchSubjectData:", error);
       setError(error.message);
     } finally {
       setLoading(false);
@@ -109,6 +121,11 @@ const UserDashboard = () => {
   useEffect(() => {
     fetchSubjectData();
   }, [status, session]);
+
+  // Debug logging for subject data changes
+  // useEffect(() => {
+  //   console.log("Updated subjectData:", subjectData);
+  // }, [subjectData]);
 
   if (status === "loading" || loading) {
     return (
@@ -142,29 +159,31 @@ const UserDashboard = () => {
           <p className="body-1 text-grey_1">
             Let&apos;s start your journey to a brighter future.
           </p>
-          <div class="active-button inline-flex items-center justify-start gap-4 self-stretch">
-            <div class="justify-start font-['Nunito'] text-2xl font-semibold text-[#2C3D68]">
+          <div className="active-button inline-flex items-center justify-start gap-4 self-stretch">
+            <div className="justify-start font-['Nunito'] text-2xl font-semibold text-[#2C3D68]">
               {plan}
             </div>
-            <div class="inline-flex flex-col items-start justify-center gap-2 overflow-hidden rounded-lg bg-green-100 px-2 py-[3px]">
-              <div class="inline-flex items-center justify-center gap-[5px] self-stretch overflow-hidden">
-                <div className="relative h-3 w-3 overflow-hidden">
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="z-10"
-                  >
-                    <circle cx="6" cy="6" r="4" fill="#3AA176" />
-                  </svg>
-                </div>
-                <div class="justify-start text-center font-['Inter'] text-sm font-medium leading-tight text-green-500">
-                  Active
+            {plan !== "Upgrade Now!" ? (
+              <div className="inline-flex flex-col items-start justify-center gap-2 overflow-hidden rounded-lg bg-green-100 px-2 py-[3px]">
+                <div className="inline-flex items-center justify-center gap-[5px] self-stretch overflow-hidden">
+                  <div className="relative h-3 w-3 overflow-hidden">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="z-10"
+                    >
+                      <circle cx="6" cy="6" r="4" fill="#3AA176" />
+                    </svg>
+                  </div>
+                  <div className="justify-start text-center font-['Inter'] text-sm font-medium leading-tight text-green-500">
+                    Active
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : null}
           </div>
         </div>
         <div className="relative h-fit max-w-[min(650px,90vw)] rounded-2xl bg-gradient-to-t from-[#EF5F3D] via-[#F97A23] to-[#F8BF3B] p-4 shadow-lg">
@@ -186,7 +205,7 @@ const UserDashboard = () => {
         </div>
       </div>
       <div className="flex w-full gap-10">
-        {subjectData?.length > 0 ? (
+        {subjectData && subjectData.length > 0 ? (
           <div className="flex grow flex-col">
             <h4 className="h4 px-4 text-left uppercase text-black">Subjects</h4>
             <div className="scrollbar flex w-full flex-col gap-5 px-4 sm:h-[500px] sm:overflow-y-auto">

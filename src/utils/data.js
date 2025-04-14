@@ -19,6 +19,11 @@ import Card2 from "@/assets/scrollAssets/Card2.svg?url";
 import Card3 from "@/assets/scrollAssets/Card3.svg?url";
 import Card4 from "@/assets/scrollAssets/Card4.svg?url";
 
+import psychInstitute from "@/assets/articleAssets/psychologyInstitute.svg?url";
+import indiaToday from "@/assets/articleAssets/indiaToday.svg?url";
+import Unicef from "@/assets/articleAssets/unicef.svg?url";
+import visionIas from "@/assets/articleAssets/visionIas.svg?url";
+
 export const plans = {
   Family: {
     features: {
@@ -281,44 +286,52 @@ export const cards = [
     image: "school",
   },
 ];
-export const comments = [
+export const Testimonials = [
   {
     description:
       "Sensei has been a game-changer for my introverted child. The self and social awareness modules, designed by actual psychologists, have given them the tools to confidently approach new situations and make friends. We're so grateful for this platform that complements their regular schooling!",
     identity: "Fellow Parent",
     user: "Mother of an 8 yrs old, Pune",
+    videoSrc :"https://drive.google.com/file/d/1V1__JQjl0DZ3UJFTKWubiO0FNFFGPrke/preview",
   },
   {
     description:
       "I love doing the activities with my parents. My parents are my best friends!",
     identity: "Young Friend",
     user: "9 yrs old, [A society] Pune",
+    videoSrc :"https://drive.google.com/file/d/1VxXuMuVNpJpf12FEk5qMUgYhu1EGbxrW/preview",
   },
   {
     description:
       "Sensei's activity-based learning modules are a fantastic addition to my classroom. The social-emotional learning focus is refreshing, and I've seen a positive difference in how students interact with each other.",
     identity: "Fellow Parent",
     user: "Clinical Psychologist, Raipur",
+    videoSrc :"https://drive.google.com/file/d/1iYQuOhxSZmp32UMvpXfqNdDRIw7y0eXv/preview",
   },
   {
     description:
       "Sensei is a fantastic fit for school with no compromise. The program aligns perfectly with NEP 2020 guidelines and this is what we were looking for.",
     identity: "Fellow Parent",
     user: "School Admin, Pune",
+    videoSrc :"https://drive.google.com/file/d/1V1__JQjl0DZ3UJFTKWubiO0FNFFGPrke/preview",
   },
   {
     description:
       "As a practicing psychologist, I'm impressed by Sensei's commitment to well-being. This can be a game changer for Indian parenting specially the introduction of SEL modules",
     identity: "Fellow Parent",
     user: "Indian Psychologist, London",
+    videoSrc :"https://drive.google.com/file/d/1VxXuMuVNpJpf12FEk5qMUgYhu1EGbxrW/preview",
   },
   {
     description:
       "I wish we were taught these skills in our childhood, I would be a different person altogether. There is so much to learn here.",
     identity: "Fellow Parent",
     user: "Father of a 5 yrs old, Pune",
+    videoSrc :"https://drive.google.com/file/d/1iYQuOhxSZmp32UMvpXfqNdDRIw7y0eXv/preview",
   },
 ];
+
+
 export const faqs = [
   {
     id: 1,
@@ -2018,4 +2031,39 @@ export const ScrollCardData = [
     activityTime: "15 Mins.",
     // rating
   },
+]
+
+export const Articles = [
+  {
+    title: "23% kids have mental wellness issue",
+    description: "Studies indicate a substantial percentage of children and adolescents struggle with mental health problems, with some research suggesting 23% of school children in India have mental health issue",
+    sourceLink : "https://pmc.ncbi.nlm.nih.gov/articles/PMC6657557/#:~:text=Several%20studies%20conducted%20at%20community,both%20rural%20and%20urban%20population",
+    imageSrc : "/images/23kids.png",
+    source : "Indian Journal of Psychology",
+    iconSrc: psychInstitute
+  },
+  {
+    title: "Suicide case percentage increase",
+    description: "There's a concerning rise in student suicides, with a 50% increase in male student suicides and a 61% increase in female student suicides over the past decade, according to the National Crime Records Bureau (NCRB)",
+    sourceLink : "https://www.indiatoday.in/education-today/featurephilia/story/mental-health-crisis-why-is-mental-health-education-important-for-students-2641662-2024-11-28",
+    imageSrc : "/images/mentalHealthedu.png",
+    source : "India Today",
+    iconSrc: indiaToday
+  },
+  {
+    title: "41% kinds think they need mental wellness",
+    description : "A survey by UNICEF and Gallup revealed that a significant minority of young people in India (41%) felt it was good to seek support for mental health problems, indicating a potential stigma and hesitancy to reach out.",
+    sourceLink: "https://www.unicef.org/india/press-releases/unicef-report-spotlights-mental-health-impact-covid-19-children-and-young-people#:~:text=Children%20in%20India%20seem%20reticent,should%20reach%20out%20to%20others",
+    imageSrc : "/images/unicef.png",
+    source :  "UNICEF",
+    iconSrc: Unicef
+  },
+  {
+    title: "30% kids facing anxiety and depression",
+    description: "Studies have shown a high prevalence of anxiety and depression among students, with some research indicating over 30% of students experience these issues.",
+    sourceLink : "https://visionias.in/current-affairs/monthly-magazine/2024-09-12/social-issues/mental-health-of-students",
+    imageSrc : "/images/mentalhealth.png",
+    source : "Vision IAS",
+    iconSrc: visionIas
+  }
 ]

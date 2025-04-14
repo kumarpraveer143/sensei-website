@@ -5,7 +5,7 @@ const WhyChooseSenseiSection = () => {
         <div className="justify-center text-center font-['Nunito'] text-xl font-bold uppercase leading-relaxed text-[#ff8b13] md:text-2xl md:leading-loose">
           Why Choose Sensei
         </div>
-        <div className="justify-center text-center font-['Nunito'] text-2xl font-black capitalize leading-8 text-slate-700 md:text-4xl md:leading-10">
+        <div className="justify-center text-center font-['Nunito'] text-2xl font-extrabold capitalize leading-8 text-slate-700 md:text-4xl md:leading-10">
           A Smarter Way to Build Emotional & Social Skills
         </div>
       </div>
