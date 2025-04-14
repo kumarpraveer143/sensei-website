@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Articles } from "@/utils/data";
 import Link from "next/link";
 
-import ParentPlaceHolder from "@/assets/parentPlaceHolder.svg?url";
+// import ParentPlaceHolder from "@/assets/parentPlaceHolder.svg?url";
 
 
 export const ArticlesSection = () => {
@@ -116,6 +116,8 @@ export const ArticlesSection = () => {
                 description={article.description} 
                 imageSrc = {article.imageSrc}
                 sourceLink = {article.sourceLink}
+                source = {article.source}
+                iconSrc = {article.iconSrc}
               />
             ))}
           </div>
@@ -129,6 +131,8 @@ export const ArticlesSection = () => {
                 description={article.description} 
                 imageSrc = {article.imageSrc}
                 sourceLink = {article.sourceLink}
+                source = {article.source}
+                iconSrc = {article.iconSrc}
               />
             ))}
           </div>
@@ -204,7 +208,7 @@ export const ArticlesSection = () => {
   );
 };
 
-const ArticleCard = ({ title, description,imageSrc,sourceLink }) => {
+const ArticleCard = ({ title, description,imageSrc,sourceLink,source, iconSrc }) => {
   return (
     <div className="article-card inline-flex w-full xs:w-64 sm:w-72 md:w-80 flex-col items-start justify-center gap-3 overflow-hidden rounded-[16px] bg-white p-3 md:p-4 shadow-[0px_4px_20px_0px_rgba(0,0,0,0.12)] flex-shrink-0 scroll-snap-align-start">
       <Image
@@ -226,15 +230,15 @@ const ArticleCard = ({ title, description,imageSrc,sourceLink }) => {
         </div>
         <div className="mt-1 md:mt-2 inline-flex items-center justify-start gap-3 md:gap-4">
           <Image
-            className="h-8 w-8 md:h-9 md:w-9 rounded-[30px] outline outline-2 outline-[#ff8b13]"
-            src={ParentPlaceHolder}
+            className="h-8 w-8 md:h-9 md:w-9 rounded-[30px]"
+            src={iconSrc}
             alt="Author"
             width={36}
             height={36}
           />
           <div className="inline-flex flex-col items-start justify-start gap-1">
             <div className="justify-start font-Nunito text-sm md:text-base font-bold text-slate-700">
-              Indian Journal of Psychiatry
+              {source}
             </div>
           </div>
         </div>

@@ -53,6 +53,7 @@ const TestimonialCard = ({ content, name, title, videoSrc }) => {
                 muted
                 className="h-full w-full object-cover"
               />
+              
             )}
           </div>
         </div>
