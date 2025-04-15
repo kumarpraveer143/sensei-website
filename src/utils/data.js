@@ -818,12 +818,12 @@ export const subjectData = [
     innerSubjectDivColor: "#FFD9B2",
     innerBarColor: "#FF8B13",
   },
-  {
-    subjectName: "Moral Guidence",
-    percentage: "71%",
-    innerSubjectDivColor: "#FCEECA",
-    innerBarColor: "#FCD97D",
-  },
+  // {
+  //   subjectName: "Moral Guidence",
+  //   percentage: "71%",
+  //   innerSubjectDivColor: "#FCEECA",
+  //   innerBarColor: "#FCD97D",
+  // },
 ];
 
 export const counsellorData = [
@@ -2065,5 +2065,28 @@ export const Articles = [
     imageSrc : "/images/mentalhealth.png",
     source : "Vision IAS",
     iconSrc: visionIas
+  }
+]
+
+export const urlParamSubjectData = [
+  {
+    key: "emotionalwellness",
+    title: "Emotional Well-Being",
+    description : `Hey there, feeling fanatics! Are you ready to embark on an
+                    epic adventure and become a Master of Feelings? This
+                    amazing journey will take you deep into the wonderful
+                    world of emotions, where you'll learn all about
+                    expressing yourself, recognizing emotions in others, and
+                    understanding those complex feelings we all experience.`
+  },
+  {
+    key: "self-social-awareness",
+    title: "Self Social Awareness",
+    description : `Hey there, feeling fanatics! Are you ready to embark on an
+                    epic adventure and become a Master of Feelings? This
+                    amazing journey will take you deep into the wonderful
+                    world of emotions, where you'll learn all about
+                    expressing yourself, recognizing emotions in others, and
+                    understanding those complex feelings we all experience.`
   }
 ]

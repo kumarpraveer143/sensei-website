@@ -1,6 +1,9 @@
 import React from "react";
 import { subjects } from "@/utils/data";
 import { slug } from "@/utils/logic";
+// import { SubjectSection } from "@/components/SubjectSection";
+// import Subject from "@/components/Modules/Subject";
+// import { SubjectSection } from "@/components/SubjectSection";
 
 export function generateMetadata({ params: { sub } }) {
   const subject = subjects.find((s) => slug(s?.slug || s?.title) === sub);
@@ -20,7 +23,8 @@ export function generateMetadata({ params: { sub } }) {
   };
 }
 const layout = ({ children }) => {
-  return <>{children}</>;
+  return <>{children}
+  </>;
 };
 
 export default layout;

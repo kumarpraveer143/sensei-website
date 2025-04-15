@@ -53,17 +53,11 @@ const Navbar = () => {
           <ul className="m-6 inline-flex gap-6 font-['Nunito'] text-lg font-bold text-white">
             {navLinks.map((link) =>
               link.title === "Curriculum" ? (
-                // Curriculum with dropdown
+                // Curriculum with dropdown (no link)
                 <li key={link.index} className="group/sub relative">
-                  <Link
-                    href={link.link}
-                    className={`${
-                      pathname.startsWith(link.link) ? "text-primary" : ""
-                    } button_text`}
-                  >
+                  <span className="button_text cursor-pointer">
                     {link.title}
-                  </Link>
-
+                  </span>
                   {/* Dropdown */}
                   <div className="flex max-h-0 flex-col overflow-hidden whitespace-nowrap rounded-lg bg-[#2C3D68] text-white transition-all group-hover/sub:max-h-fit group-hover/sub:p-2 min-[850px]:absolute">
                     {subjects.map((subject, index) => (
@@ -129,7 +123,7 @@ const Navbar = () => {
                 <User className="mr-7 h-8 min-w-8 rounded-full bg-white p-1 text-[#FF8B13]" />
                 <div className="group absolute left-7 flex align-middle">
                   <DownArrow className="m-4 h-4 -rotate-90 cursor-pointer text-primary transition-all group-hover:rotate-90" />
-                  <div className="absolute -right-4 top-10 z-[100] hidden w-max flex-col gap-6 rounded-xl bg-[#FF8B13] md:bg-[#2C3D68] p-2 group-hover:flex md:px-4 md:py-3">
+                  <div className="absolute -right-4 top-10 z-[100] hidden w-max flex-col gap-6 rounded-xl bg-[#FF8B13] p-2 group-hover:flex md:bg-[#2C3D68] md:px-4 md:py-3">
                     <Link
                       href={"/dashboard"}
                       className="flex w-full cursor-pointer items-center gap-5"
@@ -191,12 +185,10 @@ const Navbar = () => {
             <ul className="flex flex-col px-4 py-2 font-['Nunito'] text-lg font-bold text-white">
               {navLinks.map((link) =>
                 link.title === "Curriculum" ? (
-                  // Mobile Curriculum with dropdown
+                  // Mobile Curriculum with dropdown (no link)
                   <li key={link.index} className="py-2">
                     <div
-                      className={`flex items-center justify-between ${
-                        pathname.startsWith(link.link) ? "text-primary" : ""
-                      } cursor-pointer`}
+                      className="flex cursor-pointer items-center justify-between"
                       onClick={toggleSubjectDropdown}
                     >
                       <span>{link.title}</span>
