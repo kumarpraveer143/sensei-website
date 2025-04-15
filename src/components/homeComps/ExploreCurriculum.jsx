@@ -50,7 +50,7 @@ const ExploreCurriculum = () => {
         </div>
 
         <div className="mt-6 md:mt-8 mb-6 md:mb-8 relative z-20">
-          <Link href="/login">
+          <Link href="/subjects/emotionalwellness">
           <button className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#ff8b13] px-4 py-3 md:px-5 md:py-3.5 shadow-[0px_1px_1px_0px_rgba(0,0,0,0.12),0px_2px_5px_0px_rgba(103,110,118,0.08)] transition-all hover:bg-amber-600">
             <span className="text-center font-['Nunito'] text-base md:text-lg font-black leading-normal text-white">
               See All

@@ -1,20 +1,17 @@
 "use client";
-import React from "react";
-import Mental from "@/assets/mental.svg";
-import Cross from "@/assets/cross1.svg";
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import addchild from "@/Images/addchild.png";
+
 import { subjects } from "@/utils/data";
 import { slug } from "@/utils/logic";
 import { notFound } from "next/navigation";
+import { SubjectSection } from "@/components/SubjectSection";
 
 const Page = ({ params: { sub } }) => {
   const [checkedId, setCheckedId] = useState(0);
   const subject = subjects.find((s) => slug(s?.slug || s?.title) === sub);
   if (!subject) return notFound();
-
+  console.log(sub)
   return (
     <div className="container mx-auto p-4 py-10 md:py-20 xl:max-w-[1300px]">
       <div className="mx-auto flex h-min w-fit items-end max-sm:flex-col">
@@ -79,23 +76,7 @@ const Page = ({ params: { sub } }) => {
           />
         )}
       </div>
-      <div className="relative mx-auto mt-10 h-fit max-w-[min(1100px,90vw)] rounded-2xl bg-gradient-to-t from-[#EF5F3D] via-[#F97A23] to-[#F8BF3B] p-4 shadow-lg">
-        <h1 className="h3 mb-4 w-[80%] text-left font-Nunito font-bold text-white">
-          Teach your kid the Life-skill education they need.{" "}
-        </h1>
-        <Link
-          href={"/child-details"}
-          className="mr-auto flex h-fit w-fit cursor-pointer items-center rounded-[40px] bg-white p-2 px-4 font-Nunito text-base font-bold text-black md:px-8 md:py-6 md:text-xl"
-        >
-          Enroll at Rs. 99{" "}
-        </Link>
-        <Image
-          src={addchild}
-          alt="addchild"
-          sizes="auto"
-          className="absolute -right-5 bottom-0 -z-[0] max-h-[120%] max-w-[min(298px,50%)] object-contain"
-        />
-      </div>
+      <SubjectSection sub={sub} />
     </div>
   );
 };
