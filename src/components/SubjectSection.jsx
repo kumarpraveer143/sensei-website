@@ -3,26 +3,30 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import ParentPlaceholder from "@/assets/parentPlaceHolder.svg?url";
+import Person1 from "@/assets/people/person1.svg?url";
+import Person2 from "@/assets/people/person2.svg?url";
+import Person3 from "@/assets/people/person3.svg?url";
+import Person4 from "@/assets/people/person4.svg?url";
+
 import addchild from "@/Images/addchild.png";
 import { ScrollButtonData } from "@/utils/data";
 import { urlParamSubjectData } from "@/utils/data";
 
-export const SubjectSection = ({sub}) => {
-    // console.log("sub", sub);
-    // console.log("urlParamSubjectData", urlParamSubjectData);
-    const subjectData = urlParamSubjectData.find((item) => item.key == sub);
-    // console.log("subjectData", subjectData);
-    return (
+export const SubjectSection = ({ sub }) => {
+  // console.log("sub", sub);
+  // console.log("urlParamSubjectData", urlParamSubjectData);
+  const subjectData = urlParamSubjectData.find((item) => item.key == sub);
+  // console.log("subjectData", subjectData);
+  return (
     <section className="px-4 md:px-6 lg:px-8">
-      <div className="mt-6 md:mt-16 flex flex-col items-center justify-center gap-8">
+      <div className="mt-6 flex flex-col items-center justify-center gap-8 md:mt-16">
         {/* First Section with Subject Info and CTA */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
           {/* Subject Info */}
-          <div className="sub-name w-full flex justify-center">
-            <div className="w-full max-w-lg flex flex-col items-center md:items-start justify-start gap-5 rounded-xl px-4 py-4">
-              <div className="flex flex-col items-center md:items-start justify-center gap-4 w-full">
-                <div className="flex items-center justify-center md:justify-start gap-2">
+          <div className="sub-name flex w-full justify-center">
+            <div className="flex w-full max-w-lg flex-col items-center justify-start gap-5 rounded-xl px-4 py-4 md:items-start">
+              <div className="flex w-full flex-col items-center justify-center gap-4 md:items-start">
+                <div className="flex items-center justify-center gap-2 md:justify-start">
                   <div className="flex h-8 w-8 items-center justify-center gap-1 overflow-hidden rounded-[3px] bg-white px-px py-[0.75px]">
                     <svg
                       width="18"
@@ -43,17 +47,17 @@ export const SubjectSection = ({sub}) => {
                     5-10 Years
                   </div>
                 </div>
-                <div className="flex flex-col items-center md:items-start justify-start gap-4 w-full">
-                  <div className="flex flex-col items-center md:items-start justify-start gap-2 w-full">
-                    <div className="font-['Nunito'] text-2xl md:text-4xl font-black text-[#2c3d68] text-center md:text-left">
+                <div className="flex w-full flex-col items-center justify-start gap-4 md:items-start">
+                  <div className="flex w-full flex-col items-center justify-start gap-2 md:items-start">
+                    <div className="text-center font-['Nunito'] text-2xl font-black text-[#2c3d68] md:text-left md:text-4xl">
                       {subjectData.title}
                     </div>
-                    <div className="font-['Nunito'] text-base font-bold text-stone-500 text-center md:text-left">
+                    <div className="text-center font-['Nunito'] text-base font-bold text-stone-500 md:text-left">
                       {subjectData.description}
                     </div>
                   </div>
-                  <div className="flex flex-col items-center md:items-start justify-start gap-2">
-                    <div className="flex items-center justify-center md:justify-start gap-1">
+                  <div className="flex flex-col items-center justify-start gap-2 md:items-start">
+                    <div className="flex items-center justify-center gap-1 md:justify-start">
                       <div className="font-['Nunito'] text-lg font-bold text-stone-500">
                         Interactive Activity :
                       </div>
@@ -61,7 +65,7 @@ export const SubjectSection = ({sub}) => {
                         120+
                       </div>
                     </div>
-                    <div className="flex items-center justify-center md:justify-start gap-1">
+                    <div className="flex items-center justify-center gap-1 md:justify-start">
                       <div className="font-['Nunito'] text-lg font-bold text-stone-500">
                         Gamified Activity :
                       </div>
@@ -71,33 +75,33 @@ export const SubjectSection = ({sub}) => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center justify-between w-full">
+                <div className="flex w-full items-center justify-between">
                   <div className="flex items-center justify-start gap-1">
                     <div className="flex w-20 items-center justify-between">
                       <Image
                         className="h-7 w-7 rounded-full"
-                        src={ParentPlaceholder}
+                        src={Person1}
                         width={30}
                         height={30}
                         alt="placeholder"
                       />
                       <Image
                         className="-ml-3 h-7 w-7 rounded-full"
-                        src={ParentPlaceholder}
+                        src={Person2}
                         width={30}
                         height={30}
                         alt="placeholder"
                       />
                       <Image
                         className="-ml-3 h-7 w-7 rounded-full"
-                        src={ParentPlaceholder}
+                        src={Person3}
                         width={30}
                         height={30}
                         alt="placeholder"
                       />
                       <Image
                         className="-ml-3 h-7 w-7 rounded-full"
-                        src={ParentPlaceholder}
+                        src={Person4}
                         width={30}
                         height={30}
                         alt="placeholder"
@@ -130,14 +134,14 @@ export const SubjectSection = ({sub}) => {
           </div>
 
           {/* CTA Section */}
-          <div className="CTA-section w-full flex justify-center">
-            <div className="relative w-full max-w-lg h-96 rounded-2xl bg-gradient-to-t from-[#EF5F3D] via-[#F97A23] to-[#F8BF3B] p-4 shadow-lg">
-              <h1 className="h3 mb-4 w-[80%] text-left font-Nunito font-bold text-white">
+          <div className="CTA-section flex justify-center md:w-full">
+            <div className="relative h-64 w-full max-w-lg rounded-2xl bg-gradient-to-t from-[#EF5F3D] via-[#F97A23] to-[#F8BF3B] p-4 shadow-lg md:h-96">
+              <h1 className="mb-2 w-[80%] text-left font-Nunito text-xl font-bold text-white md:mb-4 md:text-2xl">
                 Teach your kid the Life-skill education they need.{" "}
               </h1>
               <Link
                 href={"/child-details"}
-                className="mr-auto flex h-fit w-fit cursor-pointer items-center rounded-[40px] bg-white p-2 px-4 font-Nunito text-base font-bold text-black md:px-6 md:py-4 md:text-xl"
+                className="mr-auto flex h-fit w-fit cursor-pointer items-center rounded-[40px] bg-white p-2 px-3 font-Nunito text-sm font-bold text-black md:px-6 md:py-4 md:text-xl"
               >
                 Enroll Your Child
               </Link>
@@ -145,19 +149,18 @@ export const SubjectSection = ({sub}) => {
                 src={addchild}
                 alt="addchild"
                 sizes="auto"
-                className="absolute bottom-0 right-5 -z-[0] max-h-[120%] max-w-[min(298px,50%)] object-contain"
+                className="absolute bottom-0 right-3 -z-[0] max-h-[110%] max-w-[min(200px,45%)] object-contain md:right-5 md:max-h-[120%] md:max-w-[min(298px,50%)]"
               />
             </div>
           </div>
         </div>
-
         {/* Subject Buttons Section */}
-        <div className="subjects w-full max-w-6xl mx-auto px-4">
-          <div className="flex flex-col items-center justify-center gap-6 w-full">
+        <div className="subjects mx-auto w-full max-w-6xl px-4">
+          <div className="flex w-full flex-col items-center justify-center gap-6">
             {ScrollButtonData.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-3 w-full rounded-[58px] py-2 md:py-4 px-4 md:px-6 lg:px-10 outline outline-[3px] outline-offset-[-3px] outline-orange-300"
+                className="flex w-full items-center gap-3 rounded-[58px] px-4 py-2 outline outline-[3px] outline-offset-[-3px] outline-orange-300 md:px-6 md:py-4 lg:px-10"
               >
                 <div className="ml-2">
                   <Image src={item.svgUrl} alt="book" />
@@ -185,13 +188,13 @@ export const SubjectSection = ({sub}) => {
                       30 Mins.
                     </div>
                   </div>
-                  <div className="font-['Nunito'] text-xl md:text-2xl font-extrabold capitalize text-[#2c3d68] text-left">
+                  <div className="text-left font-['Nunito'] text-xl font-extrabold capitalize text-[#2c3d68] md:text-2xl">
                     {item.title}
                   </div>
                 </div>
                 <Link
                   href={"/login"}
-                  className="relative h-6 w-6 md:h-8 md:w-8 overflow-hidden flex-shrink-0"
+                  className="relative h-6 w-6 flex-shrink-0 overflow-hidden md:h-8 md:w-8"
                 >
                   <svg
                     width="100%"
