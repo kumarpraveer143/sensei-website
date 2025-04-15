@@ -7,12 +7,12 @@ import personalizedInsight from "@/assets/personalizedInsight.svg?url";
 import Selfawareness from "@/assets/selfawareness.svg?url";
 import Mentalwellness from "@/assets/mental.svg?url";
 
-import Book1 from "@/assets/scrollAssets/Book-1.svg?url"
-import Book2 from "@/assets/scrollAssets/Book-3.svg?url"
-import Book3 from "@/assets/scrollAssets/Book-2.svg?url"
-import Book4 from "@/assets/scrollAssets/Book-4.svg?url"
-import Book5 from "@/assets/scrollAssets/Book-5.svg?url"
-import Book6 from "@/assets/scrollAssets/Book-6.svg?url"
+import Book1 from "@/assets/scrollAssets/Book-1.svg?url";
+import Book2 from "@/assets/scrollAssets/Book-3.svg?url";
+import Book3 from "@/assets/scrollAssets/Book-2.svg?url";
+import Book4 from "@/assets/scrollAssets/Book-4.svg?url";
+import Book5 from "@/assets/scrollAssets/Book-5.svg?url";
+import Book6 from "@/assets/scrollAssets/Book-6.svg?url";
 
 import Card1 from "@/assets/scrollAssets/Card1.svg?url";
 import Card2 from "@/assets/scrollAssets/Card2.svg?url";
@@ -292,45 +292,50 @@ export const Testimonials = [
       "Sensei has been a game-changer for my introverted child. The self and social awareness modules, designed by actual psychologists, have given them the tools to confidently approach new situations and make friends. We're so grateful for this platform that complements their regular schooling!",
     identity: "Fellow Parent",
     user: "Mother of an 8 yrs old, Pune",
-    videoSrc :"https://drive.google.com/file/d/1V1__JQjl0DZ3UJFTKWubiO0FNFFGPrke/preview",
+    videoSrc:
+      "https://drive.google.com/file/d/1V1__JQjl0DZ3UJFTKWubiO0FNFFGPrke/preview",
   },
   {
     description:
       "I love doing the activities with my parents. My parents are my best friends!",
     identity: "Young Friend",
     user: "9 yrs old, [A society] Pune",
-    videoSrc :"https://drive.google.com/file/d/1VxXuMuVNpJpf12FEk5qMUgYhu1EGbxrW/preview",
+    videoSrc:
+      "https://drive.google.com/file/d/1VxXuMuVNpJpf12FEk5qMUgYhu1EGbxrW/preview",
   },
   {
     description:
       "Sensei's activity-based learning modules are a fantastic addition to my classroom. The social-emotional learning focus is refreshing, and I've seen a positive difference in how students interact with each other.",
     identity: "Fellow Parent",
     user: "Clinical Psychologist, Raipur",
-    videoSrc :"https://drive.google.com/file/d/1iYQuOhxSZmp32UMvpXfqNdDRIw7y0eXv/preview",
+    videoSrc:
+      "https://drive.google.com/file/d/1iYQuOhxSZmp32UMvpXfqNdDRIw7y0eXv/preview",
   },
   {
     description:
       "Sensei is a fantastic fit for school with no compromise. The program aligns perfectly with NEP 2020 guidelines and this is what we were looking for.",
     identity: "Fellow Parent",
     user: "School Admin, Pune",
-    videoSrc :"https://drive.google.com/file/d/1V1__JQjl0DZ3UJFTKWubiO0FNFFGPrke/preview",
+    videoSrc:
+      "https://drive.google.com/file/d/1V1__JQjl0DZ3UJFTKWubiO0FNFFGPrke/preview",
   },
   {
     description:
       "As a practicing psychologist, I'm impressed by Sensei's commitment to well-being. This can be a game changer for Indian parenting specially the introduction of SEL modules",
     identity: "Fellow Parent",
     user: "Indian Psychologist, London",
-    videoSrc :"https://drive.google.com/file/d/1VxXuMuVNpJpf12FEk5qMUgYhu1EGbxrW/preview",
+    videoSrc:
+      "https://drive.google.com/file/d/1VxXuMuVNpJpf12FEk5qMUgYhu1EGbxrW/preview",
   },
   {
     description:
       "I wish we were taught these skills in our childhood, I would be a different person altogether. There is so much to learn here.",
     identity: "Fellow Parent",
     user: "Father of a 5 yrs old, Pune",
-    videoSrc :"https://drive.google.com/file/d/1iYQuOhxSZmp32UMvpXfqNdDRIw7y0eXv/preview",
+    videoSrc:
+      "https://drive.google.com/file/d/1iYQuOhxSZmp32UMvpXfqNdDRIw7y0eXv/preview",
   },
 ];
-
 
 export const faqs = [
   {
@@ -398,32 +403,32 @@ export const faqs = [
 ];
 export const navLinks = [
   {
-    index:1,
+    index: 1,
     title: "Home",
     link: "/",
   },
   {
-    index:2,
+    index: 2,
     title: "About Us",
     link: "/about",
   },
   {
-    index:3,
+    index: 3,
     title: "Pricing",
     link: "/pricing",
   },
   {
-    index:4,
+    index: 4,
     title: "Contact us",
     link: "/contact",
   },
   {
-    index:5,
+    index: 5,
     title: "Blogs",
     link: "/blogs",
   },
   {
-    index:6,
+    index: 6,
     title: "Curriculum",
     link: "/subjects",
   },
@@ -1976,35 +1981,34 @@ export const ScrollButtonData = [
   {
     svgUrl: Book1,
     title: "Understanding Emotions",
-    activityTime: "30 Mins."
+    activityTime: "30 Mins.",
   },
   {
     svgUrl: Book2,
     title: "Building Self Esteem",
-    activityTime: "30 Mins."
+    activityTime: "30 Mins.",
   },
   {
     svgUrl: Book3,
     title: "Social Skills and Empathy",
-    activityTime: "30 Mins."
+    activityTime: "30 Mins.",
   },
   {
     svgUrl: Book4,
     title: "Coping With Daily Stressors",
-    activityTime: "30 Mins."
+    activityTime: "30 Mins.",
   },
   {
     svgUrl: Book5,
     title: "Healthy Habits",
-    activityTime: "30 Mins."
+    activityTime: "30 Mins.",
   },
   {
     svgUrl: Book6,
     title: "Building Resilience",
-    activityTime: "30 Mins."
-  }
-]
-
+    activityTime: "30 Mins.",
+  },
+];
 
 export const ScrollCardData = [
   {
@@ -2031,62 +2035,69 @@ export const ScrollCardData = [
     activityTime: "15 Mins.",
     // rating
   },
-]
+];
 
 export const Articles = [
   {
     title: "23% kids have mental wellness issue",
-    description: "Studies indicate a substantial percentage of children and adolescents struggle with mental health problems, with some research suggesting 23% of school children in India have mental health issue",
-    sourceLink : "https://pmc.ncbi.nlm.nih.gov/articles/PMC6657557/#:~:text=Several%20studies%20conducted%20at%20community,both%20rural%20and%20urban%20population",
-    imageSrc : "/images/23kids.png",
-    source : "Indian Journal of Psychology",
-    iconSrc: psychInstitute
+    description:
+      "Studies indicate a substantial percentage of children and adolescents struggle with mental health problems, with some research suggesting 23% of school children in India have mental health issue",
+    sourceLink:
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC6657557/#:~:text=Several%20studies%20conducted%20at%20community,both%20rural%20and%20urban%20population",
+    imageSrc: "/images/23kids.png",
+    source: "Indian Journal of Psychology",
+    iconSrc: psychInstitute,
   },
   {
     title: "Suicide case percentage increase",
-    description: "There's a concerning rise in student suicides, with a 50% increase in male student suicides and a 61% increase in female student suicides over the past decade, according to the National Crime Records Bureau (NCRB)",
-    sourceLink : "https://www.indiatoday.in/education-today/featurephilia/story/mental-health-crisis-why-is-mental-health-education-important-for-students-2641662-2024-11-28",
-    imageSrc : "/images/mentalHealthedu.png",
-    source : "India Today",
-    iconSrc: indiaToday
+    description:
+      "There's a concerning rise in student suicides, with a 50% increase in male student suicides and a 61% increase in female student suicides over the past decade, according to the National Crime Records Bureau (NCRB)",
+    sourceLink:
+      "https://www.indiatoday.in/education-today/featurephilia/story/mental-health-crisis-why-is-mental-health-education-important-for-students-2641662-2024-11-28",
+    imageSrc: "/images/mentalHealthedu.png",
+    source: "India Today",
+    iconSrc: indiaToday,
   },
   {
     title: "41% kinds think they need mental wellness",
-    description : "A survey by UNICEF and Gallup revealed that a significant minority of young people in India (41%) felt it was good to seek support for mental health problems, indicating a potential stigma and hesitancy to reach out.",
-    sourceLink: "https://www.unicef.org/india/press-releases/unicef-report-spotlights-mental-health-impact-covid-19-children-and-young-people#:~:text=Children%20in%20India%20seem%20reticent,should%20reach%20out%20to%20others",
-    imageSrc : "/images/unicef.png",
-    source :  "UNICEF",
-    iconSrc: Unicef
+    description:
+      "A survey by UNICEF and Gallup revealed that a significant minority of young people in India (41%) felt it was good to seek support for mental health problems, indicating a potential stigma and hesitancy to reach out.",
+    sourceLink:
+      "https://www.unicef.org/india/press-releases/unicef-report-spotlights-mental-health-impact-covid-19-children-and-young-people#:~:text=Children%20in%20India%20seem%20reticent,should%20reach%20out%20to%20others",
+    imageSrc: "/images/unicef.png",
+    source: "UNICEF",
+    iconSrc: Unicef,
   },
   {
     title: "30% kids facing anxiety and depression",
-    description: "Studies have shown a high prevalence of anxiety and depression among students, with some research indicating over 30% of students experience these issues.",
-    sourceLink : "https://visionias.in/current-affairs/monthly-magazine/2024-09-12/social-issues/mental-health-of-students",
-    imageSrc : "/images/mentalhealth.png",
-    source : "Vision IAS",
-    iconSrc: visionIas
-  }
-]
+    description:
+      "Studies have shown a high prevalence of anxiety and depression among students, with some research indicating over 30% of students experience these issues.",
+    sourceLink:
+      "https://visionias.in/current-affairs/monthly-magazine/2024-09-12/social-issues/mental-health-of-students",
+    imageSrc: "/images/mentalhealth.png",
+    source: "Vision IAS",
+    iconSrc: visionIas,
+  },
+];
 
 export const urlParamSubjectData = [
   {
     key: "emotionalwellness",
     title: "Emotional Well-Being",
-    description : `Hey there, feeling fanatics! Are you ready to embark on an
+    description: `Hey there, feeling fanatics! Are you ready to embark on an
                     epic adventure and become a Master of Feelings? This
                     amazing journey will take you deep into the wonderful
                     world of emotions, where you'll learn all about
                     expressing yourself, recognizing emotions in others, and
-                    understanding those complex feelings we all experience.`
+                    understanding those complex feelings we all experience.`,
   },
   {
     key: "self-social-awareness",
     title: "Self Social Awareness",
-    description : `Hey there, feeling fanatics! Are you ready to embark on an
-                    epic adventure and become a Master of Feelings? This
-                    amazing journey will take you deep into the wonderful
-                    world of emotions, where you'll learn all about
-                    expressing yourself, recognizing emotions in others, and
-                    understanding those complex feelings we all experience.`
-  }
-]
+    description: `Get ready to unlock the superpowers of self-reflection and empathy!
+                  On this exciting quest, you'll learn how to understand what makes you tick,
+                  recognize how others are feeling, and build strong, respectful relationships.
+                  From reading facial expressions to understanding different perspectives, you'll
+                  gain the tools to become a true empathy expert and a friendship champion!`,
+  },
+];
