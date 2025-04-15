@@ -12,6 +12,16 @@ const Page = ({ params: { sub } }) => {
   const subject = subjects.find((s) => slug(s?.slug || s?.title) === sub);
   if (!subject) return notFound();
   console.log(sub)
+
+  // Function to toggle checkedId - if same item clicked, close it by setting to -1
+  const toggleCheckedId = (index) => {
+    if (checkedId === index) {
+      setCheckedId(-1);
+    } else {
+      setCheckedId(index);
+    }
+  };
+
   return (
     <div className="container mx-auto p-4 py-10 md:py-20 xl:max-w-[1300px]">
       <div className="mx-auto flex h-min w-fit items-end max-sm:flex-col">
@@ -34,7 +44,7 @@ const Page = ({ params: { sub } }) => {
           {subject.concerns.map((concern, index) => (
             <div
               key={index}
-              onClick={() => setCheckedId(index)}
+              onClick={() => toggleCheckedId(index)}
               className={`flex cursor-pointer flex-col rounded-[10px] bg-secondary pb-4 shadow-cs`}
             >
               <div
