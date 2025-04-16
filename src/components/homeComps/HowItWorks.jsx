@@ -84,6 +84,7 @@ export const HowItWorks = () => {
               className="transition-all duration-500 ease-in-out"
               width={500}
               height={500}
+              fetchPriority="low"
             />
           </div>
         )}
@@ -131,6 +132,7 @@ export const HowItWorks = () => {
                   className="transition-all duration-500 ease-in-out"
                   width={500}
                   height={500}
+                  fetchPriority="low"
                 />
               </div>
             )}

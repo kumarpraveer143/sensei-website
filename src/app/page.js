@@ -6,7 +6,6 @@ import Comments from "../components/homeComps/Comments";
 import HeroSection from "../components/homeComps/HeroSection";
 import Rating from "@/components/homeComps/Rating";
 import WhatIsSenseiSection from "@/components/homeComps/WhatIsSensei";
-// import ExploreCurriculum from "@/components/homeComps/ExploreCurriculum";
 import WhyChooseSenseiSection from "@/components/homeComps/WhyChooseSensei";
 import { HowItWorks } from "@/components/homeComps/HowItWorks";
 import { TestimonialsSection } from "@/components/homeComps/Testimonials";
@@ -18,7 +17,6 @@ export default function Home() {
       <HeroSection />
       <Rating />
       <WhatIsSenseiSection />
-      {/* <ExploreCurriculum /> */}
       <WhyChooseSenseiSection />
       <HowItWorks />
       <TestimonialsSection />

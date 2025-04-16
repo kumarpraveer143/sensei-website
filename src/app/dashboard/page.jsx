@@ -146,7 +146,7 @@ const UserDashboard = () => {
   }
 
   return (
-    <div className="hh-screen container relative mx-auto flex w-fit flex-col items-center gap-10 from-gray-200 to-white p-4 py-10 sm:py-20">
+    <div className="h-screen container relative mx-auto flex w-fit flex-col items-center gap-10 from-gray-200 to-white p-4 py-10 sm:py-20 my-4 md:my-8">
       <Background1 />
       <div className="flex flex-wrap justify-center gap-5 md:gap-10">
         <div className="flex flex-col items-start gap-1 py-4">

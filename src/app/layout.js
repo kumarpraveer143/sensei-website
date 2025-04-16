@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import logo from "@/assets/Logo.svg?url";
+// import logo from "@/assets/Logo.svg?url";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import StoreProvider from "@/Redux/Provider";

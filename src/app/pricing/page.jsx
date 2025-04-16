@@ -17,7 +17,7 @@ const Page = () => {
       style={{
         backgroundImage: `url(${ABLTopology.src})`,
       }}
-      className="flex flex-col items-center gap-10 px-5 py-20"
+      className="flex flex-col items-center gap-10 px-5 py-20 mt-4 md:mt-8"
     >
       <div className="relative flex flex-col items-center gap-2">
         <Stars />
