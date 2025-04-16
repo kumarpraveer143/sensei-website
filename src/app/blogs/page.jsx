@@ -5,7 +5,7 @@ import Blog from "@/components/miniComps/Blog";
 import { slug } from "@/utils/logic";
 const page = () => {
   return (
-    <div className="container mx-auto flex flex-wrap gap-4 p-4 py-20">
+    <div className="container mx-auto flex flex-wrap gap-4 p-4 py-20 mt-4 md:mt-8">
       <h5 className="h5_b underline-grad relative w-full text-[#333333]">
         Blogs & News
       </h5>

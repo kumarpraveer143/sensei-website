@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between bg-[#2C3C68] px-4 md:px-10">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-[#2C3C68] px-4 md:px-10 mb-4">
         <div className="m-2 md:m-4">
           <Link href={"/"}>
             <MainLogo className="relative h-10 w-20 overflow-hidden text-white md:h-14 md:w-28" />

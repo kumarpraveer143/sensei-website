@@ -10,7 +10,7 @@ import ParentPlaceHolder from "@/assets/parentPlaceHolder.svg?url";
 // TestimonialCard Component
 const TestimonialCard = ({ content, name, title, videoSrc }) => {
   return (
-    <div className="mx-auto w-full lg:h-[350px] h-[400px] rounded-2xl bg-white p-4 md:p-10 shadow-md">
+    <div className="mx-auto w-full lg:h-[350px] h-[450px] rounded-2xl bg-white py-6 px-4 md:p-10 shadow-md">
       <div className="relative">
         <div className="absolute -top-8 md:-top-10 right-10 md:left-10 size-8 md:size-12">
           <svg
@@ -43,7 +43,7 @@ const TestimonialCard = ({ content, name, title, videoSrc }) => {
       </div>
       
       <div className="my-4 grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-5 h-full">
-        <div className="md:col-span-2 h-full">
+        <div className="md:col-span-2 h-full min-h-32">
           <div className="h-full w-full overflow-hidden rounded-xl bg-zinc-200">
             {(
               <iframe
@@ -51,9 +51,8 @@ const TestimonialCard = ({ content, name, title, videoSrc }) => {
                 autoPlay
                 loop
                 muted
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover min-h-32"
               />
-              
             )}
           </div>
         </div>

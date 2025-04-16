@@ -293,7 +293,7 @@ export const Testimonials = [
     identity: "Fellow Parent",
     user: "Mother of an 8 yrs old, Pune",
     videoSrc:
-      "https://drive.google.com/file/d/1V1__JQjl0DZ3UJFTKWubiO0FNFFGPrke/preview",
+      "https://youtube.com/embed/9eWzJqNts-w?feature=share",
   },
   {
     description:
@@ -301,7 +301,7 @@ export const Testimonials = [
     identity: "Young Friend",
     user: "9 yrs old, [A society] Pune",
     videoSrc:
-      "https://drive.google.com/file/d/1VxXuMuVNpJpf12FEk5qMUgYhu1EGbxrW/preview",
+      "https://youtube.com/embed/ySwGQrdxLHo?feature=share",
   },
   {
     description:
@@ -309,7 +309,7 @@ export const Testimonials = [
     identity: "Fellow Parent",
     user: "Clinical Psychologist, Raipur",
     videoSrc:
-      "https://drive.google.com/file/d/1iYQuOhxSZmp32UMvpXfqNdDRIw7y0eXv/preview",
+      "https://youtube.com/embed/qfXlBxsnYW4?feature=share",
   },
   {
     description:
@@ -317,15 +317,15 @@ export const Testimonials = [
     identity: "Fellow Parent",
     user: "School Admin, Pune",
     videoSrc:
-      "https://drive.google.com/file/d/1V1__JQjl0DZ3UJFTKWubiO0FNFFGPrke/preview",
-  },
+      "https://youtube.com/embed/9eWzJqNts-w?feature=share",
+    },
   {
     description:
       "As a practicing psychologist, I'm impressed by Sensei's commitment to well-being. This can be a game changer for Indian parenting specially the introduction of SEL modules",
     identity: "Fellow Parent",
     user: "Indian Psychologist, London",
     videoSrc:
-      "https://drive.google.com/file/d/1VxXuMuVNpJpf12FEk5qMUgYhu1EGbxrW/preview",
+      "https://youtube.com/embed/ySwGQrdxLHo?feature=share",
   },
   {
     description:
@@ -333,7 +333,7 @@ export const Testimonials = [
     identity: "Fellow Parent",
     user: "Father of a 5 yrs old, Pune",
     videoSrc:
-      "https://drive.google.com/file/d/1iYQuOhxSZmp32UMvpXfqNdDRIw7y0eXv/preview",
+      "https://youtube.com/embed/qfXlBxsnYW4?feature=share",
   },
 ];
 

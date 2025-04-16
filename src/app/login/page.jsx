@@ -72,7 +72,7 @@ const page = () => {
   // };
 
   return (
-    <div className="max-w-screen h-full overflow-hidden">
+    <div className="max-w-screen h-full overflow-hidden mt-6 md:mt-12">
       <div className="flex flex-col sm:flex-row sm:items-center sm:gap-20">
         <div className="flex h-full max-w-[calc(100vw-100px)] items-center max-sm:order-1 max-sm:mb-10 sm:w-1/2">
           <Image

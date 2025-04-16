@@ -21,7 +21,7 @@ const Footer = () => {
           src={FooterImage}
           alt="footer"
           className="-z-10 -mb-5 items-center justify-center md:-mb-14 md:ml-5"
-          priority
+          fetchPriority="low"
         />
       </div>
       <div className="flex flex-col flex-wrap justify-center gap-4 rounded-[calc(4vw)] bg-grad_1 p-4 text-xs font-normal text-slate-200 sm:flex-row sm:flex-nowrap sm:gap-10 md:rounded-b-none md:text-base lg:gap-20">
