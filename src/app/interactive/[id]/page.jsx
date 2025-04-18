@@ -99,7 +99,7 @@ const Page = ({ params: { id } }) => {
         <>
           <div
             style={{ backgroundImage: `url(${Activitybg.src})` }}
-            className="container relative mx-auto mb-5 flex h-fit max-w-[1000px] flex-col gap-8 p-5"
+            className="container relative mx-auto mb-5 flex h-fit max-w-[1000px] flex-col gap-8 p-5 mt-5"
           >
             {infoOpen && (
               <Info
@@ -109,7 +109,7 @@ const Page = ({ params: { id } }) => {
                 action={() => setInfoOpen((pre) => !pre)}
               />
             )}
-            <div className="flex items-center justify-center gap-4">
+            <div className="mt-8 md:mt-16 flex items-center justify-center gap-4">
               <Image src={cross} onClick={() => Router.back()} alt="cross" />
               <div className="flex w-full gap-1 p-2 sm:gap-2">
                 {Array.from({
