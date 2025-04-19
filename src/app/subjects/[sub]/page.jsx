@@ -4,9 +4,8 @@ import { useState } from "react";
 
 import { subjects } from "@/utils/data";
 import { slug } from "@/utils/logic";
-import { notFound } from "next/navigation";
 import { SubjectSection } from "@/components/SubjectSection";
-import { useRouter } from "next/navigation";
+import { useRouter,notFound } from "next/navigation";
 // import Link from "next/link";
 
 const Page = ({ params: { sub } }) => {
@@ -26,7 +25,7 @@ const Page = ({ params: { sub } }) => {
 
   return (
     <div className="container mt-6 md:mt-12 mx-auto p-2 py-10 md:py-20 xl:max-w-[1300px]">
-      <button onClick={Router.back()} className="inline-flex items-center justify-start">
+      <button onClick={() => {Router.back()} } className="inline-flex items-center justify-start">
         <svg
           width="50"
           height="25"
