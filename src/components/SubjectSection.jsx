@@ -1,5 +1,5 @@
-"use client";
-import { useState } from "react";
+// "use client";
+// import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,14 +9,11 @@ import Person3 from "@/assets/people/person3.svg?url";
 import Person4 from "@/assets/people/person4.svg?url";
 
 import addchild from "@/Images/addchild.png";
-import { ScrollButtonData } from "@/utils/data";
+import { ScrollButtonData,socialAwarenessButtonData } from "@/utils/data";
 import { urlParamSubjectData } from "@/utils/data";
 
 export const SubjectSection = ({ sub }) => {
-  // console.log("sub", sub);
-  // console.log("urlParamSubjectData", urlParamSubjectData);
   const subjectData = urlParamSubjectData.find((item) => item.key == sub);
-  // console.log("subjectData", subjectData);
   return (
     <section className="px-4 md:px-6 lg:px-8">
       <div className="mt-6 flex flex-col items-center justify-center gap-8 md:mt-16">
@@ -155,68 +152,74 @@ export const SubjectSection = ({ sub }) => {
           </div>
         </div>
         {/* Subject Buttons Section */}
-        <div className="subjects mx-auto w-full max-w-6xl px-4">
-          <div className="flex w-full flex-col items-center justify-center gap-6">
-            {ScrollButtonData.map((item, index) => (
-              <div
-                key={index}
-                className="flex w-full items-center gap-3 rounded-[58px] px-4 py-2 outline outline-[3px] outline-offset-[-3px] outline-orange-300 md:px-6 md:py-4 lg:px-10"
-              >
-                <div className="ml-2">
-                  <Image src={item.svgUrl} alt="book" />
-                </div>
-                <div className="flex flex-1 flex-col items-start justify-start gap-1">
-                  <div className="flex items-center justify-center gap-1">
-                    <div className="flex h-6 w-6 items-center justify-center gap-1 overflow-hidden rounded-[3px] p-px">
-                      <svg
-                        width="19"
-                        height="19"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9.88574 4.16667V9.5H13.8857M17.8857 9.5C17.8857 13.9183 14.304 17.5 9.88574 17.5C5.46746 17.5 1.88574 13.9183 1.88574 9.5C1.88574 5.08172 5.46746 1.5 9.88574 1.5C14.304 1.5 17.8857 5.08172 17.8857 9.5Z"
-                          stroke="#FF8B13"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <div className="font-['Nunito'] text-base font-bold leading-none text-[#ff8b13]">
-                      30 Mins.
-                    </div>
-                  </div>
-                  <div className="text-left font-['Nunito'] text-xl font-extrabold capitalize text-[#2c3d68] md:text-2xl">
-                    {item.title}
-                  </div>
-                </div>
-                <Link
-                  href={"/login"}
-                  className="relative h-6 w-6 flex-shrink-0 overflow-hidden md:h-8 md:w-8"
-                >
+        {sub == "emotionalwellness" ? (<LinkSection data = {ScrollButtonData} />) : <LinkSection data = {socialAwarenessButtonData} />}
+      </div>
+    </section>
+  );
+};
+
+const LinkSection = ({ data }) => {
+  return (
+    <div className="subjects mx-auto w-full max-w-6xl px-4">
+      <div className="flex w-full flex-col items-center justify-center gap-6">
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="flex w-full items-center gap-3 rounded-[58px] px-4 py-2 outline outline-[3px] outline-offset-[-3px] outline-orange-300 md:px-6 md:py-4 lg:px-10"
+          >
+            <div className="ml-2">
+              <Image src={item.svgUrl} alt="book" />
+            </div>
+            <div className="flex flex-1 flex-col items-start justify-start gap-1">
+              <div className="flex items-center justify-center gap-1">
+                <div className="flex h-6 w-6 items-center justify-center gap-1 overflow-hidden rounded-[3px] p-px">
                   <svg
-                    width="100%"
-                    height="100%"
-                    viewBox="0 0 32 32"
+                    width="19"
+                    height="19"
+                    viewBox="0 0 19 19"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M18 6L28 16M28 16L18 26M28 16H4"
+                      d="M9.88574 4.16667V9.5H13.8857M17.8857 9.5C17.8857 13.9183 14.304 17.5 9.88574 17.5C5.46746 17.5 1.88574 13.9183 1.88574 9.5C1.88574 5.08172 5.46746 1.5 9.88574 1.5C14.304 1.5 17.8857 5.08172 17.8857 9.5Z"
                       stroke="#FF8B13"
-                      strokeWidth="3"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
-                </Link>
+                </div>
+                <div className="font-['Nunito'] text-base font-bold leading-none text-[#ff8b13]">
+                  30 Mins.
+                </div>
               </div>
-            ))}
+              <div className="text-left font-['Nunito'] text-xl font-extrabold capitalize text-[#2c3d68] md:text-2xl">
+                {item.title}
+              </div>
+            </div>
+            <Link
+              href={"/login"}
+              className="relative h-6 w-6 flex-shrink-0 overflow-hidden md:h-8 md:w-8"
+            >
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 6L28 16M28 16L18 26M28 16H4"
+                  stroke="#FF8B13"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
           </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };

@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Rafiki from "@/assets/rafiki.svg";
 import User from "@/assets/user.svg";
-// import MainLogo from "@/assets/mainlogo.svg";
-import MainLogo from "@/assets/OogwayIcon.svg";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -22,6 +20,8 @@ const Loading = ({ action, activity }) => {
     return activity?.outComes ? formatOutcomes(activity.outComes) : [];
   });
 
+  const [countdown, setCountdown] = useState(6);
+
   const Router = useRouter();
 
   useEffect(() => {
@@ -33,15 +33,23 @@ const Loading = ({ action, activity }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       action();
-    }, 10000);
+    }, 6500);
+
+    const countdownInterval = setInterval(() => {
+      setCountdown((prevCount) => {
+        if (prevCount <= 1) {
+          clearInterval(countdownInterval);
+          return 0;
+        }
+        return prevCount - 1;
+      });
+    }, 1000);
 
     return () => {
       clearTimeout(timeout);
+      clearInterval(countdownInterval);
     };
   }, [action]);
-
-  // console.log("activity", activity); // for debugging
-  // console.log("outcomes", outcomes); // for debugging outcomes
 
   return (
     <div className="relative mb-4 mt-20 flex h-full min-h-[90vh] flex-col gap-12">
@@ -61,8 +69,7 @@ const Loading = ({ action, activity }) => {
         />
       </svg>
 
-      <div className="center-x relative h-[150px] w-[150px]">
-        <MainLogo className="center-x absolute top-4 rounded-full border-2 border-primary bg-white text-secondary" />
+      <div className="center-x relative mt-8 h-[150px] w-[150px]">
         <svg
           className="absolute left-0 top-0 h-full w-full"
           viewBox="0 0 200 200"
@@ -106,7 +113,15 @@ const Loading = ({ action, activity }) => {
             </linearGradient>
           </defs>
         </svg>
+        
+        {/* Countdown positioned inside the loader with relative sizing */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="relative flex h-3/4 w-3/4 items-center justify-center rounded-full border-2 border-primary bg-white text-secondary">
+            <span className="text-6xl font-bold text-primary">{countdown}</span>
+          </div>
+        </div>
       </div>
+      
       <div className="mx-auto mb-20 mt-10 flex flex-col justify-center gap-2">
         <h3 className="h3 text-grad mx-auto font-bold">
           {activity?.name || "Loading Activity..."}

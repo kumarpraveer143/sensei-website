@@ -37,7 +37,7 @@ export const Home = ({ params: { Id } }) => {
         backgroundImage: `url(${introbg.src})`,
         backgroundSize: "cover",
       }}
-      className="container mx-auto mb-20 flex flex-wrap justify-between gap-5 p-4"
+      className="mt-8 md:mt-16 container mx-auto mb-20 flex flex-wrap justify-between gap-5 p-4"
     >
       {/* <Print data={activities} /> */}
       {/* <Print data={interactivieActivities} /> */}
@@ -52,7 +52,7 @@ export const Home = ({ params: { Id } }) => {
               Interactive Activities
             </h4>
 
-            <div className="flex gap-4 overflow-x-scroll">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-x-scroll">
               {activities?.interactiveActivities?.map((activity, index) => (
                 <ActivityCard key={index} activity={activity} />
               ))}

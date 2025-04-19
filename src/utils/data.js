@@ -14,6 +14,13 @@ import Book4 from "@/assets/scrollAssets/Book-4.svg?url";
 import Book5 from "@/assets/scrollAssets/Book-5.svg?url";
 import Book6 from "@/assets/scrollAssets/Book-6.svg?url";
 
+import socBook1 from "@/assets/scrollAssets/personalBoundaries.svg?url";
+import socBook2 from "@/assets/scrollAssets/Diversity.svg?url";
+import socBook3 from "@/assets/scrollAssets/relationCommunication.svg?url";
+import socBook4 from "@/assets/scrollAssets/personalHygiene.svg?url";
+import socBook5 from "@/assets/scrollAssets/safeTouch.svg?url";
+import socBook6 from "@/assets/scrollAssets/onlineSafety.svg?url";
+
 import Card1 from "@/assets/scrollAssets/Card1.svg?url";
 import Card2 from "@/assets/scrollAssets/Card2.svg?url";
 import Card3 from "@/assets/scrollAssets/Card3.svg?url";
@@ -2099,5 +2106,45 @@ export const urlParamSubjectData = [
                   recognize how others are feeling, and build strong, respectful relationships.
                   From reading facial expressions to understanding different perspectives, you'll
                   gain the tools to become a true empathy expert and a friendship champion!`,
+  },
+];
+
+
+export const socialAwarenessButtonData = [
+  {
+    title: "Introduction to Body Parts and Personal Boundaries",
+    svgUrl: socBook1,
+    activityTime: "15 Mins.",
+    // rating
+  },
+  {
+    title: "Exploring Diversity and Inclusivity",
+    svgUrl: socBook2,
+    activityTime: "15 Mins.",
+    // rating
+  },
+  {
+    title: "Healthy Relationships and Communication",
+    svgUrl: socBook3,
+    activityTime: "15 Mins.",
+    // rating
+  },
+  {
+    title: "Personal Hygiene and Health",
+    svgUrl: socBook4,
+    activityTime: "15 Mins.",
+    // rating
+  },
+  {
+    title: "Safe and Unsafe Touch",
+    svgUrl: socBook5,
+    activityTime: "15 Mins.",
+    // rating
+  },
+  {
+    title: "Online Safety and Digital Literacy",
+    svgUrl: socBook6,
+    activityTime: "15 Mins.",
+    // rating
   },
 ];

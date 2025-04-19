@@ -89,7 +89,7 @@ const Page = ({ params: { id } }) => {
                 action={() => setInfoOpen((pre) => !pre)}
               />
             )}
-            <div className="flex items-center justify-center gap-4">
+            <div className="mt-8 md:mt-16 flex items-center justify-center gap-4">
               <Image src={cross} onClick={() => Router.back()} alt="cross" />
               <div className="flex w-full gap-1 p-2 sm:gap-2">
                 {Array.from({

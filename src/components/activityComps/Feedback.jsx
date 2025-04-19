@@ -20,7 +20,7 @@ const Feedback = ({ activityId, activityName }) => {
   }
 
   return (
-    <div className="relative flex min-h-[90vh] flex-col items-center justify-evenly">
+    <div className="mt-5 md:mt-8 relative flex min-h-[90vh] flex-col items-center justify-evenly">
       <div className="mx-auto flex flex-col items-center justify-center gap-4">
         <FeedbackTopStars />
         <h3 className="h3 mx-auto font-bold text-secondary">{star+1}/5</h3>
