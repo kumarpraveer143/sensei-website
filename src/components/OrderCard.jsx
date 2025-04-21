@@ -5,8 +5,8 @@ import Image from "next/image";
 
 import { useRouter } from "next/navigation";
 
-import Book from "@/Images/books.svg?url";
-import DeletIcon from "@/Images/Deleteicon.svg?url";
+import Book from "@/assets/in-Use/books.svg?url";
+import DeletIcon from "@/assets/in-Use/Deleteicon.svg?url";
 
 const OrderCard = ({ childData }) => {
   const [deleteChild, setDeleteChild] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
-import Refund from "@/assets/refund.svg";
-import refund from "@/assets/refund.svg?url";
+import Refund from "@/assets/in-Use/refund.svg";
+import refund from "@/assets/in-Use/refund.svg?url";
 
 export const metadata = {
   title: "Privacy Policy",
