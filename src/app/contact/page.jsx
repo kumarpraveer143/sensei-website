@@ -2,9 +2,9 @@ import React from "react";
 import CircleOfTrust from "@/components/homeComps/CircleOfTrust";
 import ContactUs from "@/components/homeComps/ContactUs";
 import FAQS from "@/components/homeComps/FAQS";
-import ABLTopology from "@/assets/ABLTopology-1.svg?url";
-import Contact from "@/assets/contactimg.svg";
+import ABLTopology from "@/assets/in-Use/ABLTopology-1.svg?url";
 import Stars from "@/components/miniComps/Stars";
+import Image from "next/image";
 export const metadata = {
   title: "Contact Us",
 };
@@ -31,7 +31,7 @@ const Page = () => {
             </p>
           </div>
 
-          <Contact />
+          <Image src={"/images/contactimg.webp"} alt="Contact US" width={420}  height={420} className=""/>
         </div>
         <ContactUs />
       </div>

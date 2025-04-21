@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import Varroww from "@/assets/varroww.svg";
-import Lock from "@/assets/lock.svg";
+
+import Varroww from "@/assets/in-Use/downArrow.svg";
+import Lock from "@/assets/in-Use/lock.svg";
+// import Print from "../miniComps/Print";
+import Free from "@/assets/in-Use/free.gif";
+
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import Print from "../miniComps/Print";
-import Free from "@/assets/free.gif";
 import Image from "next/image";
+import Link from "next/link";
 
 const Activities = ({ modules, hidden, colours, subjectId, locked, customUserData }) => {
   const [moduleId, setModuleId] = useState(null);

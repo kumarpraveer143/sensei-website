@@ -3,13 +3,13 @@
 import React from "react";
 import Image from "next/image";
 
-import SelfIdentity from "@/Images/selfIdentity.jpeg";
-import StrengthsAndChallenges from "@/Images/strengthsAndChallenges.jpeg";
-import StrengthsAndChallenges2 from "@/Images/strengthsAndChallenges2.jpeg";
-import MyBodyAndEmotions from "@/Images/myBodyAndEmotions.jpeg";
+// import SelfIdentity from "@/Images/selfIdentity.jpeg";
+// import StrengthsAndChallenges from "@/Images/strengthsAndChallenges.jpeg";
+// import StrengthsAndChallenges2 from "@/Images/strengthsAndChallenges2.jpeg";
+// import MyBodyAndEmotions from "@/Images/myBodyAndEmotions.jpeg";
 import Link from "next/link";
-import MyFavouriteThings from "@/Images/myFavouriteThings.jpeg";
-import MyProudMomentsAndRest from "@/Images/myProudMoments.jpeg";
+// import MyFavouriteThings from "@/Images/myFavouriteThings.jpeg";
+// import MyProudMomentsAndRest from "@/Images/myProudMoments.jpeg";
 import { useRouter } from "next/navigation";
 const ActivityCard = ({ activity }) => {
   // console.log("activity", activity);
@@ -17,28 +17,28 @@ const ActivityCard = ({ activity }) => {
   const router = useRouter();
   switch (activity.unit) {
     case 1:
-      specificTopicPicture = SelfIdentity;
+      specificTopicPicture = "/images/activities/selfIdentity.jpeg";
       break;
     case 2:
-      specificTopicPicture = StrengthsAndChallenges;
+      specificTopicPicture = "/images/activities/strengthsAndChallenges.jpeg";
       break;
     case 3:
-      specificTopicPicture = MyBodyAndEmotions;
+      specificTopicPicture = "/images/activities/myBodyAndEmotions.jpeg";
       break;
     case 4:
-      specificTopicPicture = StrengthsAndChallenges2;
+      specificTopicPicture = "/images/activities/strengthsAndChallenges2.jpeg";
       break;
     case "ASA 1":
-      specificTopicPicture = MyFavouriteThings;
+      specificTopicPicture = "/images/activities/myFavouriteThings.jpeg";
       break;
     case "ASA 2":
-      specificTopicPicture = MyProudMomentsAndRest;
+      specificTopicPicture = "/images/activities/myProudMoments.jpeg";
       break;
     case "ASA 3":
-      specificTopicPicture = MyProudMomentsAndRest;
+      specificTopicPicture = "/images/activities/myProudMoments.jpeg";
       break;
     case "ASA 4":
-      specificTopicPicture = MyProudMomentsAndRest;
+      specificTopicPicture = "/images/activities/myProudMoments.jpeg";
       break;
     default:
       break;

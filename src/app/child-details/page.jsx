@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 // import { toast } from "react-toastify";
 import { setCurrentUserData } from "@/Redux/slice/currentuserslice";
 
-import DeleteIcon from "@/Images/delete-icon.svg";
+import DeleteIcon from "@/assets/in-Use/delete-icon.svg";
 // import AddChild from "@/Images/AddChild.svg";
 import Background from "@/components/miniComps/BackGround.jsx";
 

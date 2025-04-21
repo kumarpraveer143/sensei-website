@@ -1,5 +1,5 @@
 import React from "react";
-import Activitybg from "@/assets/activitybg.svg?url";
+import Activitybg from "@/assets/in-Use/activitybg.svg?url";
 const Materials = ({ action, materials }) => {
   return (
     <div

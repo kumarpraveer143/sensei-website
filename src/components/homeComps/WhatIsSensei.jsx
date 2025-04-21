@@ -1,12 +1,8 @@
 import Image from "next/image";
-import Image1 from "@/assets/image1.svg?url";
-import Image2 from "@/assets/image2.svg?url";
-import Image3 from "@/assets/image3.svg?url";
-import Image4 from "@/assets/image4.svg?url";
-import BrainIcon from "@/assets/brainIcon.svg?url";
-import BlockIcon from "@/assets/blockIcon.svg?url";
-import BulbIcon from "@/assets/bulbIcon.svg?url";
-import TargetIcon from "@/assets/targetIcon.svg?url";
+import BrainIcon from "@/assets/in-Use/brainIcon.svg?url";
+import BlockIcon from "@/assets/in-Use/blockIcon.svg?url";
+import BulbIcon from "@/assets/in-Use/bulbIcon.svg?url";
+import TargetIcon from "@/assets/in-Use/targetIcon.svg?url";
 import ExploreCurriculum from "./ExploreCurriculum";
 import Link from "next/link";
 
@@ -46,7 +42,7 @@ const WhatIsSenseiSection = () => {
             </div>
             <div className="order-2 flex w-full justify-center md:order-1">
               <div className="w-full max-w-md">
-                <Image src={Image1} alt="img" className="h-auto w-full" />
+                <Image src={"/images/image1.webp"} alt="img" width={200} height={200}  className="h-auto w-full" />
               </div>
             </div>
           </div>
@@ -66,7 +62,7 @@ const WhatIsSenseiSection = () => {
             </div>
             <div className="order-2 flex w-full justify-center">
               <div className="w-full max-w-md">
-                <Image src={Image2} alt="img" className="h-auto w-full" />
+                <Image src={"/images/image2.webp"} alt="img" width={200} height={200} className="h-auto w-full" />
               </div>
             </div>
           </div>
@@ -86,7 +82,7 @@ const WhatIsSenseiSection = () => {
             </div>
             <div className="order-2 flex w-full justify-center md:order-1">
               <div className="w-full max-w-md">
-                <Image src={Image3} alt="img" className="h-auto w-full" />
+                <Image src={"/images/image3.webp"} alt="img" width={200} height={200} className="h-auto w-full" />
               </div>
             </div>
           </div>
@@ -106,7 +102,7 @@ const WhatIsSenseiSection = () => {
             </div>
             <div className="order-2 flex w-full justify-center">
               <div className="w-full max-w-md">
-                <Image src={Image4} alt="img" className="h-auto w-full" />
+                <Image src={"/images/image4.webp"} alt="img" width={200} height={200} className="h-auto w-full" />
               </div>
             </div>
           </div>

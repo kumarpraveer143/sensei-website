@@ -4,11 +4,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
-import DownArrow from "@/assets/varroww.svg";
-import MainLogo from "@/assets/mainlogo.svg";
-import User from "@/assets/user.svg";
-import Logout from "@/assets/logoutnavbar.svg?url";
-import Useraccount from "@/assets/useraccount.svg";
+import DownArrow from "@/assets/in-Use/downArrow.svg";
+import MainLogo from "@/assets/in-Use/mainlogo.svg";
+import User from "@/assets/in-Use/user.svg";
+import Logout from "@/assets/in-Use/logoutnavbar.svg";
+import Useraccount from "@/assets/in-Use/useraccount.svg";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/utils/data";
 import { useSession } from "next-auth/react";
@@ -137,7 +137,7 @@ const Navbar = () => {
                       onClick={() => signOut()}
                       className="flex w-full cursor-pointer items-center gap-5"
                     >
-                      <Image src={Logout} alt="Logout" />
+                      <Logout />
                       <h1 className="cursor-pointer text-lg text-white">
                         Logout
                       </h1>
@@ -269,7 +269,7 @@ const Navbar = () => {
                       }}
                       className="flex w-full items-center gap-2 py-2 text-left"
                     >
-                      <Image src={Logout} alt="Logout" width={20} height={20} />
+                      <Logout className="w-20 h-20" />
                       <span>Logout</span>
                     </button>
                   </li>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Rafiki from "@/assets/rafiki.svg";
-import User from "@/assets/user.svg";
+import Rafiki from "@/assets/in-Use/rafiki.svg";
+// import User from "@/assets//in-Use/user.svg";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 

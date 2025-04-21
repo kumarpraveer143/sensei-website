@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import FeedbackTopStars from "@/assets/feedbackTopStars.svg";
-import Feedbackstar from "@/assets/feedbackStar.svg";
-import Emptystar from "@/assets/emptystar.svg";
+import FeedbackTopStars from "@/assets/in-Use/feedbackTopStars.svg";
+import Feedbackstar from "@/assets/in-Use/feedbackStar.svg";
+import Emptystar from "@/assets/in-Use/emptystar.svg";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getSession } from "next-auth/react";

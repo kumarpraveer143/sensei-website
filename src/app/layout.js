@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import StoreProvider from "@/Redux/Provider";
-import { GoogleTagManager, GoogleTagManagerNoScript, MetaPixel, GTag } from "@/components/Analytics";
+import { GoogleTagManager, GoogleTagManagerNoScript, GTag } from "@/components/Analytics";
 // import { Nunito } from "next/font/google";
 
 // const nunito = Nunito({
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         {/* Tracking Scripts */}
         <GTag gtagId={process.env.GTAG_ID} />
         <GoogleTagManager gtmId={process.env.GTM_ID} />
-        <MetaPixel pixelId={process.env.META_PIXEL_ID} />
+        {/* <MetaPixel pixelId={process.env.META_PIXEL_ID} /> */}
         <GoogleTagManagerNoScript gtmId={process.env.GTM_ID} />
 
         {/* App Content */}

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Mainlogo from "@/assets/mainlogo.svg";
-import ParentRole from "@/assets/parentRole.svg";
-import pause from "@/assets/pause.svg?url";
-import mute from "@/assets/sound-off.svg?url";
-import replay from "@/assets/replay.svg?url";
+import Mainlogo from "@/assets/in-Use/mainlogo.svg";
+import ParentRole from "@/assets/in-Use/parentRole.svg";
+import pause from "@/assets/in-Use/pause.svg?url";
+import mute from "@/assets/in-Use/sound-off.svg?url";
+import replay from "@/assets/in-Use/replay.svg?url";
 import { getTextToAudio } from "@/config/textToSpeech";
 
 const TextReader = ({ text, role }) => {

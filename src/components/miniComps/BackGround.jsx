@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import Star from "@/assets/star.svg?url";
-import Heart from "@/assets/heart.svg?url";
-import Thumb from "@/assets/thumb.svg?url";
-import Bulb from "@/assets/bulb.svg?url";
-import Puzzle from "@/assets/puzzle.svg?url";
-import SmileStar from "@/assets/smileStar.svg?url";
-import fullSmileStar from "@/assets/fullSmileStar.svg?url";
+import Star from "@/assets/in-Use/star.svg?url";
+import Heart from "@/assets/in-Use/heart.svg?url";
+import Thumb from "@/assets/in-Use/thumb.svg?url";
+import Bulb from "@/assets/in-Use/bulb.svg?url";
+import Puzzle from "@/assets/in-Use/puzzle.svg?url";
+import SmileStar from "@/assets/in-Use/smileStar.svg?url";
+import fullSmileStar from "@/assets/in-Use/fullSmileStar.svg?url";
 
 const Background = () => {
   return (

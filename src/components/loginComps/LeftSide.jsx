@@ -3,7 +3,6 @@ import Image from "next/image";
 
 import VideoPlay from "@/components/miniComps/VideoPlay";
 
-import Doctor from "@/Images/dr.png";
 // import loginvideo from "/videos/login.mp4";
 // import { Muxplayer } from "@/components/miniComps/VideoPlay";
 
@@ -28,7 +27,9 @@ const LeftSide = () => {
             </p>
           </div>
           <Image
-            src={Doctor}
+            src={"/images/dr.png"}
+            width={100}
+            height={100}
             alt="doctor pic"
             className="absolute -left-16 sm:-left-18 md:-left-20 bottom-0 h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:-left-10"
           />

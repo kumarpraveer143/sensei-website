@@ -8,7 +8,7 @@ import Person2 from "@/assets/people/person2.svg?url";
 import Person3 from "@/assets/people/person3.svg?url";
 import Person4 from "@/assets/people/person4.svg?url";
 
-import addchild from "@/Images/addchild.png";
+
 import { ScrollButtonData,socialAwarenessButtonData } from "@/utils/data";
 import { urlParamSubjectData } from "@/utils/data";
 
@@ -143,7 +143,9 @@ export const SubjectSection = ({ sub }) => {
                 Enroll Your Child
               </Link>
               <Image
-                src={addchild}
+                src={"/images/addchild.png"}
+                width={250}
+                height={200}
                 alt="addchild"
                 sizes="auto"
                 className="absolute bottom-0 right-3 -z-[0] max-h-[110%] max-w-[min(200px,45%)] object-contain md:right-5 md:max-h-[120%] md:max-w-[min(298px,50%)]"

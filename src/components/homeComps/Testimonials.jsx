@@ -4,7 +4,7 @@ import { useRef, useEffect, useCallback, useState } from "react";
 import Image from "next/image";
 import { Testimonials } from "@/utils/data";
 import useEmblaCarousel from 'embla-carousel-react';
-import ParentPlaceHolder from "@/assets/parentPlaceHolder.svg?url";
+import ParentPlaceHolder from "@/assets/in-Use/parentPlaceHolder.svg?url";
 
 
 // TestimonialCard Component

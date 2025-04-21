@@ -1,16 +1,17 @@
 "use client";
-import Popup from "@/components/gamifiedActivities/Popup";
+// import Popup from "@/components/gamifiedActivities/Popup";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import cross from "@/assets/cross-solid.svg?url";
-import Infosvg from "@/assets/info.svg";
-import Activitybg from "@/assets/activitybg.svg?url";
+
+import cross from "@/assets/in-Use/cross-solid.svg?url";
+import Infosvg from "@/assets/in-Use/info.svg";
+import Activitybg from "@/assets/in-Use/activitybg.svg?url";
 import TextReader from "@/components/gamifiedActivities/textSpeach";
 import Loading from "@/components/gamifiedActivities/Loading";
-import Star from "@/assets/star1.svg";
-import Reward from "@/assets/reward.svg";
+// import Star from "@/assets/star1.svg";
+// import Reward from "@/assets/reward.svg";
 import Info from "@/components/gamifiedActivities/Info";
-import GetStarted from "@/components/activityComps/GetStarted";
+// import GetStarted from "@/components/activityComps/GetStarted";
 import Materials from "@/components/activityComps/Materials";
 import axios from "axios";
 import next from "next";

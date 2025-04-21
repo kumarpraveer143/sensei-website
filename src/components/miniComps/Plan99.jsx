@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import addchild from "@/Images/addchild.png";
+
 
 const Plan99 = () => {
   const features = [
@@ -52,7 +52,9 @@ const Plan99 = () => {
         </Link>
       </div>
       <Image
-        src={addchild}
+        src={"/images/addchild.png"}
+        width={300}
+        height={275}
         alt="addchild"
         sizes="auto"
         className="absolute -right-5 bottom-0 -z-[0] max-h-[120%] max-w-[min(298px,50%)] object-contain"
