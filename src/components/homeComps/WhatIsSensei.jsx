@@ -62,7 +62,7 @@ const WhatIsSenseiSection = () => {
             </div>
             <div className="order-2 flex w-full justify-center">
               <div className="w-full max-w-md">
-                <Image src={"/images/image2.webp"} alt="img" width={200} height={200} className="h-auto w-full" />
+                <Image src={"/images/image2.webp"} alt="img" width={200} height={200} className="h-auto w-full" fetchPriority="auto" />
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@ const WhatIsSenseiSection = () => {
             </div>
             <div className="order-2 flex w-full justify-center md:order-1">
               <div className="w-full max-w-md">
-                <Image src={"/images/image3.webp"} alt="img" width={200} height={200} className="h-auto w-full" />
+                <Image src={"/images/image3.webp"} alt="img" width={200} height={200} className="h-auto w-full" fetchPriority="low"/>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ const WhatIsSenseiSection = () => {
             </div>
             <div className="order-2 flex w-full justify-center">
               <div className="w-full max-w-md">
-                <Image src={"/images/image4.webp"} alt="img" width={200} height={200} className="h-auto w-full" />
+                <Image src={"/images/image4.webp"} alt="img" width={200} height={200} className="h-auto w-full" fetchPriority="low"/>
               </div>
             </div>
           </div>

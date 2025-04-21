@@ -9,7 +9,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 
 export const HowItWorks = () => {
   const [activeSection, setActiveSection] = useState("signup");
-  const [currentImage, setCurrentImage] = useState("/images/signUpScreen.webp");
+  const [currentImage, setCurrentImage] = useState("/images/signUpScreen.png");
   const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
 
@@ -23,10 +23,10 @@ export const HowItWorks = () => {
   // Images mapping to sections
   const sectionImages = useMemo(
     () => ({
-      signup: "/images/signUpScreen.webp",
-      learning: "/images/startLearning.webp",
-      assessment: "/images/takeAssessment.webp",
-      growth: "/images/trackGrowth.webp",
+      signup: "/images/signUpScreen.png",
+      learning: "/images/startLearning.png",
+      assessment: "/images/takeAssessment.png",
+      growth: "/images/trackGrowth.png",
     }),
     [],
   );
@@ -77,7 +77,7 @@ export const HowItWorks = () => {
       >
         {/* Desktop image column */}
         {!isMobile && (
-          <div className="image flex h-fit items-start justify-center">
+          <div className="image flex h-fit items-start justify-center md:mt-8">
             <Image
               src={currentImage}
               alt={`${activeSection} illustration`}
@@ -127,7 +127,7 @@ export const HowItWorks = () => {
             {isMobile && activeSection === "signup" && (
               <div className="mt-4 flex justify-center transition-all duration-300 ease-in-out">
                 <Image
-                  src={"/images/signUpScreen.webp"}
+                  src={"/images/signUpScreen.png"}
                   alt="Sign up illustration"
                   className="transition-all duration-500 ease-in-out"
                   width={500}
@@ -175,7 +175,7 @@ export const HowItWorks = () => {
             {isMobile && activeSection === "learning" && (
               <div className="mt-4 flex justify-center transition-all duration-300 ease-in-out">
                 <Image
-                  src={"/images/startLearning.webp"}
+                  src={"/images/startLearning.png"}
                   alt="Start learning illustration"
                   className="transition-all duration-500 ease-in-out"
                   width={500}
@@ -220,7 +220,7 @@ export const HowItWorks = () => {
             {isMobile && activeSection === "assessment" && (
               <div className="mt-4 flex justify-center transition-all duration-300 ease-in-out">
                 <Image
-                  src={"/images/takeAssessment.webp"}
+                  src={"/images/takeAssessment.png"}
                   alt="Take assessment illustration"
                   className="transition-all duration-500 ease-in-out"
                   width={500}
@@ -264,7 +264,7 @@ export const HowItWorks = () => {
             {isMobile && activeSection === "growth" && (
               <div className="mt-4 flex justify-center transition-all duration-300 ease-in-out">
                 <Image
-                  src={"/images/trackGrowth.webp"}
+                  src={"/images/trackGrowth.png"}
                   alt="Track growth illustration"
                   className="transition-all duration-500 ease-in-out"
                   width={500}
