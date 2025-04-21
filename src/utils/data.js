@@ -1,11 +1,13 @@
-import interactiveLearning from "@/assets/interactiveLearning.svg?url";
-import parentingSupport from "@/assets/ParentingSupport.svg?url";
-import securePlatform from "@/assets/SecurePlatform.svg?url";
-import ageAppropriate from "@/assets/ageAppropriate.svg?url";
-import focusLearning from "@/assets/FocusOnLearning.svg?url";
-import personalizedInsight from "@/assets/personalizedInsight.svg?url";
-import Selfawareness from "@/assets/selfawareness.svg?url";
-import Mentalwellness from "@/assets/mental.svg?url";
+// import interactiveLearning from "@/assets/interactiveLearning.svg?url";
+// import parentingSupport from "@/assets/ParentingSupport.svg?url";
+// import securePlatform from "@/assets/SecurePlatform.svg?url";
+// import ageAppropriate from "@/assets/ageAppropriate.svg?url";
+// import focusLearning from "@/assets/FocusOnLearning.svg?url";
+// import personalizedInsight from "@/assets/personalizedInsight.svg?url";
+
+
+// import Selfawareness from "@/assets/selfawareness.svg?url";
+// import Mentalwellness from "@/assets/mental.svg?url";
 
 import Book1 from "@/assets/scrollAssets/Book-1.svg?url";
 import Book2 from "@/assets/scrollAssets/Book-3.svg?url";
@@ -30,6 +32,9 @@ import psychInstitute from "@/assets/articleAssets/psychologyInstitute.svg?url";
 import indiaToday from "@/assets/articleAssets/indiaToday.svg?url";
 import Unicef from "@/assets/articleAssets/unicef.svg?url";
 import visionIas from "@/assets/articleAssets/visionIas.svg?url";
+
+import buildings from "@/assets/in-Use/buildings.svg?url";
+import school from "@/assets/in-Use/school.svg?url";
 
 export const plans = {
   Family: {
@@ -237,45 +242,46 @@ export const plans = {
 //     linkedIn_url: "https://linkedin.com/in/hardik-r-58964a239?u/",
 //   },
 // ];
-export const features = [
-  {
-    image: interactiveLearning,
-    title: "Interactive Learning",
-    description:
-      "Fun, hands-on activities like projects and games spark critical thinking and creativity.",
-  },
-  {
-    image: parentingSupport,
-    title: "Parenting Support",
-    description:
-      "Expert advice, strategies, and tools to help parents navigate challenges and build strong family dynamics.",
-  },
-  {
-    image: ageAppropriate,
-    title: "Age-Appropriate",
-    description:
-      "Tailored content and methods match each child's developmental stage for optimal learning.",
-  },
-  {
-    image: focusLearning,
-    title: "Focus on Learning",
-    description:
-      "Ditch the stress of exams! We emphasize understanding, creativity, and a love for lifelong learning.",
-  },
-  {
-    image: securePlatform,
-    title: "Secure Platform",
-    description:
-      "Encrypts and safeguards personal data with advanced security measures.",
-  },
-  {
-    image: personalizedInsight,
-    title: "Personalized Insights",
-    description:
-      "Get a report on your child's strengths, weaknesses, and areas for skill development.",
-  },
-];
-export const Herotexts = ["happy", "resilient", "ethical"];
+
+// export const features = [
+//   {
+//     image: interactiveLearning,
+//     title: "Interactive Learning",
+//     description:
+//       "Fun, hands-on activities like projects and games spark critical thinking and creativity.",
+//   },
+//   {
+//     image: parentingSupport,
+//     title: "Parenting Support",
+//     description:
+//       "Expert advice, strategies, and tools to help parents navigate challenges and build strong family dynamics.",
+//   },
+//   {
+//     image: ageAppropriate,
+//     title: "Age-Appropriate",
+//     description:
+//       "Tailored content and methods match each child's developmental stage for optimal learning.",
+//   },
+//   {
+//     image: focusLearning,
+//     title: "Focus on Learning",
+//     description:
+//       "Ditch the stress of exams! We emphasize understanding, creativity, and a love for lifelong learning.",
+//   },
+//   {
+//     image: securePlatform,
+//     title: "Secure Platform",
+//     description:
+//       "Encrypts and safeguards personal data with advanced security measures.",
+//   },
+//   {
+//     image: personalizedInsight,
+//     title: "Personalized Insights",
+//     description:
+//       "Get a report on your child's strengths, weaknesses, and areas for skill development.",
+//   },
+// ];
+// export const Herotexts = ["happy", "resilient", "ethical"];
 
 export const cards = [
   {
@@ -283,16 +289,18 @@ export const cards = [
     description:
       "We make weekends fun and productive! Sensei's team of professionals visit your society clubhouse where we hold weekly sessions and empower parents along with kids.",
     button: "Explore",
-    image: "buildings",
+    imageSrc: buildings,
   },
   {
     title: "For School",
     description:
       "We believe classrooms are where we see friendships, problem-solving, and teamwork in action. Research says that Learning social skills blossoms through play and interaction with friends!",
     button: "Explore",
-    image: "school",
+    imageSrc: school,
   },
 ];
+
+
 export const Testimonials = [
   {
     description:
@@ -1034,7 +1042,7 @@ export const news = [
 export const subjects = [
   {
     title: "Emotional Wellness",
-    image: Mentalwellness,
+    // image: Mentalwellness,
     slug: "emotional-wellness",
     description:
       "At Sensei, we believe a healthy mind is just as important as a sharp one.",
@@ -1695,7 +1703,7 @@ export const subjects = [
   },
   {
     title: "Self & Social Awareness",
-    image: Selfawareness,
+    // image: Selfawareness,
     description: "Need for Self & Social Awareness in India",
     concernsHeading:
       "There's a growing concern about emotional immaturity in India, potentially linked to a lack of self-awareness. This can manifest in children as frequent and intense tantrums, excessive neediness like separation anxiety or constant reassurance seeking, and difficulty regulating emotions leading to outbursts or blaming others.",

@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import addchild from "@/Images/addchild.png";
 import Subject from "@/components/Modules/Subject";
 import Background1 from "@/components/miniComps/BackGround.jsx";
 import { getSubColour } from "@/utils/logic";
@@ -197,7 +196,9 @@ const UserDashboard = () => {
             Enroll at Rs.99{" "}
           </Link>
           <Image
-            src={addchild}
+            src={"/images/addchild.png"}
+            width={298}
+            height={298}
             alt="addchild"
             sizes="auto"
             className="absolute -right-5 bottom-0 -z-[0] max-h-full max-w-[min(298px,50%)] object-contain"

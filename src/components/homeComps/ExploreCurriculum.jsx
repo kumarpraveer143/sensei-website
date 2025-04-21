@@ -2,7 +2,7 @@
 
 import Marquee from "react-fast-marquee";
 import { ScrollButton, ScrollCard } from "./ScrollCard";
-import scrollBg from "@/assets/scrollBg.svg?url";
+import scrollBg from "@/assets/in-Use/scrollBg.svg?url";
 import Image from "next/image";
 import Link from "next/link";
 

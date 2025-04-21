@@ -1,7 +1,7 @@
 import React from "react";
 
 import Image from "next/image";
-import Mainlogo from "@/assets/mainlogo.svg";
+import Mainlogo from "@/assets/in-Use/mainlogo.svg";
 const Blog = ({ blog }) => {
   return (
     <div className="flex w-full min-w-[min(100%,380px)] flex-col gap-2 rounded-lg bg-white pb-4 shadow-cs lg:min-w-[min(95vw,396px)] lg:max-w-[min(95vw,380px)]">

@@ -1,16 +1,16 @@
 import React from "react";
 import Image from "next/image";
-import linkedin from "@/assets/linkedin-solid.svg?url";
+import linkedin from "@/assets/in-Use/linkedin-solid.svg?url";
 // import Mission from "@/assets/mission.svg";
 // import Vision from "@/assets/vision.svg";
-import ABLTopology from "@/assets/ABLTopology-1.svg?url";
+import ABLTopology from "@/assets/in-Use/ABLTopology-1.svg?url";
 // import group from "@/assets/us/Group_40155.png";
-import { team, psychologists } from "@/utils/data";
+// import { team, psychologists } from "@/utils/data";
 import Link from "next/link";
 // import Background from "@/components/miniComps/BackGround";
 import CircleOfTrust from "../../components/homeComps/CircleOfTrust";
 
-import BoyFrame from "@/assets/boyFrame.svg?url";
+// import BoyFrame from "@/assets/boyFrame.svg?url";
 
 export const metadata = {
   title: "About",
@@ -215,6 +215,7 @@ const Page = async () => {
     </div>
   );
 };
+
 export const Person = ({ person, index }) => {
   return (
     <div className="group relative rounded-[10px]">

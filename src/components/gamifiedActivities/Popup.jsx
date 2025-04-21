@@ -1,6 +1,6 @@
 import React from "react";
-import wrong from "@/assets/wrong.svg?url";
-import right from "@/assets/right.svg?url";
+import wrong from "@/assets/in-Use/wrong.svg?url";
+import right from "@/assets/in-Use/right.svg?url";
 import Image from "next/image";
 
 const Popup = ({ messege, status, action }) => {

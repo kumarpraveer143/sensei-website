@@ -2,20 +2,20 @@
 import Popup from "@/components/gamifiedActivities/Popup";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import cross from "@/assets/cross-solid.svg?url";
-import Infosvg from "@/assets/info.svg";
-import Activitybg from "@/assets/activitybg.svg?url";
+import cross from "@/assets/in-Use/cross-solid.svg?url";
+// import Infosvg from "@/assets/info.svg";
+import Activitybg from "@/assets/in-Use/activitybg.svg?url";
 import TextReader from "@/components/gamifiedActivities/textSpeach";
 import Loading from "@/components/gamifiedActivities/Loading";
-import Star from "@/assets/star1.svg";
-import Reward from "@/assets/reward.svg";
+// import Star from "@/assets/star1.svg";
+// import Reward from "@/assets/reward.svg";
 import Info from "@/components/gamifiedActivities/Info";
-import GetStarted from "@/components/activityComps/GetStarted";
-import Materials from "@/components/activityComps/Materials";
+// import GetStarted from "@/components/activityComps/GetStarted";
+// import Materials from "@/components/activityComps/Materials";
 import axios from "axios";
 import next from "next";
 import Feedback from "@/components/activityComps/Feedback";
-import Print from "@/components/miniComps/Print";
+// import Print from "@/components/miniComps/Print";
 import { notFound, useRouter } from "next/navigation";
 
 const Page = ({ params: { id } }) => {
@@ -89,7 +89,7 @@ const Page = ({ params: { id } }) => {
                 action={() => setInfoOpen((pre) => !pre)}
               />
             )}
-            <div className="mt-8 md:mt-16 flex items-center justify-center gap-4">
+            <div className="mt-8 flex items-center justify-center gap-4 md:mt-16">
               <Image src={cross} onClick={() => Router.back()} alt="cross" />
               <div className="flex w-full gap-1 p-2 sm:gap-2">
                 {Array.from({
@@ -114,10 +114,27 @@ const Page = ({ params: { id } }) => {
                 <h5 className="body1_b text-grad">
                   {digitalActivity?.digitalActivityName}
                 </h5>
-                <Infosvg
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="none"
                   onClick={() => setInfoOpen((pre) => !pre)}
                   className="cursor-pointer"
-                />
+                >
+                  <rect
+                    width="31"
+                    height="31"
+                    x="0.5"
+                    y="0.5"
+                    stroke="#9FC5EF"
+                    rx="15.5"
+                  ></rect>
+                  <path
+                    fill="#9FC5EF"
+                    d="m17.279 14.059-3.15.394-.112.523.619.114c.404.096.484.242.396.645l-1.015 4.768c-.267 1.233.145 1.814 1.111 1.814.75 0 1.62-.347 2.015-.823l.12-.572c-.274.242-.676.339-.943.339-.378 0-.515-.266-.418-.733zm.096-2.871a1.375 1.375 0 1 1-2.75 0 1.375 1.375 0 0 1 2.75 0"
+                  ></path>
+                </svg>
               </div>
               <p className="body_2 text-secondary">
                 {digitalActivity?.questions[currQuestion]?.questionNumber +

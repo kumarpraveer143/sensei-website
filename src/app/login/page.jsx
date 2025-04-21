@@ -12,7 +12,7 @@ import { signIn } from "next-auth/react";
 // import { toast } from "react-toastify";
 import Link from "next/link";
 import LeftSide from "@/components/loginComps/LeftSide";
-import Backgroud from "@/Images/background.svg?url";
+import Backgroud from "@/assets/in-Use/background.svg?url";
 import Image from "next/image";
 import WhyChooseSenseiSection from "@/components/homeComps/WhyChooseSensei";
 import ExploreCurriculum from "@/components/homeComps/ExploreCurriculum";

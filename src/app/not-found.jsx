@@ -1,7 +1,7 @@
 import React from "react";
 import ClientLink from "@/components/miniComps/ClientLink";
 import Background from "@/components/miniComps/BackGround";
-import Pana from "@/assets/pana.svg";
+import Pana from "@/assets/in-Use/404cat.svg";
 const Page = () => {
   return (
     <div className="container relative mx-auto flex items-center justify-center p-4 py-10 max-md:flex-wrap">

@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <div className="mx-4 mt-16 grid grid-cols-1 gap-6 md:mx-8 md:mt-24 md:pt-10 lg:mx-20 lg:mt-20 lg:grid-cols-2">
       <div className="maintext flex flex-col">
-        <div className="max-w-full font-['Nunito'] text-3xl font-black leading-tight text-slate-700 sm:text-4xl md:leading-snug lg:text-5xl lg:leading-[60px]">
+        <div className="max-w-full font-Nunito text-3xl font-black leading-tight text-slate-700 sm:text-4xl md:leading-snug lg:text-5xl lg:leading-[60px]">
           Empower Your Child with Essential Life Skills for the Digital Age.
         </div>
         <div className="mb-4 mt-2 max-w-full font-['Nunito'] text-base font-bold text-stone-500 sm:text-lg">

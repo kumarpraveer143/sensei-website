@@ -1,7 +1,7 @@
-import MentalHealthPic from "@/Images/mentalhealthpic.svg?url";
-import SexEducationPic from "@/Images/sexeducationpic.svg?url";
-import MoralScience from "@/Images/moralsciencepic.svg?url";
-import TrialPack from "@/assets/TrialPack.svg?url";
+import MentalHealthPic from "@/assets/in-Use/mentalhealthpic.svg?url";
+import SexEducationPic from "@/assets/in-Use/sexeducationpic.svg?url";
+import MoralScience from "@/assets/in-Use/moralsciencepic.svg?url";
+import TrialPack from "@/assets/in-Use/TrialPack.svg?url";
 export const getRandomLightColor = () => {
   // Generate a random number in the range 128-255 for each color component
   const r = Math.floor(Math.random() * (255 - 128) + 128).toString(16);

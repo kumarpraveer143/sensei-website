@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { plans } from "@/utils/data";
 import Image from "next/image";
-import right from "@/assets/tick.svg?url";
-import cross from "@/assets/cross1.svg?url";
+import right from "@/assets/in-Use/tick.svg?url";
+import cross from "@/assets/in-Use/cross1.svg?url";
 import Stars from "@/components/miniComps/Stars";
-import ABLTopology from "@/assets/ABLTopology-1.svg?url";
+import ABLTopology from "@/assets/in-Use/ABLTopology-1.svg?url";
 import Link from "next/link";
 import Plan99 from "@/components/miniComps/Plan99";
 

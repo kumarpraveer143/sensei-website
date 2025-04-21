@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { blogs } from "@/utils/data";
-import arrow from "@/assets/arrow-left-circle.svg?url";
+// import arrow from "@/assets/arrow-left-circle.svg?url";
 // import FbLinkdMailLink from "@/components/miniComps/FbLinkdMailLink";
-import Mainlogo from "@/assets/mainlogo.svg";
-import heart from "@/assets/heart1.svg?url";
-import send from "@/assets/send.svg?url";
+import Mainlogo from "@/assets/in-Use/mainlogo.svg";
+import heart from "@/assets/in-Use/heart1.svg?url";
+// import send from "@/assets/send.svg?url";
 import ClientLink from "@/components/miniComps/ClientLink";
 import Blog from "@/components/miniComps/Blog";
 import { slug } from "@/utils/logic";

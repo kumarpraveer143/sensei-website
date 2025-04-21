@@ -1,15 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import SenseiLogo from "@/assets/mainlogo.svg";
+import SenseiLogo from "@/assets/in-Use/mainlogo.svg";
 import Link from "next/link";
-import minisaark from "@/assets/minisaark.svg?url";
-import Msme from "@/assets/msme.svg?url";
-import StartIndia from "@/assets/startIndia.svg";
-import Mail from "@/assets/mail.svg";
-import Location from "@/assets/location.svg";
-import Phone from "@/assets/phone.svg";
-import Stars from "@/assets/stars.svg?url";
-import FooterImage from "@/assets/footerChild.svg?url";
+import minisaark from "@/assets/in-Use/minisaark.svg?url";
+import Msme from "@/assets/in-Use/msme.svg?url";
+import StartIndia from "@/assets/in-Use/startIndia.svg";
+import Mail from "@/assets/in-Use/mail.svg";
+import Location from "@/assets/in-Use/location.svg";
+import Phone from "@/assets/in-Use/phone.svg";
+import Stars from "@/assets/in-Use/stars.svg?url";
+import FooterImage from "@/assets/in-Use/footerChild.svg?url";
 import { navLinks } from "@/utils/data";
 const Footer = () => {
   const d = new Date();

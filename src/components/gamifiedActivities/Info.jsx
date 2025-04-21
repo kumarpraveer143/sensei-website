@@ -1,9 +1,9 @@
 import React from "react";
-import ActivityIntro from "@/assets/activityIntro.svg";
-import BookRef from "@/assets/bookRef.svg";
-import VideoRef from "@/assets/videoRef.svg";
-import PlayButton from "@/assets/playButton.svg";
-import Cross from "@/assets/cross.svg";
+import ActivityIntro from "@/assets/in-Use/activityIntro.svg";
+import BookRef from "@/assets/in-Use/bookRef.svg";
+import VideoRef from "@/assets/in-Use/videoRef.svg";
+import PlayButton from "@/assets/in-Use/playButton.svg";
+import Cross from "@/assets/in-Use/cross.svg";
 const Info = ({ action, activity }) => {
   return (
     <>

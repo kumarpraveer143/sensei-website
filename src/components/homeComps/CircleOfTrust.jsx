@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
 // import family from "@/assets/family.svg?url";
-import buildings from "@/assets/buildings.svg?url";
-import school from "@/assets/school.svg?url";
+
 import { cards } from "@/utils/data";
 const CircleOfTrust = () => {
   return (
@@ -19,8 +18,8 @@ const CircleOfTrust = () => {
           </p>
         </div>
         <div className="flex flex-col gap-5 md:gap-10">
-          <Card card={cards[0]} image={buildings} color={"#FF8B13"} />
-          <Card card={cards[1]} image={school} color={"#EF5F3D"} />
+          <Card card={cards[0]} image={cards[0].imageSrc} color={"#FF8B13"} />
+          <Card card={cards[1]} image={cards[1].imageSrc} color={"#EF5F3D"} />
         </div>
         {/* <Card card={cards[2]} image={school} color={"#F8BF3B"} /> */}
       </div>
@@ -47,7 +46,7 @@ export const Card = ({ card, image, color }) => {
       </button> */}
       <Image
         src={image}
-        alt={card.image}
+        alt="build"
         sizes="auto"
         className="absolute -bottom-12 right-0"
       />
