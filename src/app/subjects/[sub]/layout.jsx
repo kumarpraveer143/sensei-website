@@ -1,6 +1,7 @@
 import React from "react";
 import { subjects } from "@/utils/data";
 import { slug } from "@/utils/logic";
+import Footer from "@/components/Footer";
 // import { SubjectSection } from "@/components/SubjectSection";
 // import Subject from "@/components/Modules/Subject";
 // import { SubjectSection } from "@/components/SubjectSection";
@@ -23,8 +24,12 @@ export function generateMetadata({ params: { sub } }) {
   };
 }
 const layout = ({ children }) => {
-  return <>{children}
-  </>;
+  return (
+    <>
+      {children}
+      <Footer />
+    </>
+  );
 };
 
 export default layout;

@@ -8,7 +8,7 @@ const VideoPlay = () => {
       <ReactPlayer
         className="absolute left-0 top-0"
         url={"https://youtube.com/shorts/rj4aNyni_uk?si=xNE1mSz_UpmPWwyb"}
-        autoplay
+        autoPlay
         loop={true}
         muted
         playing={true}

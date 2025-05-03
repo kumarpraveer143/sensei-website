@@ -13,7 +13,7 @@ const HeroSection = () => {
           intelligence, resilience, and social skills in children.
         </div>
         <button className="group inline-flex w-full max-w-xs flex-col items-start justify-center rounded-2xl bg-[#FF8B13] px-5 py-3.5 shadow-[0px_1px_1px_0px_rgba(0,0,0,0.12)] shadow-[0px_2px_5px_0px_rgba(103,110,118,0.08)]">
-          <Link href={"/login"}>
+          <Link href={"/survey"}>
             <div className="relative inline-flex w-full items-center justify-between gap-2 self-stretch">
               <div className="text-md justify-start text-center font-['Nunito'] font-black leading-snug text-white">
                 Start Your Child&apos;s Journey

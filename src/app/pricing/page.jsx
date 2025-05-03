@@ -8,51 +8,55 @@ import Stars from "@/components/miniComps/Stars";
 import ABLTopology from "@/assets/in-Use/ABLTopology-1.svg?url";
 import Link from "next/link";
 import Plan99 from "@/components/miniComps/Plan99";
+import Footer from "@/components/Footer";
 
 const Page = () => {
   const [plan, setPlan] = useState("Family");
   //   console.log(plan);
   return (
-    <div
-      style={{
-        backgroundImage: `url(${ABLTopology.src})`,
-      }}
-      className="flex flex-col items-center gap-10 px-5 py-20 mt-4 md:mt-8"
-    >
-      <div className="relative flex flex-col items-center gap-2">
-        <Stars />
-        <h4 className="h4 mx-auto h-fit w-full max-w-[90vw] text-center uppercase text-secondary lg:col-start-2">
-          Pricing
-        </h4>
-        <h1 className="h1 text-secondary">
-          {" "}
-          Get the <span className="text-primary">Results</span> You Deserve
-        </h1>
-        <p className="body_1 max-w-[600px] text-center">
-          We offer a variety of plans to suit your family&apos;s needs, all
-          designed to equip your child with essential life skills for success.
-        </p>
-        <Plan99 />
+    <>
+      <div
+        style={{
+          backgroundImage: `url(${ABLTopology.src})`,
+        }}
+        className="mt-4 flex flex-col items-center gap-10 px-5 py-20 md:mt-8"
+      >
+        <div className="relative flex flex-col items-center gap-2">
+          <Stars />
+          <h4 className="h4 mx-auto h-fit w-full max-w-[90vw] text-center uppercase text-secondary lg:col-start-2">
+            Pricing
+          </h4>
+          <h1 className="h1 text-secondary">
+            {" "}
+            Get the <span className="text-primary">Results</span> You Deserve
+          </h1>
+          <p className="body_1 max-w-[600px] text-center">
+            We offer a variety of plans to suit your family&apos;s needs, all
+            designed to equip your child with essential life skills for success.
+          </p>
+          <Plan99 />
+        </div>
+        <div className="flex w-fit gap-2 rounded-full shadow-cs shadow-orange-100">
+          {["Family", "Society"].map((p, index) => (
+            <button
+              key={index}
+              onClick={() => setPlan(p)}
+              className={`h5_b rounded-full px-6 py-3 ${plan === p ? "bg-primary text-white" : ""}`}
+            >
+              {p}
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          {plans[plan]?.plans?.map((p, index) => (
+            <Link key={index} href={"/child-details"}>
+              <Plan plan={p} features={plans[plan].features} />
+            </Link>
+          ))}
+        </div>
       </div>
-      <div className="flex w-fit gap-2 rounded-full shadow-cs shadow-orange-100">
-        {["Family", "Society"].map((p, index) => (
-          <button
-            key={index}
-            onClick={() => setPlan(p)}
-            className={`h5_b rounded-full px-6 py-3 ${plan === p ? "bg-primary text-white" : ""}`}
-          >
-            {p}
-          </button>
-        ))}
-      </div>
-      <div className="flex flex-wrap items-center justify-center gap-4">
-        {plans[plan]?.plans?.map((p, index) => (
-          <Link key={index} href={"/child-details"}>
-            <Plan plan={p} features={plans[plan].features} />
-          </Link>
-        ))}
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 const Plan = ({ plan, features }) => {

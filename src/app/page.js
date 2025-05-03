@@ -10,6 +10,7 @@ import WhyChooseSenseiSection from "@/components/homeComps/WhyChooseSensei";
 import { HowItWorks } from "@/components/homeComps/HowItWorks";
 import { TestimonialsSection } from "@/components/homeComps/Testimonials";
 import { ArticlesSection } from "@/components/homeComps/Articles";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       {/* <Comments /> */}
       {/* <GetStarted /> */}
       <FAQS />
+      <Footer />
     </div>
   );
 }
