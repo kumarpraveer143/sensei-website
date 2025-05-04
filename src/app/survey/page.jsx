@@ -11,7 +11,7 @@ export default function SurveyPage() {
     const router = useRouter();
     
     return (
-        <div className="fixed inset-0 bg-white bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 px-2 sm:px-4">
+        <div className="fixed inset-0 bg-white bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-20 px-2 sm:px-4">
             <div className="w-full max-w-[848px] max-h-[95vh] h-auto bg-[#fff7f1] rounded-2xl shadow-xl relative px-4 sm:px-6 py-6 sm:py-8 overflow-hidden">
 
                 {/* Close button */}
@@ -28,11 +28,10 @@ export default function SurveyPage() {
                     <p className="text-gray-700 text-sm sm:text-base md:text-lg xl:text-xl max-w-[90%] sm:max-w-2xl mb-4 sm:mb-6">
                         You&apos;re one step closer to raising a confident, emotionally strong child.
                     </p>
-                    <Link href={"/survey/question1"}>
-                        <button className="bg-[#ff8b13] hover:bg-orange-500 text-white font-semibold py-2 sm:py-3 px-5 sm:px-6 rounded-xl shadow-md transition flex items-center gap-2 text-sm sm:text-lg xl:text-xl">
+                        <button onClick={() => router.push("/survey/question1")}
+                        className="bg-[#ff8b13] hover:bg-orange-500 text-white font-semibold py-2 sm:py-3 px-5 sm:px-6 rounded-xl shadow-md transition flex items-center gap-2 text-sm sm:text-lg xl:text-xl">
                             Get Started <span>🚀</span>
                         </button>
-                    </Link>
                 </div>
 
                 {/* Bottom Illustration */}
