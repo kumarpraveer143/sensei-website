@@ -205,8 +205,8 @@ const page = () => {
             </p> */}
           </div>
         </div>
-        <WhyChooseSenseiSection />
-        <ExploreCurriculum />
+        {/* <WhyChooseSenseiSection />
+        <ExploreCurriculum /> */}
       </div>
       <Footer />
     </>
