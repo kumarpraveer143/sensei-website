@@ -8,7 +8,7 @@ import Image from "next/image";
 const EmotionNav = ({ name }) => {
   return (
     <>
-      <div className="container mx-auto flex w-[80vw] items-center gap-4 rounded-[10px] bg-white p-4 shadow drop-shadow-md max-sm:w-[90vw] sm:p-5">
+      <div className="container mx-auto flex w-[80vw] items-center gap-4 rounded-[10px] bg-white max-sm:w-[90vw] sm:p-5">
         <div className="text-grad text-grad flex flex-wrap items-center gap-2">
           <Link href="/dashboard">
             <span className="flex cursor-pointer items-center">

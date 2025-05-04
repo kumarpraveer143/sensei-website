@@ -165,7 +165,8 @@ const LinkSection = ({ data }) => {
     <div className="subjects mx-auto w-full max-w-6xl px-4">
       <div className="flex w-full flex-col items-center justify-center gap-6">
         {data.map((item, index) => (
-          <div
+          <Link
+            href={"/freeactivity"}
             key={index}
             className="flex w-full items-center gap-3 rounded-[58px] px-4 py-2 outline outline-[3px] outline-offset-[-3px] outline-orange-300 md:px-6 md:py-4 lg:px-10"
           >
@@ -199,10 +200,7 @@ const LinkSection = ({ data }) => {
                 {item.title}
               </div>
             </div>
-            <Link
-              href={"/login"}
-              className="relative h-6 w-6 flex-shrink-0 overflow-hidden md:h-8 md:w-8"
-            >
+            <div className="relative h-6 w-6 flex-shrink-0 overflow-hidden md:h-8 md:w-8">
               <svg
                 width="100%"
                 height="100%"
@@ -218,8 +216,8 @@ const LinkSection = ({ data }) => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
