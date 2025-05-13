@@ -20,7 +20,7 @@ export default function Home() {
       <WhatIsSenseiSection />
       <WhyChooseSenseiSection />
       <HowItWorks />
-      {/* <TestimonialsSection /> */}
+      <TestimonialsSection />
       <ArticlesSection />
       {/* <Comments /> */}
       {/* <GetStarted /> */}
