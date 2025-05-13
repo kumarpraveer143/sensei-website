@@ -8,7 +8,7 @@ import ParentPlaceHolder from "@/assets/in-Use/parentPlaceHolder.svg?url";
 
 
 // TestimonialCard Component
-const TestimonialCard = ({ content, name, title, videoSrc }) => {
+const TestimonialCard = ({ content, name, title }) => {
   return (
     <div className="mx-auto w-full lg:h-[350px] h-[450px] rounded-2xl bg-white py-6 px-4 md:p-10 shadow-md">
       <div className="relative">
@@ -41,9 +41,9 @@ const TestimonialCard = ({ content, name, title, videoSrc }) => {
           </svg>
         </div>
       </div>
-      
-      <div className="my-4 grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-5 h-full">
-        <div className="md:col-span-2 h-full min-h-32">
+      {/* changed col span to enlarge text */}
+      <div className="my-4 grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-3 h-full">   
+        {/* <div className="md:col-span-2 h-full min-h-32">
           <div className="h-full w-full overflow-hidden rounded-xl bg-zinc-200">
             {(
               <iframe
@@ -55,7 +55,7 @@ const TestimonialCard = ({ content, name, title, videoSrc }) => {
               />
             )}
           </div>
-        </div>
+        </div> */}
 
         <div className="flex flex-col justify-between md:col-span-3 h-full">
           <div className="mb-4 font-['Nunito'] text-base md:text-lg font-bold leading-relaxed text-neutral-900 line-clamp-6">
@@ -178,7 +178,7 @@ export const TestimonialsSection = () => {
                   content={testimonial.description}
                   name={testimonial.user}
                   title={testimonial.name}
-                  videoSrc={testimonial.videoSrc}
+                  // videoSrc={testimonial.videoSrc}
                 />
               </div>
             ))}
