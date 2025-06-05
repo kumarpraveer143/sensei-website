@@ -4,11 +4,11 @@ import { useRef, useEffect, useCallback, useState } from "react";
 import Image from "next/image";
 import { Testimonials } from "@/utils/data";
 import useEmblaCarousel from 'embla-carousel-react';
-import ParentPlaceHolder from "@/assets/in-Use/parentPlaceHolder.svg?url";
+// import ParentPlaceHolder from "@/assets/in-Use/parentPlaceHolder.svg?url";
 
 
 // TestimonialCard Component
-const TestimonialCard = ({ content, name, title }) => {
+const TestimonialCard = ({ content, name, title, img, identity }) => {
   return (
     <div className="mx-auto w-full lg:h-[350px] h-[450px] rounded-2xl bg-white py-6 px-4 md:p-10 shadow-md">
       <div className="relative">
@@ -65,7 +65,7 @@ const TestimonialCard = ({ content, name, title }) => {
           <div className="mt-auto flex items-center gap-3 md:gap-4">
             <div className="h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-full border-2 border-amber-500">
                 <Image
-                  src={ParentPlaceHolder}
+                  src={img}
                   alt={name}
                   width={56}
                   height={56}
@@ -75,10 +75,10 @@ const TestimonialCard = ({ content, name, title }) => {
 
             <div>
               <div className="font-Nunito text-base md:text-lg font-bold text-slate-700">
-                {name}
+                {identity}
               </div>
               <div className="font-Nunito text-xs md:text-sm text-neutral-500">
-                {title}
+                {name}
               </div>
             </div>
           </div>
@@ -177,7 +177,9 @@ export const TestimonialsSection = () => {
                 <TestimonialCard
                   content={testimonial.description}
                   name={testimonial.user}
+                  identity={testimonial.identity}
                   title={testimonial.name}
+                  img={testimonial.img}
                   // videoSrc={testimonial.videoSrc}
                 />
               </div>

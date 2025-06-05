@@ -15,6 +15,11 @@ import Book3 from "@/assets/scrollAssets/Book-2.svg?url";
 import Book4 from "@/assets/scrollAssets/Book-4.svg?url";
 import Book5 from "@/assets/scrollAssets/Book-5.svg?url";
 import Book6 from "@/assets/scrollAssets/Book-6.svg?url";
+import abhay from "@/assets/Testimonial-Images/abhay.png";
+import kriti from "@/assets/Testimonial-Images/kriti.png";
+import prashant from "@/assets/Testimonial-Images/prashant.png";
+import roma from "@/assets/Testimonial-Images/roma.png";
+import sunita from "@/assets/Testimonial-Images/sunita.png";
 
 import socBook1 from "@/assets/scrollAssets/personalBoundaries.svg?url";
 import socBook2 from "@/assets/scrollAssets/Diversity.svg?url";
@@ -305,48 +310,46 @@ export const Testimonials = [
   {
     description:
       "Sensei has been a game-changer for my introverted child. The self and social awareness modules, designed by actual psychologists, have given them the tools to confidently approach new situations and make friends. We're so grateful for this platform that complements their regular schooling!",
-    identity: "Fellow Parent",
-    user: "Mother of an 8 yrs old, Pune",
+    identity: "Sunita",
+    img: sunita,
+    user: "Parent of 8yr old",
     videoSrc:
       "https://youtube.com/embed/9eWzJqNts-w?feature=share",
   },
   {
     description:
-      "I love doing the activities with my parents. My parents are my best friends!",
-    identity: "Young Friend",
-    user: "9 yrs old, [A society] Pune",
+      "Sensei's activity-based learning modules are a fantastic addition to my classroom. The social-emotional learning focus is refreshing, and I've seen a positive difference in how students interact with each other.",
+    identity: "Kriti Joshi",
+    img: kriti,
+    user: "Parent of 7yr old",
     videoSrc:
       "https://youtube.com/embed/ySwGQrdxLHo?feature=share",
   },
-  {
-    description:
-      "Sensei's activity-based learning modules are a fantastic addition to my classroom. The social-emotional learning focus is refreshing, and I've seen a positive difference in how students interact with each other.",
-    identity: "Fellow Parent",
-    user: "Clinical Psychologist, Raipur",
-    videoSrc:
-      "https://youtube.com/embed/qfXlBxsnYW4?feature=share",
-  },
+
   {
     description:
       "Sensei is a fantastic fit for school with no compromise. The program aligns perfectly with NEP 2020 guidelines and this is what we were looking for.",
-    identity: "Fellow Parent",
-    user: "School Admin, Pune",
+    identity: "Prashant Namdeo",
+    img: prashant,
+    user: "Educator with 15yrs of exp.",
     videoSrc:
       "https://youtube.com/embed/9eWzJqNts-w?feature=share",
     },
   {
     description:
       "As a practicing psychologist, I'm impressed by Sensei's commitment to well-being. This can be a game changer for Indian parenting specially the introduction of SEL modules",
-    identity: "Fellow Parent",
-    user: "Indian Psychologist, London",
+    identity: "Roma",
+    img: roma,
+    user: "Clinical Psychologist, Raipur",
     videoSrc:
       "https://youtube.com/embed/ySwGQrdxLHo?feature=share",
   },
   {
     description:
       "I wish we were taught these skills in our childhood, I would be a different person altogether. There is so much to learn here.",
-    identity: "Fellow Parent",
-    user: "Father of a 5 yrs old, Pune",
+    identity: "Abhay Singh",
+    img: abhay,
+    user: "Parent of 6yr old",
     videoSrc:
       "https://youtube.com/embed/qfXlBxsnYW4?feature=share",
   },
