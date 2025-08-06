@@ -12,6 +12,7 @@ import Useraccount from "@/assets/in-Use/useraccount.svg";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/utils/data";
 import { useSession } from "next-auth/react";
+import Button from "@/components/miniComps/Button";
 // import { current } from "@reduxjs/toolkit";
 import { useState } from "react";
 import { subjects } from "@/utils/data";
@@ -147,35 +148,7 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <Link
-              href="/login"
-              className="m-4 inline-flex flex-col items-start justify-center gap-2 overflow-hidden rounded-2xl bg-[#FF8B13] px-5 py-3.5 shadow-[0px_1px_1px_0px_rgba(0,0,0,0.12)] shadow-[0px_2px_5px_0px_rgba(103,110,118,0.08)]"
-            >
-              <div className="inline-flex items-center justify-center gap-2.5 self-stretch">
-                <div className="justify-center text-center font-['Nunito'] text-lg font-black leading-normal text-white">
-                  Login
-                </div>
-                <svg
-                  className="relative h-5 w-5 overflow-hidden"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="heroicons-outline/arrow-right">
-                    <path
-                      id="Vector"
-                      d="M11.25 3.75L17.5 10M17.5 10L11.25 16.25M17.5 10H2.5"
-                      stroke="white"
-                      strokeWidth="2.4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </g>
-                </svg>
-              </div>
-            </Link>
+            <Button href="/login" text="Login" icon="arrow" className="m-4" />
           )}
         </div>
 
